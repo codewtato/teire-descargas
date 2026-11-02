@@ -12,9 +12,9 @@
 
 ## ✨ ¿Qué es Noty?
 
-Notas, listas y pizarrones que podés **compartir en vivo con tus amigos**, y una **burbuja** para guardar al instante lo que encontrás en cualquier programa. Simple, rápida y gratis.
+Notas, listas y pizarrones que podés **compartir en vivo con tus amigos**, y una **burbuja** para guardar al instante lo que encontrás en cualquier programa. Simple, rápida y gratis. Hecha a mano por [Matías D'Agostino](https://github.com/codewtato), un creador independiente de Argentina 🇦🇷.
 
-## 🫧 La burbuja (solo en Windows)
+## 🫧 La burbuja (solo en Windows, con cuenta)
 
 Una pelotita que vive al costado de tu pantalla. Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
 
@@ -25,20 +25,22 @@ Una pelotita que vive al costado de tu pantalla. Estás viendo un reel, un artí
 - **Arrastrás y soltás** un link, un texto o una imagen desde cualquier programa.
 - **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás.
 - **Capturas:** si sacaste una captura mientras no estabas en Noty, te ofrece guardarla.
+- **Te avisa** de mensajes y recordatorios con un puntito verde, y **tocarla te lleva directo** al último aviso: el chat, la nota o el recordatorio.
+- Se mueve con un deslizamiento suave y se esconde sola si estás en un juego o video en pantalla completa.
 - Después lo pasás a una nota cuando quieras.
 
 ## 🚀 Todo lo que hace
 
 | | |
 |---|---|
-| 🤝 **En vivo con tus amigos** | Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. Ves quién está en la nota. |
-| 🎨 **Notas, listas y pizarrones** | Listas con casillas, imágenes, emojis y un pizarrón para dibujar con mouse, touch o lápiz. |
-| 💬 **Chat y cartas** | Mensajes con emojis y notas adjuntas, y cartas con papel y animación. |
-| ⏰ **Recordatorios** | Avisos que llegan aunque cierres la ventana. También en el celular. |
-| 🎙️ **Che Noty** | Pedile por voz que cree una nota, abra otra o le mande un mensaje a un amigo. Siempre te pregunta antes de compartir. |
+| 🤝 **En vivo con tus amigos** | Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. Ves quién está en la nota y, como en Google Docs, **quién está escribiendo o dibujando ahora mismo**. |
+| 🎨 **Notas, listas y pizarrones** | Listas con casillas, imágenes, emojis y un pizarrón para dibujar con mouse, touch o lápiz. El pizarrón **se puede agrandar** y te movés por él con la **manita** (o mantené `Espacio`), como en un programa de edición. |
+| 💬 **Chat y cartas** | Mensajes con emojis, fotos y notas adjuntas, y cartas con papel y animación. **Respondé un mensaje en particular**, como en WhatsApp. |
+| ⏰ **Recordatorios** | Avisos que llegan aunque cierres la ventana, y se repiten hasta que les das **Listo**. Si estás jugando en pantalla completa no te interrumpen. También en el celular. |
+| 🎙️ **Noty IA** | Decí «Oye Noty» para crear una nota, poner un recordatorio, abrir otra o mandarle un mensaje a un amigo (el mensaje sale al instante). Compartir una nota siempre te pide confirmar. |
 | 🔒 **Notas con PIN** | Cifrá las notas privadas con un PIN. Ni el servidor las puede leer. |
 | 📴 **Sin internet** | Escribí sin conexión: se sube todo cuando vuelve. Sin cuenta, tus notas quedan solo en tu equipo. |
-| ✦ **Noty Premium** | Temas animados, colores para tus notas, estilos de burbuja y el triple de pedidos a Noty IA. |
+| ✦ **Noty Premium** | Temas animados, colores para tus notas, estilos de burbuja y el triple de pedidos a Noty IA. Se paga con Mercado Pago o PayPal, y **se lo podés regalar a un amigo**. |
 
 ## ⬇️ Descargar
 
@@ -87,13 +89,19 @@ No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan ent
 <details>
 <summary><b>¿Es gratis?</b></summary>
 
-Sí. Existe Noty Premium, que es opcional: agrega temas animados, colores para tus notas, estilos de burbuja y más pedidos diarios a Noty IA.
+Sí. Existe Noty Premium, que es opcional: agrega temas animados, colores para tus notas, estilos de burbuja y más pedidos diarios a Noty IA. Lo podés pagar con Mercado Pago o PayPal, y también regalárselo a un amigo por 1, 3, 6 o 12 meses.
 </details>
 
 <details>
 <summary><b>¿Por qué Windows me muestra una advertencia?</b></summary>
 
 Porque el instalador todavía no tiene una firma de código paga, y Windows desconfía de las apps con pocas descargas. No significa que tenga un virus. Con el tiempo y más descargas la advertencia deja de aparecer.
+</details>
+
+<details>
+<summary><b>¿La burbuja funciona sin cuenta?</b></summary>
+
+No: la burbuja es solo para quienes tienen cuenta (y por ahora solo en Windows). Podés crearla gratis desde la app.
 </details>
 
 <details>
