@@ -29,12 +29,22 @@ Una pelotita que vive al costado de tu pantalla. Estás viendo un reel, un artí
 - Se mueve con un deslizamiento suave y se esconde sola si estás en un juego o video en pantalla completa.
 - Después lo pasás a una nota cuando quieras.
 
+## 🪟 Barra de ventana propia (Windows y Linux)
+
+La ventana lleva el **logo de Noty**, la **campana de avisos** (mensajes sin leer, solicitudes y recordatorios, con *marcar como leído*), **Obtener Premium** y los botones de la ventana, con los colores de tu tema. En Linux la podés apagar desde *Perfil → Apariencia*.
+
 ## 🚀 Todo lo que hace
 
 | | |
 |---|---|
 | 🤝 **En vivo con tus amigos** | Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. Ves quién está en la nota y, como en Google Docs, **quién está escribiendo o dibujando ahora mismo**. |
 | 🎨 **Notas, listas y pizarrones** | Listas con casillas, imágenes, emojis y un pizarrón para dibujar con mouse, touch o lápiz. El pizarrón **se puede agrandar** y te movés por él con la **manita** (o mantené `Espacio`), como en un programa de edición. |
+| 🔗 **Enlaces entre notas** | Escribí `[[Título]]` para enlazar una nota con otra. Abajo ves a qué notas enlaza y **cuáles la mencionan**, como en Obsidian. |
+| 🕘 **Historial de versiones** | Noty guarda versiones de tus notas mientras las editás: mirá una anterior y **volvé a ella** cuando quieras. |
+| 🌐 **Comunidad** | Un **lienzo compartido** por todos los usuarios, sin dueño, como una "guerra" estilo r/place: cada día tenés tinta limitada para dibujar o tapar lo de otros. Ves quién participó y podés ver su perfil o agregarlo de amigo. |
+| 🏅 **Insignias y estados** | Insignias en tu perfil, como en Discord: **CEO**, **OG** (por ser de los primeros usuarios) y **Racha de conexión**. Elegí tu estado: En línea, Ausente, No molestar o Invisible. |
+| 📊 **Tu semana** | Un resumen en Inicio con tus notas, palabras escritas, tareas completadas y tu racha de los últimos 7 días. |
+| 🧪 **Experimental** | Funciones en pruebas, como un **Kanban** donde las tarjetas pueden ser tus notas reales. |
 | 💬 **Chat y cartas** | Mensajes con emojis, fotos y notas adjuntas, y cartas con papel y animación. **Respondé un mensaje en particular**, como en WhatsApp. |
 | ⏰ **Recordatorios** | Avisos que llegan aunque cierres la ventana, y se repiten hasta que les das **Listo**. Si estás jugando en pantalla completa no te interrumpen. También en el celular. |
 | 🎙️ **Noty IA** | Decí «Oye Noty» para crear una nota, poner un recordatorio, abrir otra o mandarle un mensaje a un amigo (el mensaje sale al instante). Compartir una nota siempre te pide confirmar. |
@@ -102,6 +112,18 @@ Porque el instalador todavía no tiene una firma de código paga, y Windows desc
 <summary><b>¿La burbuja funciona sin cuenta?</b></summary>
 
 No: la burbuja es solo para quienes tienen cuenta (y por ahora solo en Windows). Podés crearla gratis desde la app.
+</details>
+
+<details>
+<summary><b>¿Qué es el lienzo de la comunidad?</b></summary>
+
+Un dibujo grande que comparten todos los usuarios con cuenta y que **no tiene dueño**. Cada día tenés una cantidad limitada de tinta (cuanto más largo el trazo, más gasta) que se renueva sola. Lo que dibujás puede quedar tapado por lo que dibujen otros, así que el lienzo cambia todo el tiempo. Solo podés deshacer tus propios trazos. Lo encontrás en la sección **Comunidad** (en el celular, dentro de *Más*).
+</details>
+
+<details>
+<summary><b>¿Qué son las insignias?</b></summary>
+
+Pequeños reconocimientos que aparecen en tu perfil: **OG** para los primeros usuarios, **Racha de conexión** por usar Noty 7 días seguidos y **CEO** (la del creador). Cuando conseguís una te avisamos una sola vez, y las podés ocultar desde *Perfil → Cuenta*.
 </details>
 
 <details>
