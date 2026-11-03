@@ -1,0 +1,36 @@
+/* Teire: páginas de texto (privacidad, términos, arrepentimiento). Un índice fijo al costado
+   en la compu, lectura de unos 68 caracteres por línea y un resumen corto arriba de todo. */
+.legal { padding-block: 56px 40px; }
+.legal .ancho { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; align-items: start; }
+.legal-indice { position: sticky; top: 104px; font-size: .9rem; }
+.legal-indice p { color: var(--gris); font-weight: 600; margin-bottom: 10px; }
+.legal-indice ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 1px solid var(--linea); }
+.legal-indice a { display: block; padding: 5px 0 5px 14px; margin-left: -1px; border-left: 2px solid transparent; color: var(--gris); text-decoration: none; }
+.legal-indice a:hover { color: var(--crema); border-left-color: var(--brote); }
+.legal-texto { max-width: 68ch; }
+.legal-texto h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.02em; }
+.legal-texto .fecha { color: var(--gris); margin-top: 12px; font-size: .95rem; }
+.resumen { margin-top: 32px; padding: 24px 26px; border-radius: 22px; background: var(--superficie); border: 1px solid var(--linea); }
+.legal-texto .resumen h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 700; margin: 0 0 10px; color: var(--brote); }
+.resumen ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; color: var(--gris-claro); }
+.legal-texto section { scroll-margin-top: 96px; }
+.legal-texto h2 { font-family: var(--serif); font-weight: 700; font-size: 1.6rem; line-height: 1.2; margin: 48px 0 14px; }
+.legal-texto h3 { font-size: 1.08rem; margin: 26px 0 8px; }
+.legal-texto p, .legal-texto li { color: var(--gris-claro); }
+.legal-texto p + p { margin-top: 12px; }
+.legal-texto ul, .legal-texto ol { padding-left: 1.3em; display: grid; gap: 8px; margin: 12px 0 0; }
+.legal-texto strong { color: var(--crema); }
+.legal-texto a { color: var(--brote); }
+.tabla-marco { overflow-x: auto; margin-top: 14px; border-radius: 16px; border: 1px solid var(--linea); }
+.legal-texto table { width: 100%; border-collapse: collapse; font-size: .94rem; min-width: 520px; }
+.legal-texto th, .legal-texto td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--linea); color: var(--gris-claro); }
+.legal-texto th { color: var(--crema); background: var(--superficie); font-weight: 600; }
+.legal-texto tr:last-child td { border-bottom: 0; }
+/* Datos que todavía falta completar antes de publicar */
+mark.falta { background: rgba(255,122,102,.16); color: var(--coral); border: 1px dashed var(--coral); border-radius: 6px; padding: 0 6px; }
+.pasos-arrepentimiento { counter-reset: paso; list-style: none; padding: 0 !important; }
+.pasos-arrepentimiento li { counter-increment: paso; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; padding: 16px 18px; border-radius: 18px; background: var(--superficie); border: 1px solid var(--linea); }
+.pasos-arrepentimiento li::before { content: counter(paso); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--brote); color: var(--tinta); font-weight: 700; font-size: .9rem; }
+.copiar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+.copiar code { font: 600 .95rem/1.4 ui-monospace, "SF Mono", Consolas, monospace; padding: 8px 12px; border-radius: 10px; background: var(--superficie-2); color: var(--crema); user-select: all; }
+@media (max-width: 900px) { .legal .ancho { grid-template-columns: 1fr; gap: 0; } .legal-indice { display: none; } }

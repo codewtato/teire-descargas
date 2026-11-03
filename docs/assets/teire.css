@@ -1,0 +1,75 @@
+/* Teire: base del sitio (marca, barra, botones y pie). La comparten todas las páginas.
+   Colores y fuentes salen de la guía de marca (teire-marca/BRAND.md). El sitio es oscuro a propósito. */
+@font-face { font-family: "Inter"; src: url("fuentes/inter-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("fuentes/playfair-display-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("fuentes/playfair-display-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("fuentes/playfair-display-latin-600-italic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("fuentes/caveat-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  --tinta: #0F1513; --superficie: #151D1A; --superficie-2: #1C2622; --linea: #28332E; --linea-fuerte: #3a4a42;
+  --crema: #F4EFE6; --gris: #9AA7A0; --gris-claro: #c4cec9; --brote: #5FD4A0; --hoja: #1F9D6E; --sol: #FFC86B; --coral: #FF7A66;
+  --amarillo: #F7DC8A; --celeste: #9FD9EC; --menta: #B9E8CF; --rosa: #F4B9A8;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mano: "Caveat", "Segoe Print", cursive;
+  --ancho: 1140px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--tinta); color: var(--crema); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--tinta); }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+img, svg { max-width: 100%; }
+.ancho { width: 100%; max-width: var(--ancho); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+:focus-visible { outline: 2px solid var(--brote); outline-offset: 3px; border-radius: 8px; }
+.saltar { position: absolute; left: 12px; top: -60px; z-index: 40; padding: 10px 16px; border-radius: 999px; background: var(--brote); color: var(--tinta); font-weight: 600; text-decoration: none; }
+.saltar:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+/* Cartel de Noty */
+.cartel { background: var(--brote); color: var(--tinta); font-size: .9rem; font-weight: 500; }
+.cartel .ancho { display: flex; justify-content: center; align-items: center; gap: 4px 10px; min-height: 40px; padding-block: 6px; text-align: center; flex-wrap: wrap; }
+.cartel b { font-family: var(--mano); font-size: 1.3rem; font-weight: 600; line-height: 1; }
+.cartel a { font-weight: 700; }
+
+/* Barra */
+.barra { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; }
+.barra .ancho { position: relative; display: flex; align-items: center; gap: 24px; height: 72px; }
+.barra-fondo { position: absolute; inset: 0; background: color-mix(in srgb, var(--tinta) 80%, transparent); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); opacity: 0; transition: opacity .3s; border-bottom: 1px solid var(--linea); }
+.barra.con-fondo .barra-fondo, .barra.siempre .barra-fondo { opacity: 1; }
+.marca { position: relative; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 1.45rem; letter-spacing: -0.045em; }
+.marca svg { width: 34px; height: 34px; }
+.barra nav { position: absolute; left: 50%; top: 50%; translate: -50% -50%; margin: 0; display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: var(--superficie); border: 1px solid var(--linea); font-size: .9rem; }
+.barra nav a { text-decoration: none; padding: 8px 16px; border-radius: 999px; color: var(--gris); transition: background .2s, color .2s; }
+.barra nav a:hover, .barra nav a[aria-current] { background: var(--superficie-2); color: var(--crema); }
+.barra .ancho > .boton { margin-left: auto; position: relative; }
+@media (max-width: 1000px) { .barra nav a { padding: 8px 12px; } }
+@media (max-width: 860px) { .barra nav { display: none; } }
+
+/* Botones */
+.boton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 999px; font: 600 .98rem/1 var(--sans); text-decoration: none; border: 1px solid var(--linea); background: var(--superficie-2); color: var(--crema); cursor: pointer; white-space: nowrap; transition: background .2s, border-color .2s, transform .25s cubic-bezier(.3,1.6,.5,1); }
+.boton:hover { background: #22302a; border-color: var(--linea-fuerte); }
+.boton:active { transform: scale(.97); }
+.boton-chico { min-height: 40px; padding: 0 18px; font-size: .9rem; }
+/* Descargar: una gota de la burbuja, con la luz que gira adentro */
+.descargar { position: relative; overflow: hidden; isolation: isolate; border: 0; color: var(--tinta); background: var(--brote); }
+.descargar::before { content: ""; position: absolute; z-index: -1; inset: -60%; background: conic-gradient(from 0deg, #5FD4A0, #8FE3BC, #F4EFE6, #8FE3BC, #5FD4A0, #1F9D6E, #5FD4A0); animation: girar 6s linear infinite; filter: blur(10px); opacity: .9; }
+.descargar:hover { background: var(--brote); transform: translateY(-2px) scale(1.02); }
+.descargar.grande { min-height: 64px; padding: 0 34px 0 14px; font-size: 1.1rem; gap: 14px; box-shadow: 0 18px 50px -12px rgba(95,212,160,.5); }
+.descargar .so { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--tinta); color: var(--brote); }
+.descargar .so svg { width: 20px; height: 20px; }
+@keyframes girar { to { rotate: 360deg; } }
+
+/* Pie */
+.pie { margin-top: 40px; border-top: 1px solid var(--linea); padding-block: 48px; color: var(--gris); font-size: .92rem; }
+.pie .ancho { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 40px; align-items: center; }
+.pie nav { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.pie nav a { text-decoration: none; } .pie nav a:hover { color: var(--crema); }
+.pie .firma { flex-basis: 100%; font-size: .85rem; }
+.pie .lema { font-family: var(--serif); font-style: italic; color: var(--brote); font-size: 1.15rem; }
+.pie .arrepentimiento { color: var(--crema); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
