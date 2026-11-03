@@ -67,7 +67,7 @@
         { "@type": "Question", "name": "¿Teire es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas, estilos de burbuja y más pedidos a Teire IA." } },
         { "@type": "Question", "name": "¿Necesito una cuenta?", "acceptedAnswer": { "@type": "Answer", "text": "No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan entre tus dispositivos y las podés compartir. Entrás con correo, Google, Discord o GitHub." } },
         { "@type": "Question", "name": "¿La burbuja anda en Linux y en el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Por ahora la burbuja es solo para Windows y con cuenta. En el celular, usá Compartir y elegí Teire desde cualquier app." } },
-        { "@type": "Question", "name": "¿Por qué Windows me muestra una advertencia al instalar?", "acceptedAnswer": { "@type": "Answer", "text": "Porque el instalador todavía no tiene una firma de código paga y Windows desconfía de las apps nuevas. Tocá «Más información» y «Ejecutar de todas formas»." } },
+        { "@type": "Question", "name": "¿Por qué Windows me avisa al instalar?", "acceptedAnswer": { "@type": "Answer", "text": "Porque el instalador todavía no tiene una firma de código paga y Windows desconfía de las apps nuevas. Tocá «Más información» y «Ejecutar de todas formas»." } },
         { "@type": "Question", "name": "¿Qué pasa con mis datos?", "acceptedAnswer": { "@type": "Answer", "text": "Tus notas son tuyas. No hay publicidad ni vendemos datos, y las notas con PIN se cifran en tu equipo antes de subirse." } },
         { "@type": "Question", "name": "¿Cómo entro a una Mesa con un link?", "acceptedAnswer": { "@type": "Answer", "text": "Abrí el link que te pasaron y copiá el código. En Teire andá a Mesa, tocá Unirme y pegalo. Los links sirven 7 días." } }
       ]
@@ -271,14 +271,18 @@
 
       <h2 class="titulo-preguntas" id="preguntas">Preguntas frecuentes</h2>
       <div class="preguntas">
-        <details class="pregunta" id="pregunta-noty"><summary>Tenía Noty. ¿Pierdo algo?</summary><div class="respuesta"><p>Nada. Es la misma app con otro nombre: tus notas, tu cuenta, tus amigos y tu Premium siguen igual. Se actualiza sola.</p></div></details>
-        <details class="pregunta"><summary>¿Teire es gratis?</summary><div class="respuesta"><p>Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas, estilos de burbuja y más pedidos a Teire IA.</p></div></details>
-        <details class="pregunta"><summary>¿Necesito una cuenta?</summary><div class="respuesta"><p>No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan entre tus dispositivos y las podés compartir. Entrás con correo, Google, Discord o GitHub.</p></div></details>
-        <details class="pregunta"><summary>¿La burbuja anda en Linux y en el celular?</summary><div class="respuesta"><p>Por ahora la burbuja es solo para Windows y con cuenta. En el celular, usá Compartir y elegí Teire desde cualquier app.</p></div></details>
-        <details class="pregunta"><summary>¿Por qué Windows me muestra una advertencia al instalar?</summary><div class="respuesta"><p>Porque el instalador todavía no tiene una firma de código paga y Windows desconfía de las apps nuevas. Tocá «Más información» y «Ejecutar de todas formas».</p></div></details>
-        <details class="pregunta"><summary>¿Qué pasa con mis datos?</summary><div class="respuesta"><p>Tus notas son tuyas. No hay publicidad ni vendemos datos, y las notas con PIN se cifran en tu equipo antes de subirse. Está todo en la <a href="privacidad/">política de privacidad</a>.</p></div></details>
-        <details class="pregunta"><summary>¿Cómo entro a una Mesa con un link?</summary><div class="respuesta"><p>Abrí el link que te pasaron y copiá el código. En Teire andá a Mesa, tocá Unirme y pegalo. Los links sirven 7 días.</p></div></details>
-        <details class="pregunta"><summary>Encontré un problema o tengo una idea</summary><div class="respuesta"><p>Contanos desde Ayuda, adentro de la app, o en <a href="https://github.com/codewtato/teire-descargas/issues">GitHub</a>.</p></div></details>
+        <div class="preguntas-col">
+          <details class="pregunta" id="pregunta-noty"><summary>Tenía Noty. ¿Pierdo algo?</summary><div class="respuesta"><p>Nada. Es la misma app con otro nombre: tus notas, tu cuenta, tus amigos y tu Premium siguen igual. Se actualiza sola.</p></div></details>
+          <details class="pregunta"><summary>¿Teire es gratis?</summary><div class="respuesta"><p>Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas, estilos de burbuja y más pedidos a Teire IA.</p></div></details>
+          <details class="pregunta"><summary>¿Necesito una cuenta?</summary><div class="respuesta"><p>No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan entre tus dispositivos y las podés compartir. Entrás con correo, Google, Discord o GitHub.</p></div></details>
+          <details class="pregunta"><summary>¿La burbuja anda en Linux y en el celular?</summary><div class="respuesta"><p>Por ahora la burbuja es solo para Windows y con cuenta. En el celular, usá Compartir y elegí Teire desde cualquier app.</p></div></details>
+        </div>
+        <div class="preguntas-col">
+          <details class="pregunta"><summary>¿Por qué Windows me avisa al instalar?</summary><div class="respuesta"><p>Porque el instalador todavía no tiene una firma de código paga y Windows desconfía de las apps nuevas. Tocá «Más información» y «Ejecutar de todas formas».</p></div></details>
+          <details class="pregunta"><summary>¿Qué pasa con mis datos?</summary><div class="respuesta"><p>Tus notas son tuyas. No hay publicidad ni vendemos datos, y las notas con PIN se cifran en tu equipo antes de subirse. Está todo en la <a href="privacidad/">política de privacidad</a>.</p></div></details>
+          <details class="pregunta"><summary>¿Cómo entro a una Mesa con un link?</summary><div class="respuesta"><p>Abrí el link que te pasaron y copiá el código. En Teire andá a Mesa, tocá Unirme y pegalo. Los links sirven 7 días.</p></div></details>
+          <details class="pregunta"><summary>Encontré un problema o tengo una idea</summary><div class="respuesta"><p>Contanos desde Ayuda, adentro de la app, o en <a href="https://github.com/codewtato/teire-descargas/issues">GitHub</a>.</p></div></details>
+        </div>
       </div>
     </div>
   </section>

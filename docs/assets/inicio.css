@@ -171,6 +171,8 @@
 
 /* Preguntas */
 .preguntas { margin-top: 80px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+/* Dos columnas que no dependen una de la otra: si una pregunta ocupa dos renglones o se abre, la de al lado no se corre. */
+.preguntas-col { display: grid; gap: 12px; align-content: start; min-width: 0; }
 .pregunta { border-radius: 20px; background: var(--superficie); border: 1px solid var(--linea); }
 .pregunta summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; display: flex; justify-content: space-between; gap: 14px; }
 .pregunta summary::-webkit-details-marker { display: none; }
