@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://useteire.app"><b>useteire.app</b></a> &nbsp;·&nbsp;
-  <a href="https://github.com/codewtato/teire-descargas/releases/latest"><b>Descargar</b></a> &nbsp;·&nbsp;
+  <a href="https://useteire.app/#descargar"><b>Descargar</b></a> &nbsp;·&nbsp;
   <a href="#-antes-éramos-noty"><b>¿Venís de Noty?</b></a> &nbsp;·&nbsp;
   <a href="#-lo-que-hace"><b>Lo que hace</b></a> &nbsp;·&nbsp;
   <a href="#-preguntas-frecuentes"><b>Preguntas</b></a>
@@ -133,8 +133,10 @@ Se paga con **Mercado Pago** o **PayPal**, y **se lo podés regalar a un amigo**
 ## ⬇️ Descargar
 
 <p align="center">
-  <a href="https://github.com/codewtato/teire-descargas/releases/latest"><b>👉 Descargar la última versión</b></a>
+  <a href="https://useteire.app/#descargar"><b>👉 Descargar desde useteire.app</b></a>
 </p>
+
+La página reconoce tu sistema y te da el instalador justo. Si preferís elegir el archivo a mano, están todos en la [última versión](https://github.com/codewtato/teire-descargas/releases/latest):
 
 | Sistema | Archivo |
 |---|---|
@@ -192,7 +194,7 @@ Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el s
 <details>
 <summary><b>¿Cómo entro a una Mesa con un link?</b></summary>
 
-Abrí el link que te pasaron: te muestra a qué mesa te invitan y un código. En Teire andá a **Mesa → Unirme** y pegá el link o el código. Los links sirven 7 días y quien te invitó los puede cortar cuando quiera.
+Abrí el link que te pasaron (empieza con `useteire.app/unirse/`): te muestra a qué mesa te invitan y un código. En Teire andá a **Mesa → Unirme** y pegá el link o el código. Los links sirven 7 días y quien te invitó los puede cortar cuando quiera.
 </details>
 
 <details>
@@ -210,7 +212,7 @@ Por ahora no: la burbuja es solo para Windows y con cuenta (la creás gratis des
 <details>
 <summary><b>¿Qué pasa con mis datos?</b></summary>
 
-Tus notas son tuyas. Las notas con PIN se cifran en tu dispositivo antes de subirse, y lo que arrastrás desde tu compu a una nota (salvo las imágenes) no se sube: queda solo el nombre.
+Tus notas son tuyas. No hay publicidad ni vendemos datos. Las notas con PIN se cifran en tu dispositivo antes de subirse, y lo que arrastrás desde tu compu a una nota (salvo las imágenes) no se sube: queda solo el nombre. Está todo en la [política de privacidad](https://useteire.app/privacidad/).
 </details>
 
 <details>
