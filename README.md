@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://useteire.app"><b>useteire.app</b></a> &nbsp;·&nbsp;
   <a href="https://github.com/codewtato/teire-descargas/releases/latest"><b>Descargar</b></a> &nbsp;·&nbsp;
   <a href="#-antes-éramos-noty"><b>¿Venís de Noty?</b></a> &nbsp;·&nbsp;
   <a href="#-lo-que-hace"><b>Lo que hace</b></a> &nbsp;·&nbsp;
@@ -222,5 +223,6 @@ Contanos desde **Ayuda** dentro de la app o en [Issues](https://github.com/codew
 
 <p align="center">
   <sub>Hecha a mano por <a href="https://github.com/codewtato">Matías D'Agostino</a>, un creador independiente de Argentina 🇦🇷<br>
-  Este repositorio contiene los instaladores; el código de Teire es privado.</sub>
+  Este repositorio contiene los instaladores y el sitio <a href="https://useteire.app">useteire.app</a>; el código de Teire es privado.<br>
+  <a href="https://useteire.app/privacidad/">Privacidad</a> · <a href="https://useteire.app/terminos/">Términos</a> · <a href="https://useteire.app/arrepentimiento/">Botón de arrepentimiento</a></sub>
 </p>
