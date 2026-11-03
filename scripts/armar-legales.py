@@ -3,7 +3,7 @@
 import json, pathlib, re
 
 DOCS = pathlib.Path(__file__).resolve().parent.parent / "docs"
-BASE = "https://codewtato.github.io/teire-descargas/"
+BASE = "https://useteire.app/"
 FECHA = "3 de noviembre de 2026"
 CORREO = '<a href="mailto:codewtato@gmail.com">codewtato@gmail.com</a>'
 EDAD_MINIMA = '13'

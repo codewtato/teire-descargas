@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /unirse/
 
-Sitemap: https://codewtato.github.io/teire-descargas/sitemap.xml
+Sitemap: https://useteire.app/sitemap.xml
