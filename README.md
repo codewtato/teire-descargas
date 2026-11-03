@@ -224,7 +224,7 @@ Contanos desde **Ayuda** dentro de la app o en [Issues](https://github.com/codew
 ---
 
 <p align="center">
-  <sub>Hecha a mano por <a href="https://github.com/codewtato">Matías D'Agostino</a>, un creador independiente de Argentina 🇦🇷<br>
+  <sub>© 2026 <a href="https://github.com/codewtato">Matías D'Agostino</a>. Argentina.<br>
   Este repositorio contiene los instaladores y el sitio <a href="https://useteire.app">useteire.app</a>; el código de Teire es privado.<br>
   <a href="https://useteire.app/privacidad/">Privacidad</a> · <a href="https://useteire.app/terminos/">Términos</a> · <a href="https://useteire.app/arrepentimiento/">Botón de arrepentimiento</a></sub>
 </p>
