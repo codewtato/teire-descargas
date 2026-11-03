@@ -5,8 +5,9 @@ import json, pathlib, re
 DOCS = pathlib.Path(__file__).resolve().parent.parent / "docs"
 BASE = "https://codewtato.github.io/teire-descargas/"
 FECHA = "3 de noviembre de 2026"
-FALTA_CORREO = '<mark class="falta">correo de contacto</mark>'
-FALTA_EDAD = '<mark class="falta">13</mark>'
+CORREO = '<a href="mailto:codewtato@gmail.com">codewtato@gmail.com</a>'
+EDAD_MINIMA = '13'
+CORREO_ARREPENTIMIENTO = '<a href="mailto:codewtato@gmail.com?subject=Arrepentimiento">codewtato@gmail.com</a>'
 
 SIMBOLOS = """<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="logo" viewBox="0 0 512 512"><rect x="20" y="20" width="472" height="472" rx="118" fill="#151D1A" stroke="#28332E" stroke-width="10"/><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 104 368 104 Z" fill="#5FD4A0"/></symbol>
@@ -93,7 +94,7 @@ def pagina(ruta, titulo, descripcion, h1, resumen, secciones, actual):
 # ---------------------------------------------------------------- Privacidad
 privacidad = [
     ("quien", "Quién cuida tus datos", f"""
-<p>Teire es una app hecha por <strong>Matías D'Agostino</strong>, un creador independiente de Argentina. Él es el responsable de los datos que se guardan cuando usás Teire con una cuenta. Para cualquier consulta sobre tus datos, escribí a {FALTA_CORREO}.</p>
+<p>Teire es una app hecha por <strong>Matías D'Agostino</strong>, un creador independiente de Argentina. Él es el responsable de los datos que se guardan cuando usás Teire con una cuenta. Para cualquier consulta sobre tus datos, escribí a {CORREO}.</p>
 <p>Esta política vale para la app de Teire (Windows, Linux y Android) y para este sitio. Antes la app se llamaba Noty: si tenías Noty, esto también es para vos.</p>"""),
     ("sin-cuenta", "Si usás Teire sin cuenta", """
 <p>Podés usar Teire sin crear una cuenta. En ese caso <strong>tus notas quedan solo en tu equipo</strong> y no se mandan a ningún servidor nuestro. Si desinstalás la app o borrás sus datos, esas notas se pierden.</p>
@@ -148,18 +149,18 @@ privacidad = [
 </ul>"""),
     ("tiempo", "Cuánto tiempo los guardamos", f"""
 <p>Guardamos tus datos mientras tengas tu cuenta. Las notas que borrás van a la papelera hasta que las borrás del todo.</p>
-<p>Si pedís que borremos tu cuenta, borramos tus datos en un plazo de 30 días. Solo guardamos lo que la ley nos obligue a conservar, como los comprobantes de pago. Mientras sumamos el botón para borrar la cuenta desde la app, lo podés pedir escribiendo a {FALTA_CORREO}.</p>"""),
+<p>Si pedís que borremos tu cuenta, borramos tus datos en un plazo de 30 días. Solo guardamos lo que la ley nos obligue a conservar, como los comprobantes de pago. Mientras sumamos el botón para borrar la cuenta desde la app, lo podés pedir escribiendo a {CORREO}.</p>"""),
     ("derechos", "Tus derechos", f"""
-<p>Por la Ley 25.326 de Protección de los Datos Personales, podés pedirnos <strong>ver, corregir, actualizar o borrar</strong> tus datos, gratis. Escribinos a {FALTA_CORREO}. Si pedís verlos, te contestamos en un máximo de 10 días corridos; si pedís corregirlos o borrarlos, en un máximo de 5 días hábiles.</p>
+<p>Por la Ley 25.326 de Protección de los Datos Personales, podés pedirnos <strong>ver, corregir, actualizar o borrar</strong> tus datos, gratis. Escribinos a {CORREO}. Si pedís verlos, te contestamos en un máximo de 10 días corridos; si pedís corregirlos o borrarlos, en un máximo de 5 días hábiles.</p>
 <p>El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley N° 25.326. La Agencia de Acceso a la Información Pública, en su carácter de Órgano de Control de la Ley N° 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>"""),
     ("seguridad", "Cómo los cuidamos", """
 <p>Las conexiones van cifradas, cada persona solo puede leer lo suyo y lo que le compartieron (las reglas de la base de datos lo controlan), y las claves de los servicios viven en el servidor, nunca en la app. Ningún sistema es perfecto: si pasa algo que afecte tus datos, te vamos a avisar.</p>"""),
     ("menores", "Menores de edad", f"""
-<p>Teire no está pensada para menores de {FALTA_EDAD} años. Si sos menor de 18, usala con el permiso de tus padres o de un adulto responsable.</p>"""),
+<p>Teire no está pensada para menores de {EDAD_MINIMA} años. Si sos menor de 18, usala con el permiso de tus padres o de un adulto responsable.</p>"""),
     ("sitio", "Este sitio", """
 <p>Este sitio no usa cookies ni analíticas. Las fuentes y las animaciones están alojadas acá mismo. Para mostrarte la última versión, la página le pregunta a GitHub cuál es, y la página para entrar a una Mesa consulta a Supabase qué Mesa es. GitHub, que aloja el sitio, puede registrar tu dirección IP.</p>"""),
     ("cambios", "Si esta política cambia", f"""
-<p>Si cambiamos algo importante, te avisamos en la app antes de que empiece a valer, y actualizamos la fecha de arriba. Si tenés dudas, escribinos a {FALTA_CORREO}.</p>"""),
+<p>Si cambiamos algo importante, te avisamos en la app antes de que empiece a valer, y actualizamos la fecha de arriba. Si tenés dudas, escribinos a {CORREO}.</p>"""),
 ]
 
 terminos = [
@@ -168,7 +169,7 @@ terminos = [
 <p>Cómo tratamos tus datos está explicado en la <a href="../privacidad/">política de privacidad</a>, que es parte de este acuerdo.</p>"""),
     ("cuenta", "Tu cuenta", f"""
 <ul>
-<li>Para crear una cuenta tenés que tener al menos {FALTA_EDAD} años. Si sos menor de 18, necesitás el permiso de tus padres o de un adulto responsable.</li>
+<li>Para crear una cuenta tenés que tener al menos {EDAD_MINIMA} años. Si sos menor de 18, necesitás el permiso de tus padres o de un adulto responsable.</li>
 <li>Cuidá tu contraseña y tu acceso. Lo que se haga desde tu cuenta es tu responsabilidad.</li>
 <li>Tu nombre de usuario no puede hacerse pasar por otra persona ni ser ofensivo.</li>
 </ul>"""),
@@ -198,9 +199,9 @@ terminos = [
 <p>Teire es gratis y la hace una sola persona. Hacemos lo posible para que ande siempre, pero puede haber cortes, errores o cambios. Podemos sumar, cambiar o sacar funciones. Si sacamos algo de Premium, te avisamos antes.</p>
 <p>Teire se ofrece tal como está. Hasta donde la ley lo permite, no respondemos por daños indirectos ni por pérdidas de datos. Por eso, si algo es muy importante, guardá una copia aparte. Nada de esto limita los derechos que te da la Ley 24.240 de Defensa del Consumidor.</p>"""),
     ("baja", "Dejar de usar Teire", f"""
-<p>Podés dejar de usar Teire cuando quieras. Para borrar tu cuenta y tus datos, escribinos a {FALTA_CORREO} (pronto lo vas a poder hacer desde la app). Si tenés Premium, cancelalo antes para que no se renueve.</p>"""),
+<p>Podés dejar de usar Teire cuando quieras. Para borrar tu cuenta y tus datos, escribinos a {CORREO} (pronto lo vas a poder hacer desde la app). Si tenés Premium, cancelalo antes para que no se renueve.</p>"""),
     ("ley", "Ley y contacto", f"""
-<p>Este acuerdo se rige por las leyes de la República Argentina. Si cambiamos algo importante, te avisamos en la app antes de que empiece a valer. Para cualquier consulta, escribinos a {FALTA_CORREO}.</p>"""),
+<p>Este acuerdo se rige por las leyes de la República Argentina. Si cambiamos algo importante, te avisamos en la app antes de que empiece a valer. Para cualquier consulta, escribinos a {CORREO}.</p>"""),
 ]
 
 arrepentimiento = [
@@ -208,7 +209,7 @@ arrepentimiento = [
 <p>Si pagaste Teire Premium o un regalo de Premium, tenés <strong>10 días corridos</strong> desde el pago para arrepentirte. No tenés que dar ningún motivo y no te cuesta nada: te devolvemos todo lo que pagaste. Es un derecho que te da la Ley 24.240 de Defensa del Consumidor, y este botón está acá por la Resolución 424/2020.</p>"""),
     ("como", "Cómo pedirlo", f"""
 <ol class="pasos-arrepentimiento">
-<li><span><strong>Escribinos a {FALTA_CORREO}</strong> con el asunto «Arrepentimiento». Contanos tu nombre de usuario en Teire, la fecha del pago y si pagaste con Mercado Pago o con PayPal.</span></li>
+<li><span><strong>Escribinos a {CORREO_ARREPENTIMIENTO}</strong> con el asunto «Arrepentimiento». Contanos tu nombre de usuario en Teire, la fecha del pago y si pagaste con Mercado Pago o con PayPal.</span></li>
 <li><span><strong>En menos de 24 horas te mandamos un código de trámite</strong>, para que puedas seguir tu pedido.</span></li>
 <li><span><strong>Te devolvemos el dinero por el mismo medio con el que pagaste</strong>, y cancelamos la suscripción para que no se vuelva a cobrar.</span></li>
 </ol>"""),
