@@ -33,7 +33,7 @@
     .then((r) => (r.ok ? r.json() : Promise.reject()))
     .then((v) => {
       const archivos = v.assets || [];
-      const clave = { windows: "setup.exe", linux: ".appimage" }[so];
+      const clave = { windows: "setup.exe", linux: ".appimage", android: ".apk" }[so];
       const buscar = (fin) => archivos.find((a) => a.name.toLowerCase().endsWith(fin));
       const archivo = clave && buscar(clave);
       if (archivo) document.querySelectorAll("[data-descargar]").forEach((b) => (b.href = archivo.browser_download_url));
