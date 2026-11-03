@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Te invitaron a una mesa · Teire</title>
+<meta name="description" content="Te invitaron a una mesa de Teire: notas, listas y pizarrones para compartir con tus amigos.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--tinta:#0F1513;--superficie:#151D1A;--superficie-2:#1C2622;--borde:#28332E;--crema:#F4EFE6;--brote:#5FD4A0;--sol:#FFC86B;--coral:#FF7A66;--gris:#9AA7A0}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;background:var(--tinta);color:var(--crema);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;align-items:center;padding:28px 16px 40px}
+a{color:inherit}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:28px}
+.marca svg{width:30px;height:30px}
+.marca span{font-weight:700;font-size:24px;letter-spacing:-.045em}
+.tarjeta{width:100%;max-width:460px;background:var(--superficie);border:1px solid var(--borde);border-radius:24px;padding:28px 24px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.kicker{margin:0 0 14px;color:var(--brote);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.mesa{display:flex;align-items:center;gap:14px}
+.avatar{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--color,#9fdcc2);color:var(--tinta);font-weight:700;font-size:20px}
+h1{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(24px,6vw,30px);line-height:1.15}
+.quien{margin:4px 0 0;color:var(--gris);font-size:14px}
+.codigo-caja{margin:22px 0 0;padding:16px;border-radius:18px;background:var(--superficie-2);text-align:center}
+.codigo-caja small{display:block;color:var(--gris);font-size:12.5px}
+.codigo{display:block;margin-top:4px;font-family:ui-monospace,"Cascadia Mono",Menlo,monospace;font-size:clamp(24px,7vw,30px);font-weight:700;letter-spacing:.08em;user-select:all}
+.botones{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{flex:1 1 180px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid transparent;font:inherit;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--brote);outline-offset:3px}
+.btn-brote{background:var(--brote);color:var(--tinta)}
+.btn-borde{background:transparent;border-color:var(--borde);color:var(--crema)}
+.btn-borde:hover{border-color:var(--brote)}
+.pasos{margin:24px 0 0;padding:0;list-style:none;counter-reset:paso;display:grid;gap:10px}
+.pasos li{counter-increment:paso;display:flex;gap:12px;align-items:flex-start;color:var(--gris);font-size:14.5px}
+.pasos li::before{content:counter(paso);flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(95,212,160,.14);color:var(--brote);font-weight:700;font-size:13px}
+.pasos b{color:var(--crema);font-weight:600}
+.aviso{margin:18px 0 0;padding:12px 14px;border-radius:14px;font-size:14px}
+.aviso-error{background:rgba(255,122,102,.12);color:var(--coral)}
+.aviso-info{background:rgba(255,200,107,.1);color:var(--sol)}
+.copiado{min-height:20px;margin:8px 0 0;color:var(--brote);font-size:13px;text-align:center}
+.pie{margin-top:28px;color:var(--gris);font-size:13px;text-align:center}
+.pie em{font-family:"Playfair Display",Georgia,serif;font-style:italic;color:var(--brote)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="marca" href="../" aria-label="Teire">
+  <svg viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 104 368 104 Z" fill="#5FD4A0"/></svg>
+  <span>teire</span>
+</a>
+
+<main class="tarjeta">
+  <p class="kicker">Te invitaron a una mesa</p>
+  <div class="mesa">
+    <span class="avatar" id="avatar" aria-hidden="true">?</span>
+    <div>
+      <h1 id="titulo">Una mesa de Teire</h1>
+      <p class="quien" id="quien">Notas, listas, pizarrones y un chat con tus amigos.</p>
+    </div>
+  </div>
+
+  <p class="aviso aviso-error" id="error" hidden></p>
+
+  <div id="con-codigo" hidden>
+    <div class="codigo-caja">
+      <small>Tu código</small>
+      <span class="codigo" id="codigo"></span>
+    </div>
+    <div class="botones">
+      <button type="button" class="btn btn-brote" id="copiar">Copiar el link</button>
+      <a class="btn btn-borde" href="https://github.com/codewtato/teire-descargas/releases/latest">Descargar Teire</a>
+    </div>
+    <p class="copiado" id="copiado" aria-live="polite"></p>
+    <ol class="pasos">
+      <li><span>Abrí <b>Teire</b>. Si no la tenés, descargala y creá tu cuenta (es gratis).</span></li>
+      <li><span>Andá a <b>Mesa</b> y tocá <b>Unirme</b>.</span></li>
+      <li><span>Pegá este link o escribí el código. ¡Listo, ya estás adentro!</span></li>
+    </ol>
+  </div>
+</main>
+
+<p class="pie">Teire · <em>cuidá lo tuyo</em></p>
+
+<script>
+// Datos públicos de Teire: la clave "anon" es la misma que va adentro de la app (las reglas de la base
+// la protegen). Solo se usa para ver a qué mesa es la invitación; entrar se hace desde la app.
+const TEIRE = {
+  url: "https://zggniboficpdfqvbpexu.supabase.co",
+  anon: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnZ25pYm9maWNwZGZxdmJwZXh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4NjM1NzMsImV4cCI6MjEwODQzOTU3M30.i_yG0MA2ASfuAqiMei327j19472cqmZ4qYCQDVzvp34",
+};
+const COLORES = { lavanda: "#b9a7f5", menta: "#9fdcc2", durazno: "#f5c2a7", cielo: "#a7cdf5", rosa: "#f2b3cc", limon: "#e9e2a0" };
+
+const $ = (id) => document.getElementById(id);
+const crudo = new URLSearchParams(location.search).get("c") || "";
+const codigo = crudo.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+const valido = /^[A-HJ-NP-Z2-9]{10}$/.test(codigo);
+
+const mostrarError = (texto) => {
+  $("error").textContent = texto;
+  $("error").hidden = false;
+};
+
+if (!valido) {
+  $("titulo").textContent = "Este link está incompleto";
+  $("quien").textContent = "Pedile a quien te invitó que te lo mande de nuevo.";
+  $("avatar").textContent = "!";
+} else {
+  $("codigo").textContent = codigo.slice(0, 5) + "-" + codigo.slice(5);
+  $("con-codigo").hidden = false;
+  const link = location.origin + location.pathname + "?c=" + codigo;
+
+  $("copiar").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(link);
+      $("copiado").textContent = "Copiado. Ahora pegalo en Teire → Mesa → Unirme.";
+    } catch {
+      $("copiado").textContent = "No se pudo copiar: copiá el código de arriba.";
+    }
+  });
+
+  fetch(TEIRE.url + "/rest/v1/rpc/ver_invitacion", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", apikey: TEIRE.anon, Authorization: "Bearer " + TEIRE.anon },
+    body: JSON.stringify({ p_codigo: codigo }),
+  })
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then((filas) => {
+      const mesa = Array.isArray(filas) ? filas[0] : null;
+      if (!mesa) {
+        $("con-codigo").hidden = true;
+        $("titulo").textContent = "Esta invitación ya no existe";
+        $("quien").textContent = "Puede que la hayan cortado. Pedile a quien te invitó un link nuevo.";
+        $("avatar").textContent = "!";
+        return;
+      }
+      $("titulo").textContent = mesa.grupo;
+      const personas = mesa.personas + (mesa.personas === 1 ? " persona" : " personas");
+      $("quien").textContent = (mesa.invita ? "@" + mesa.invita + " te invita · " : "") + personas;
+      $("avatar").style.setProperty("--color", COLORES[mesa.color] || COLORES.menta);
+      $("avatar").textContent = mesa.grupo.split(/\s+/).filter(Boolean).slice(0, 2).map((p) => [...p][0].toUpperCase()).join("") || "?";
+      document.title = "Te invitaron a " + mesa.grupo + " · Teire";
+      if (!mesa.vigente) {
+        $("con-codigo").hidden = true;
+        mostrarError("Esta invitación venció. Pedile a quien te invitó un link nuevo.");
+      }
+    })
+    .catch(() => {
+      // Sin conexión con la base igual se puede usar el código.
+      $("quien").textContent = "No pudimos ver de qué mesa es, pero el código sirve igual.";
+    });
+}
+</script>
+</body>
+</html>
