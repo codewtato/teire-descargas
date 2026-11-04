@@ -75,6 +75,8 @@ def pagina(ruta, titulo, descripcion, h1, resumen, secciones, actual):
     <a class="marca" href="../"><svg aria-hidden="true"><use href="#logo"/></svg>teire</a>
     <p class="lema">Cuidá lo tuyo.</p>
     <nav aria-label="Legales y ayuda">
+      <a href="../notas-compartidas/">Notas compartidas</a>
+      <a href="../alternativa-google-keep/">Alternativa a Google Keep</a>
       <a href="../privacidad/">Privacidad</a>
       <a href="../terminos/">Términos</a>
       <a href="https://github.com/codewtato/teire-descargas/releases">Versiones anteriores</a>
@@ -275,6 +277,57 @@ iphone = [
 </ul>""".replace("{CORREO}", CORREO)),
 ]
 
+# --- Páginas para buscadores ---
+BOTONES = """<p class="copiar"><a class="boton" href="../#descargar">Bajá Teire gratis</a> <a class="boton" href="../app/">Usala en el navegador</a></p>"""
+
+notas_compartidas = [
+    ("en-vivo", "Escriban en la misma nota, al mismo tiempo", """
+<p>Compartí una nota con un amigo por su <code>@usuario</code> y mirá cómo escribe, letra por letra. No hay que recargar nada ni mandarse versiones por WhatsApp: lo que cambia uno lo ven todos.</p>
+""" + BOTONES),
+    ("listas", "Listas que se completan entre todos", """
+<p>La lista del súper, lo que hay que llevar al viaje, las tareas de la casa. Cada uno tilda lo suyo desde su celular o su compu, y cada tarjeta te muestra cuánto falta.</p>"""),
+    ("pizarrones", "Pizarrones para pensar juntos", """
+<p>Un pizarrón es un lienzo a pantalla completa. Ves lo que dibujan los demás mientras lo dibujan: sirve para armar un plano, un esquema o explicar algo sin escribir tres párrafos.</p>"""),
+    ("mesa", "Un lugar para tu grupo: la Mesa", """
+<p>La Mesa junta en un solo lugar a quién está en línea, un pizarrón en vivo, el chat y todo lo que comparten. Podés invitar a quien quieras con un link o un código, aunque todavía no sea tu amigo en Teire.</p>"""),
+    ("como", "Cómo compartir una nota", """
+<ol class="pasos-arrepentimiento">
+<li><span><strong>Instalá Teire o abrila en el navegador</strong> y creá tu cuenta gratis.</span></li>
+<li><span><strong>Agregá a tu amigo</strong> por su <code>@usuario</code>.</span></li>
+<li><span><strong>Abrí una nota y compartila.</strong> Desde ese momento la editan los dos.</span></li>
+</ol>"""),
+    ("donde", "Funciona donde estés", """
+<p>Teire está para <strong>Windows, Android, iPhone y Linux</strong>, y también se usa desde el navegador sin instalar nada. Funciona sin internet y sube todo cuando vuelve la conexión. En iPhone se instala desde Safari: <a href="../iphone/">mirá la guía</a>.</p>"""),
+    ("privado", "Tus notas siguen siendo tuyas", """
+<p>Teire no tiene publicidad y no vende datos. Las notas con PIN se cifran en tu dispositivo antes de subirse: ni el servidor las puede leer. Lo que no compartís no lo ve nadie más. El detalle está en la <a href="../privacidad/">política de privacidad</a>.</p>"""),
+]
+
+alternativa_keep = [
+    ("que-suma", "Lo que suma Teire", """
+<ul>
+<li><strong>Notas y listas en vivo:</strong> ves cómo escriben tus amigos, letra por letra.</li>
+<li><strong>Pizarrones a pantalla completa:</strong> dibujan entre varios y se ve mientras lo hacen.</li>
+<li><strong>La Mesa:</strong> un lugar para tu grupo, con chat, pizarrón y lo que comparten.</li>
+<li><strong>Guardados:</strong> reels, links, textos y capturas, agrupados por día y aparte de tus notas.</li>
+<li><strong>La burbuja en Windows:</strong> le soltás un link o una foto desde cualquier programa y queda guardado.</li>
+<li><strong>Notas con PIN:</strong> se cifran en tu dispositivo, y ni el servidor las puede leer.</li>
+<li><strong>Sin publicidad:</strong> todo lo importante es gratis y Premium es opcional.</li>
+</ul>
+""" + BOTONES),
+    ("donde", "Dónde la podés usar", """
+<p>Hay app para <strong>Windows, Android y Linux</strong>, se instala en <a href="../iphone/">iPhone desde Safari</a> y también funciona en el navegador. Con una cuenta gratis, tus notas se sincronizan entre todos tus dispositivos.</p>"""),
+    ("antes", "Lo que tenés que saber antes de cambiarte", """
+<ul>
+<li><strong>Todavía no hay importador.</strong> Tus notas de Keep se pasan a mano, copiando y pegando. Si tenés cientos, arrancá con las que usás.</li>
+<li><strong>En iPhone no pasa por la App Store.</strong> Se instala desde Safari en tres toques.</li>
+<li><strong>La burbuja es solo para Windows</strong> y la voz de Teire IA, para la app de escritorio.</li>
+<li><strong>Teire es un proyecto independiente</strong> hecho en Argentina, no una empresa grande.</li>
+</ul>"""),
+    ("keep", "Cuándo te conviene seguir con Keep", """
+<p>Si vivís adentro de Google y pasás tus notas a Docs todo el tiempo, Keep ya está integrada con esos servicios. Si lo que buscás es compartir con tu gente, armar listas en vivo y tener un lugar para tu grupo, Teire está hecha para eso.</p>
+<p>Google Keep es una marca de Google. Teire no tiene relación con Google.</p>"""),
+]
+
 ARCHIVOS = {
     "privacidad": pagina("privacidad", "Política de privacidad · Teire",
         "Qué datos guarda Teire, para qué los usa y con quién se comparten. Sin publicidad, sin analíticas y sin venta de datos.",
@@ -309,6 +362,21 @@ ARCHIVOS = {
          "Las notificaciones se activan con un toque.",
          "Funciona desde iOS 16.4."],
         iphone, "iphone"),
+    "notas-compartidas": pagina("notas-compartidas", "App de notas compartidas gratis con tus amigos · Teire",
+        "Compartí notas y listas con tus amigos y editenlas en vivo, letra por letra. Teire es gratis para Windows, Android, iPhone, Linux y el navegador.",
+        "Notas compartidas con tus amigos, en vivo",
+        ["Editan la misma nota al mismo tiempo.",
+         "Listas y pizarrones que se actualizan solos.",
+         "Gratis para Windows, Android, iPhone, Linux y navegador.",
+         "Sin publicidad."],
+        notas_compartidas, "notas-compartidas"),
+    "alternativa-google-keep": pagina("alternativa-google-keep", "Alternativa a Google Keep gratis para notas · Teire",
+        "Teire es una alternativa gratis a Google Keep: notas y listas en vivo con tus amigos, pizarrones, Mesa para tu grupo y notas con PIN cifradas.",
+        "Una alternativa a Google Keep",
+        ["Notas, listas y pizarrones que editan juntos en vivo.",
+         "Gratis y sin publicidad.",
+         "Todavía no importa tus notas de Keep: se pasan a mano."],
+        alternativa_keep, "alternativa-google-keep"),
 }
 for carpeta, html in ARCHIVOS.items():
     (DOCS / carpeta).mkdir(exist_ok=True)
