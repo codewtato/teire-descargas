@@ -1,6 +1,6 @@
 /* Teire: la portada. La burbuja es la protagonista: le tirás cosas y se las come. Después, notas
    que se mueven, funciones que se apilan al bajar, Premium que se prueba sobre la página y los
-   tres sistemas para descargar. */
+   cuatro sistemas para descargar. */
 
 /* Portada */
 .portada { position: relative; padding-block: 56px 0; text-align: center; }
@@ -152,9 +152,9 @@
 .vista-app .barrita u { display: block; height: 100%; width: 66%; background: var(--p-acento); transition: background .6s; }
 @media (max-width: 860px) { .premium { grid-template-columns: 1fr; padding: 34px 22px; } }
 
-/* Descargar: el botón para tu sistema y los tres tickets */
+/* Descargar: el botón para tu sistema y los cuatro tickets */
 .dock { margin-top: 40px; display: grid; justify-items: center; gap: 12px; }
-.tickets { margin-top: 64px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.tickets { margin-top: 64px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .ticket { position: relative; display: flex; flex-direction: column; padding: 26px; border-radius: 24px; background: var(--superficie); border: 1px solid var(--linea); transition: border-color .3s; }
 .ticket .icono { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--superficie-2); color: var(--crema); }
 .ticket .icono svg { width: 24px; height: 24px; }
@@ -167,6 +167,7 @@
 .ticket.es-tuyo .tuyo { display: block; }
 .ticket.es-tuyo .boton { background: var(--brote); color: var(--tinta); border-color: transparent; }
 .ticket.es-tuyo .boton:hover { background: #74deaf; }
+@media (max-width: 1080px) { .tickets { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 22px; } }
 @media (max-width: 860px) { .tickets { grid-template-columns: 1fr; gap: 40px; } }
 
 /* Preguntas */

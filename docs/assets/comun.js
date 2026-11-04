@@ -7,22 +7,25 @@
 
   // --- Sistema del visitante ---
   const ua = navigator.userAgent;
-  const so = /android/i.test(ua) ? "android"
+  const esIphone = /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  const so = esIphone ? "iphone"
+    : /android/i.test(ua) ? "android"
     : /windows/i.test(ua) ? "windows"
     : /linux|x11|cros/i.test(ua) ? "linux"
     : "otro";
   const NOMBRES = { windows: "Windows", android: "Android", linux: "Linux" };
-  const DIRECTO = { android: REPO + "/latest/download/Teire.apk" };
+  const DIRECTO = { android: REPO + "/latest/download/Teire.apk", iphone: "/iphone/" };
   document.documentElement.dataset.so = so;
 
   document.querySelectorAll("[data-descargar]").forEach((boton) => {
     const texto = boton.querySelector("[data-texto]") || boton;
-    if (NOMBRES[so]) texto.textContent = `Descargar para ${NOMBRES[so]}`;
+    if (so === "iphone") texto.textContent = "Instalar en iPhone";
+    else if (NOMBRES[so]) texto.textContent = `Descargar para ${NOMBRES[so]}`;
     boton.href = DIRECTO[so] || REPO + "/latest";
   });
   document.querySelectorAll("[data-so-nota]").forEach((nota) => {
     nota.textContent = so === "otro"
-      ? "Teire está para Windows, Linux y Android. En iPhone y Mac todavía no."
+      ? "Teire está para Windows, Linux, Android y iPhone. En Mac todavía no."
       : "Gratis. Se actualiza sola.";
   });
   // Pestañas de sistema: arranca elegida la tuya.

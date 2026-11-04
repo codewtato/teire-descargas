@@ -4,7 +4,7 @@ import json, pathlib, re
 
 DOCS = pathlib.Path(__file__).resolve().parent.parent / "docs"
 BASE = "https://useteire.app/"
-FECHA = "3 de noviembre de 2026"
+FECHA = "4 de noviembre de 2026"
 CORREO = '<a href="mailto:codewtato@gmail.com">codewtato@gmail.com</a>'
 EDAD_MINIMA = '13'
 CORREO_ARREPENTIMIENTO = '<a href="mailto:codewtato@gmail.com?subject=Arrepentimiento">codewtato@gmail.com</a>'
@@ -55,7 +55,7 @@ def pagina(ruta, titulo, descripcion, h1, resumen, secciones, actual):
   <div class="barra-fondo"></div>
   <div class="ancho">
     <a class="marca" href="../" aria-label="Teire, inicio"><svg aria-hidden="true"><use href="#logo"/></svg>teire</a>
-    <nav aria-label="Páginas">{nav("privacidad", "Privacidad")}{nav("terminos", "Términos")}{nav("arrepentimiento", "Arrepentimiento")}</nav>
+    <nav aria-label="Páginas">{nav("privacidad", "Privacidad")}{nav("terminos", "Términos")}{nav("arrepentimiento", "Arrepentimiento")}{nav("iphone", "iPhone")}</nav>
     <a class="boton boton-chico" data-descargar href="https://github.com/codewtato/teire-descargas/releases/latest">Descargar</a>
   </div>
 </header>
@@ -95,7 +95,7 @@ def pagina(ruta, titulo, descripcion, h1, resumen, secciones, actual):
 privacidad = [
     ("quien", "Quién cuida tus datos", f"""
 <p>Teire es una app hecha por <strong>Matías D'Agostino</strong>, un creador independiente de Argentina. Él es el responsable de los datos que se guardan cuando usás Teire con una cuenta. Para cualquier consulta sobre tus datos, escribí a {CORREO}.</p>
-<p>Esta política vale para la app de Teire (Windows, Linux y Android) y para este sitio. Antes la app se llamaba Noty: si tenías Noty, esto también es para vos.</p>"""),
+<p>Esta política vale para la app de Teire (Windows, Linux, Android e iPhone) y para este sitio. Antes la app se llamaba Noty: si tenías Noty, esto también es para vos.</p>"""),
     ("sin-cuenta", "Si usás Teire sin cuenta", """
 <p>Podés usar Teire sin crear una cuenta. En ese caso <strong>tus notas quedan solo en tu equipo</strong> y no se mandan a ningún servidor nuestro. Si desinstalás la app o borrás sus datos, esas notas se pierden.</p>
 <p>Algunas funciones necesitan una cuenta y no se usan sin ella: compartir, la Mesa, el chat, la Comunidad, Teire IA y la burbuja.</p>"""),
@@ -133,6 +133,7 @@ privacidad = [
 <tr><td>Supabase</td><td>La base de datos, las cuentas y los archivos.</td><td>Todo lo que se guarda con tu cuenta. Sus servidores pueden estar fuera de Argentina.</td></tr>
 <tr><td>Google Gemini</td><td>Teire IA, la voz con la que te contesta y los títulos automáticos de los links que compartís.</td><td>Lo que le pedís (el audio o el texto) y, para los títulos, la vista previa pública del link. Pasa por nuestro servidor: Google no recibe tu correo.</td></tr>
 <tr><td>Firebase (Google)</td><td>Los avisos en Android.</td><td>Un identificador de tu celular y el aviso.</td></tr>
+<tr><td>Apple</td><td>Los avisos en iPhone.</td><td>Un identificador de tu celular y el aviso cifrado, que Apple no puede leer.</td></tr>
 <tr><td>Mercado Pago y PayPal</td><td>Cobrar Premium y los regalos.</td><td>Los datos del pago, que cargás directamente en sus páginas.</td></tr>
 <tr><td>Google, Discord y GitHub</td><td>Entrar con esas cuentas, si lo elegís.</td><td>Que elegiste entrar a Teire con esa cuenta.</td></tr>
 <tr><td>Photon (komoot) y OpenStreetMap</td><td>Buscar lugares y mostrar el mapa en una nota.</td><td>Lo que buscás y la zona del mapa.</td></tr>
@@ -217,6 +218,63 @@ arrepentimiento = [
 <p>Si pasaron más de 10 días o solo querés que no se cobre el mes que viene, cancelá la suscripción desde la sección Premium de la app. Seguís teniendo Premium hasta el final del período que ya pagaste.</p>"""),
 ]
 
+# --- Guía de iPhone ---
+FUNCION_GUARDAR = "https://zggniboficpdfqvbpexu.supabase.co/functions/v1/noty-guardar"
+
+iphone = [
+    ("instalar", "Instalala en tres toques", """
+<p class="copiar"><a class="boton" href="../app/">Abrir Teire en Safari</a></p>
+<ol class="pasos-arrepentimiento">
+<li><span><strong>Abrí Teire en Safari</strong> desde el botón de arriba. Si este link te abrió otro navegador, copialo y pegalo en Safari: <code>useteire.app/app</code></span></li>
+<li><span>Tocá <strong>Compartir</strong> (el cuadradito con la flecha para arriba). En los iOS nuevos puede estar adentro del botón <strong>···</strong>.</span></li>
+<li><span>Bajá y tocá <strong>Agregar a Inicio</strong>, y después <strong>Agregar</strong>.</span></li>
+<li><span>Cerrá Safari y abrí <strong>Teire desde su ícono</strong>. Listo: ya funciona como cualquier app.</span></li>
+</ol>"""),
+    ("cuenta", "Entrá a tu cuenta", """
+<p><strong>Iniciá sesión desde el ícono, no desde Safari.</strong> iOS separa las dos cosas: si entrás en Safari, la app instalada no se entera.</p>
+<p>Si ya tenés cuenta con correo, entrá como siempre. Tus notas, amigos y chats están ahí.</p>
+<p><strong>¿Entrás con Google, Discord o GitHub?</strong> En iPhone esos botones no están, porque te sacarían de la app. Tocá <strong>«Entrá con un código por correo»</strong>, poné el correo de esa cuenta y elegí una contraseña. Es la misma cuenta y vas a seguir pudiendo entrar con Google en tus otros equipos.</p>"""),
+    ("notificaciones", "Prendé las notificaciones", """
+<p>La primera vez que entres, Teire te va a preguntar si querés activarlas. Tocá <strong>Activar</strong> y después <strong>Permitir</strong>. Te avisan de mensajes, notas que te comparten y recordatorios, aunque la app esté cerrada.</p>
+<p>Si dijiste «Ahora no», las activás desde <strong>Perfil → Notificaciones</strong>. Necesitás iOS 16.4 o más nuevo.</p>"""),
+    ("guardar", "Guardá links", """
+<p>En iPhone, Teire no puede mirar lo que copiaste por su cuenta. Lo más simple es esto:</p>
+<ol class="pasos-arrepentimiento">
+<li><span>Copiá el link desde Instagram, TikTok o donde sea.</span></li>
+<li><span>Abrí Teire y andá a <strong>Guardados</strong>.</span></li>
+<li><span>Tocá <strong>Pegar</strong> y confirmá en el globito que muestra el iPhone.</span></li>
+</ol>"""),
+    ("atajo", "Guardá desde Compartir, sin abrir Teire", """
+<p>Es opcional y se arma una sola vez. Después, desde cualquier app tocás <strong>Compartir → Guardar en Teire</strong> y queda guardado. Necesitás una cuenta y la app <strong>Atajos</strong>, que viene con el iPhone.</p>
+<ol class="pasos-arrepentimiento">
+<li><span>En Teire, andá a <strong>Perfil → Guardar desde otras apps</strong>, tocá <strong>Generar código</strong> y copialo. No se lo pases a nadie.</span></li>
+<li><span>Abrí <strong>Atajos</strong>, tocá <strong>+</strong> y ponele de nombre <strong>Guardar en Teire</strong>.</span></li>
+<li><span>Agregá la acción <strong>Obtener contenido de URL</strong> y pegá esta dirección:<br><code>""" + FUNCION_GUARDAR + """</code></span></li>
+<li><span>Tocá la flecha de esa acción y elegí método <strong>POST</strong> y cuerpo de la solicitud <strong>JSON</strong>.</span></li>
+<li><span>Agregá un campo de texto con clave <code>codigo</code> y pegá tu código como valor.</span></li>
+<li><span>Agregá otro campo de texto con clave <code>link</code> y, como valor, elegí la variable <strong>Entrada del atajo</strong>.</span></li>
+<li><span>Agregá la acción <strong>Mostrar notificación</strong> y poné <strong>Contenido de la URL</strong> como texto. Así ves si se guardó.</span></li>
+<li><span>Tocá el ícono de información del atajo y prendé <strong>Mostrar en la hoja para compartir</strong>. Guardalo.</span></li>
+</ol>
+<p>Los nombres pueden variar un poco según tu versión de iOS. Si cambiás de código en Teire, actualizalo también en el atajo.</p>"""),
+    ("diferencias", "Qué cambia en iPhone", """
+<ul>
+<li><strong>Todo lo importante está:</strong> notas, listas, pizarrones, recordatorios, Guardados, amigos, chat, Mesa y Premium.</li>
+<li><strong>Se actualiza sola:</strong> cuando hay una versión nueva, la app la toma al abrirla con internet.</li>
+<li><strong>No hay burbuja ni voz de Teire IA:</strong> la burbuja es de Windows y la voz, de escritorio.</li>
+<li><strong>No aparece sola en Compartir:</strong> iOS no lo permite en las apps instaladas desde Safari. Por eso existe el atajo.</li>
+<li><strong>No hay aviso al copiar:</strong> en Android Teire te ofrece guardar lo que copiaste. En iPhone tocás Pegar.</li>
+</ul>"""),
+    ("problemas", "Si algo no anda", """
+<ul>
+<li><strong>No veo «Agregar a Inicio».</strong> Asegurate de estar en Safari. En la lista de Compartir, bajá hasta el final o tocá «Editar acciones».</li>
+<li><strong>Me pide iniciar sesión de nuevo.</strong> Entraste en Safari. Abrí Teire desde el ícono e iniciá sesión ahí.</li>
+<li><strong>No me llegan las notificaciones.</strong> Fijate en Ajustes del iPhone → Notificaciones → Teire, y que el modo Concentración no las esté frenando.</li>
+<li><strong>El atajo dice que el código no vale.</strong> Generá uno nuevo en Teire y pegalo en el atajo.</li>
+<li><strong>Sigue sin andar.</strong> Escribinos desde Ayuda, adentro de la app, o a {CORREO}.</li>
+</ul>""".replace("{CORREO}", CORREO)),
+]
+
 ARCHIVOS = {
     "privacidad": pagina("privacidad", "Política de privacidad · Teire",
         "Qué datos guarda Teire, para qué los usa y con quién se comparten. Sin publicidad, sin analíticas y sin venta de datos.",
@@ -243,6 +301,14 @@ ARCHIVOS = {
          "No tenés que dar motivos.",
          "Te devolvemos todo por el mismo medio de pago."],
         arrepentimiento, "arrepentimiento"),
+    "iphone": pagina("iphone", "Teire en iPhone: cómo instalarla · Teire",
+        "Cómo instalar Teire en tu iPhone desde Safari, gratis y sin App Store: los pasos, las notificaciones y cómo guardar links.",
+        "Teire en tu iPhone",
+        ["Se instala desde Safari y es gratis, sin App Store.",
+         "Iniciá sesión desde el ícono, no desde Safari.",
+         "Las notificaciones se activan con un toque.",
+         "Funciona desde iOS 16.4."],
+        iphone, "iphone"),
 }
 for carpeta, html in ARCHIVOS.items():
     (DOCS / carpeta).mkdir(exist_ok=True)

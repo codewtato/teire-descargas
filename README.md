@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://useteire.app/#descargar"><img alt="Descargar para Windows" src="https://img.shields.io/badge/Windows-Descargar-5FD4A0?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0Y0RUZFNiI%2BPHBhdGggZD0iTTIgNC42IDEwLjYgMy40VjExLjRIMnpNMTEuNiAzLjMgMjIgMlYxMS40SDExLjZ6TTIgMTIuNkgxMC42VjIwLjZMMiAxOS40ek0xMS42IDEyLjZIMjJWMjJMMTEuNiAyMC43eiIvPjwvc3ZnPg%3D%3D&labelColor=151D1A"></a>
   <a href="https://github.com/codewtato/teire-descargas/releases/latest/download/Teire.apk"><img alt="Bajar el APK para Android" src="https://img.shields.io/badge/Android-Bajar_APK-5FD4A0?style=for-the-badge&logo=android&logoColor=F4EFE6&labelColor=151D1A"></a>
+  <a href="https://useteire.app/iphone/"><img alt="Instalar en iPhone" src="https://img.shields.io/badge/iPhone-Instalar-5FD4A0?style=for-the-badge&logo=apple&logoColor=F4EFE6&labelColor=151D1A"></a>
   <a href="https://useteire.app/#descargar"><img alt="Descargar para Linux" src="https://img.shields.io/badge/Linux-Descargar-5FD4A0?style=for-the-badge&logo=linux&logoColor=F4EFE6&labelColor=151D1A"></a>
 </p>
 
@@ -26,7 +27,7 @@
   <img src="docs/img/readme/hero.webp" alt="Teire en la compu y en el celular: Inicio con Para hoy, tu semana y tus notas recientes" width="100%">
 </p>
 
-**Teire** es una app de notas para cuidar lo tuyo y compartirlo con tu gente. Simple, rápida y gratis, para Windows, Linux y Android. La hace un creador independiente en Argentina.
+**Teire** es una app de notas para cuidar lo tuyo y compartirlo con tu gente. Simple, rápida y gratis, para Windows, Linux, Android e iPhone. La hace un creador independiente en Argentina.
 
 El nombre viene del japonés 手入れ (*teire*): cuidar y mantener algo con cariño, como a una planta. Por eso la hojita.
 
@@ -186,6 +187,7 @@ La página reconoce tu sistema y te da el instalador justo. Si preferís elegir 
 |---|---|
 | **Windows 10 / 11** | `Teire_…_x64-setup.exe` |
 | **Android** | [`Teire.apk`](https://github.com/codewtato/teire-descargas/releases/latest/download/Teire.apk) |
+| **iPhone** | No lleva archivo: se instala desde Safari ([guía](https://useteire.app/iphone/)) |
 | **Cualquier Linux** | `Teire_….AppImage` |
 | **Fedora / openSUSE** | `Teire-….rpm` |
 
@@ -205,6 +207,23 @@ La página reconoce tu sistema y te da el instalador justo. Si preferís elegir 
 1. Descargá `Teire.apk` desde el celular y abrilo.
 2. Android te va a pedir permiso para instalar apps de esta fuente: aceptalo.
 3. Las próximas versiones se bajan e instalan desde la misma app.
+</details>
+
+<details>
+<summary><b>📱 iPhone</b></summary>
+
+Es gratis y no pasa por la App Store. Necesitás iOS 16.4 o más nuevo.
+
+1. Abrí [useteire.app/app](https://useteire.app/app/) en **Safari**.
+2. Tocá **Compartir** (en los iOS nuevos puede estar adentro de **···**), después **Agregar a Inicio** y **Agregar**.
+3. Abrí Teire desde su ícono e **iniciá sesión ahí**: lo que hagas en Safari no pasa a la app instalada.
+4. Tocá **Activar** para recibir notificaciones.
+
+¿Entrás con Google, Discord o GitHub? Tocá **«Entrá con un código por correo»** y elegí una contraseña: es la misma cuenta.
+
+Para guardar un link, copialo y tocá **Pegar** en Guardados. Si querés guardar desde Compartir sin abrir Teire, armá el atajo.
+
+En iPhone no están la burbuja ni la voz de Teire IA. Todos los pasos, con el atajo y qué hacer si algo falla, están en la [guía de iPhone](https://useteire.app/iphone/).
 </details>
 
 <details>
