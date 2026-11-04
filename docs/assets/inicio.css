@@ -167,6 +167,8 @@
 .ticket.es-tuyo .tuyo { display: block; }
 .ticket.es-tuyo .boton { background: var(--brote); color: var(--tinta); border-color: transparent; }
 .ticket.es-tuyo .boton:hover { background: #74deaf; }
+.sin-instalar { margin-top: 28px; text-align: center; color: var(--gris); }
+.sin-instalar a { color: var(--brote); }
 @media (max-width: 1080px) { .tickets { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 22px; } }
 @media (max-width: 860px) { .tickets { grid-template-columns: 1fr; gap: 40px; } }
 

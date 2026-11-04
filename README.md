@@ -191,6 +191,8 @@ La página reconoce tu sistema y te da el instalador justo. Si preferís elegir 
 | **Cualquier Linux** | `Teire_….AppImage` |
 | **Fedora / openSUSE** | `Teire-….rpm` |
 
+¿No querés instalar nada? [Usala en el navegador](https://useteire.app/app/) y entrá con tu cuenta, también con Google, Discord o GitHub. Ahí no están la burbuja ni la voz de Teire IA, y las notificaciones llegan con la pestaña abierta.
+
 ### Cómo instalar
 
 <details>
