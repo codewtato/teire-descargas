@@ -8,6 +8,7 @@
 .portada .lema { font-family: var(--serif); font-style: italic; font-weight: 600; color: var(--brote); font-size: 1.5rem; margin-top: 18px; }
 .portada .bajada { color: var(--gris); font-size: 1.12rem; max-width: 36em; margin: 18px auto 0; }
 .acciones { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; margin-top: 32px; }
+.acciones .abrir-web { min-height: 64px; padding: 0 28px; font-size: 1.05rem; }
 .nota-so { color: var(--gris); font-size: .9rem; margin-top: 14px; }
 .nota-so a { color: var(--crema); }
 
