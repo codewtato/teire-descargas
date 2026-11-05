@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Te invitaron a una mesa · Teire</title>
-<meta name="description" content="Te invitaron a una mesa de Teire: notas, listas y pizarrones para compartir con tus amigos.">
+<title>Las Mesas ahora son Espacios · Teire</title>
+<meta name="description" content="Las Mesas de Teire ahora son Espacios.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,105 +56,13 @@ h1{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(24px,6v
 </a>
 
 <main class="tarjeta">
-  <p class="kicker">Te invitaron a una mesa</p>
-  <div class="mesa">
-    <span class="avatar" id="avatar" aria-hidden="true">?</span>
-    <div>
-      <h1 id="titulo">Una mesa de Teire</h1>
-      <p class="quien" id="quien">Notas, listas, pizarrones y un chat con tus amigos.</p>
-    </div>
-  </div>
-
-  <p class="aviso aviso-error" id="error" hidden></p>
-
-  <div id="con-codigo" hidden>
-    <div class="codigo-caja">
-      <small>Tu código</small>
-      <span class="codigo" id="codigo"></span>
-    </div>
-    <div class="botones">
-      <button type="button" class="btn btn-brote" id="copiar">Copiar el link</button>
-      <a class="btn btn-borde" href="../#descargar">Descargar Teire</a>
-    </div>
-    <p class="copiado" id="copiado" aria-live="polite"></p>
-    <ol class="pasos">
-      <li><span>Abrí <b>Teire</b>. Si no la tenés, descargala y creá tu cuenta (es gratis).</span></li>
-      <li><span>Andá a <b>Mesa</b> y tocá <b>Unirme</b>.</span></li>
-      <li><span>Pegá este link o escribí el código. ¡Listo, ya estás adentro!</span></li>
-    </ol>
-  </div>
+  <p class="kicker">Este link ya no sirve</p>
+  <h1 id="titulo">Las Mesas ahora son Espacios</h1>
+  <p class="pie">Pedile a quien te invitó un link nuevo. Los links de un Espacio se abren directo, sin cuenta.</p>
+  <a class="btn" href="../">Conocer Teire</a>
 </main>
 
 <p class="pie">Teire · <em>cuidá lo tuyo</em></p>
 
-<script>
-// Datos públicos de Teire: la clave "anon" es la misma que va adentro de la app (las reglas de la base
-// la protegen). Solo se usa para ver a qué mesa es la invitación; entrar se hace desde la app.
-const TEIRE = {
-  url: "https://zggniboficpdfqvbpexu.supabase.co",
-  anon: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnZ25pYm9maWNwZGZxdmJwZXh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4NjM1NzMsImV4cCI6MjEwODQzOTU3M30.i_yG0MA2ASfuAqiMei327j19472cqmZ4qYCQDVzvp34",
-};
-const COLORES = { lavanda: "#b9a7f5", menta: "#9fdcc2", durazno: "#f5c2a7", cielo: "#a7cdf5", rosa: "#f2b3cc", limon: "#e9e2a0" };
-
-const $ = (id) => document.getElementById(id);
-const crudo = new URLSearchParams(location.search).get("c") || "";
-const codigo = crudo.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
-const valido = /^[A-HJ-NP-Z2-9]{10}$/.test(codigo);
-
-const mostrarError = (texto) => {
-  $("error").textContent = texto;
-  $("error").hidden = false;
-};
-
-if (!valido) {
-  $("titulo").textContent = "Este link está incompleto";
-  $("quien").textContent = "Pedile a quien te invitó que te lo mande de nuevo.";
-  $("avatar").textContent = "!";
-} else {
-  $("codigo").textContent = codigo.slice(0, 5) + "-" + codigo.slice(5);
-  $("con-codigo").hidden = false;
-  const link = location.origin + location.pathname + "?c=" + codigo;
-
-  $("copiar").addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(link);
-      $("copiado").textContent = "Copiado. Ahora pegalo en Teire → Mesa → Unirme.";
-    } catch {
-      $("copiado").textContent = "No se pudo copiar: copiá el código de arriba.";
-    }
-  });
-
-  fetch(TEIRE.url + "/rest/v1/rpc/ver_invitacion", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", apikey: TEIRE.anon, Authorization: "Bearer " + TEIRE.anon },
-    body: JSON.stringify({ p_codigo: codigo }),
-  })
-    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-    .then((filas) => {
-      const mesa = Array.isArray(filas) ? filas[0] : null;
-      if (!mesa) {
-        $("con-codigo").hidden = true;
-        $("titulo").textContent = "Esta invitación ya no existe";
-        $("quien").textContent = "Puede que la hayan cortado. Pedile a quien te invitó un link nuevo.";
-        $("avatar").textContent = "!";
-        return;
-      }
-      $("titulo").textContent = mesa.grupo;
-      const personas = mesa.personas + (mesa.personas === 1 ? " persona" : " personas");
-      $("quien").textContent = (mesa.invita ? "@" + mesa.invita + " te invita · " : "") + personas;
-      $("avatar").style.setProperty("--color", COLORES[mesa.color] || COLORES.menta);
-      $("avatar").textContent = mesa.grupo.split(/\s+/).filter(Boolean).slice(0, 2).map((p) => [...p][0].toUpperCase()).join("") || "?";
-      document.title = "Te invitaron a " + mesa.grupo + " · Teire";
-      if (!mesa.vigente) {
-        $("con-codigo").hidden = true;
-        mostrarError("Esta invitación venció. Pedile a quien te invitó un link nuevo.");
-      }
-    })
-    .catch(() => {
-      // Sin conexión con la base igual se puede usar el código.
-      $("quien").textContent = "No pudimos ver de qué mesa es, pero el código sirve igual.";
-    });
-}
-</script>
 </body>
 </html>

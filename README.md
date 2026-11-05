@@ -78,12 +78,11 @@ Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. El
 <td width="56%"><img src="docs/img/readme/pizarron.webp" alt="Pizarrón de Teire a pantalla completa con un esquema dibujado a mano" width="100%"></td>
 </tr>
 <tr>
-<td width="56%"><img src="docs/img/readme/mesa.webp" alt="La Mesa de Teire en la compu y en el celular: quién está en línea, el pizarrón, el chat y lo compartido" width="100%"></td>
-<td width="44%" valign="middle">
+<td colspan="2" valign="middle">
 
-### La Mesa
+### El Espacio
 
-Un lugar para tu grupo: **quién está en línea**, un **pizarrón en vivo**, el chat y todo lo que comparten. Invitá a quien quieras con un link o un código, aunque todavía no sea tu amigo en Teire.
+Un lugar para tu grupo: una lona con **notas, archivos, kanban, tablas, calendario y pizarrones**, chat y mouses en vivo. Invitá a quien quieras con un **link de 24 horas**, aunque no tenga Teire.
 
 </td>
 </tr>
@@ -264,9 +263,10 @@ Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el s
 </details>
 
 <details>
-<summary><b>¿Cómo entro a una Mesa con un link?</b></summary>
+<summary><b>¿Cómo invito a alguien a un Espacio?</b></summary>
 
-Abrí el link que te pasaron (empieza con `useteire.app/unirse/`): te muestra a qué mesa te invitan y un código. En Teire andá a **Mesa → Unirme** y pegá el link o el código. Los links sirven 7 días y quien te invitó los puede cortar cuando quiera.
+En tu Espacio tocá **Compartir** y creá un link. Quien lo abra entra sin cuenta y sin instalar nada. El link dura 24 horas y lo podés cerrar antes.
+
 </details>
 
 <details>
