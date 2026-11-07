@@ -101,6 +101,45 @@
     });
   }
 
+  // ---------- El Espacio: las cosas se mueven y dos amigos andan por la lona ----------
+  const lona = document.getElementById("lona");
+  if (hayGsap && window.Draggable) {
+    Draggable.create(".cosa-e", {
+      bounds: "#lona", zIndexBoost: true, dragClickables: false,
+      onPress() { if (animar) gsap.to(this.target, { scale: 1.03, duration: .2 }); },
+      onRelease() { if (animar) gsap.to(this.target, { scale: 1, duration: .3 }); },
+    });
+  }
+  // Los mouses van hacia las cosas (aunque las hayas movido): ana pasea entre la nota y el kanban, y beto tilda y destilda los lentes.
+  const andarPorLaLona = () => {
+    const ana = document.getElementById("mouse-ana"), beto = document.getElementById("mouse-beto");
+    const lentes = document.getElementById("e-lentes");
+    const punto = (el, fx, fy) => {
+      const l = lona.getBoundingClientRect(), r = el.getBoundingClientRect();
+      return { x: r.left - l.left + r.width * fx, y: r.top - l.top + r.height * fy };
+    };
+    const ir = (mouse, destino, duracion) => new Promise((listo) => gsap.to(mouse, { x: destino.x, y: destino.y, duration: duracion, ease: "power2.inOut", onComplete: listo }));
+    const pausa = (s) => new Promise((listo) => setTimeout(listo, s * 1000));
+    const paseoAna = async () => {
+      for (;;) {
+        await ir(ana, punto(lona.querySelector(".e-nota"), .7, .6), 1.6); await pausa(1.2);
+        await ir(ana, punto(lona.querySelector(".e-kanban"), .5, .7), 1.8); await pausa(1.4);
+        await ir(ana, punto(lona.querySelector(".e-kanban"), .85, .45), 1.1); await pausa(1);
+      }
+    };
+    const paseoBeto = async () => {
+      for (;;) {
+        await ir(beto, punto(lentes, .5, .5), 1.5); await pausa(.3);
+        lentes.checked = !lentes.checked;
+        await pausa(1.4);
+        await ir(beto, punto(lona.querySelector(".e-lista"), .9, 1.25), 1.4); await pausa(2.2);
+      }
+    };
+    gsap.set(ana, { x: 260, y: 230 }); gsap.set(beto, { x: 470, y: 420 });
+    paseoAna(); paseoBeto();
+  };
+  if (animar && window.ScrollTrigger) ScrollTrigger.create({ trigger: lona, start: "top 85%", once: true, onEnter: andarPorLaLona });
+
   // ---------- Premium: los temas pintan la caja ----------
   const TEMAS = {
     teire: { fondo: "#151D1A", texto: "#F4EFE6", acento: "#5FD4A0", tarjeta: "#1C2622" },

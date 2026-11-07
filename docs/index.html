@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Teire: app de notas gratis para compartir con amigos</title>
-<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, recordatorios y una burbuja que guarda links y fotos.">
+<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, un Espacio para trabajar en grupo, recordatorios y una burbuja que guarda links y fotos.">
 <link rel="canonical" href="https://useteire.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0F1513">
@@ -104,6 +104,7 @@
     <a class="marca" href="./" aria-label="Teire, inicio"><svg aria-hidden="true"><use href="#logo"/></svg>teire</a>
     <nav aria-label="Secciones">
       <a href="#funciones">Funciones</a>
+      <a href="#espacio">Espacio</a>
       <a href="#premium">Premium</a>
       <a href="#descargar">Descargar</a>
       <a href="#preguntas">Preguntas</a>
@@ -178,6 +179,48 @@
     </div>
   </section>
 
+  <section class="bloque espacio" id="espacio" aria-labelledby="titulo-espacio">
+    <div class="ancho">
+      <div class="lona" id="lona" role="group" aria-label="Un espacio de ejemplo: podés mover las cosas y tildar la lista">
+        <div class="lona-barra" aria-hidden="true">
+          <span class="lona-pestana">Viaje a Mendoza</span>
+          <span class="caras"><span class="cara" style="background:var(--rosa)">A</span><span class="cara" style="background:var(--celeste)">B</span></span>
+          <span class="lona-boton">Chat</span><span class="lona-boton">Compartir</span>
+        </div>
+        <div class="cosa-e e-nota"><h3>Bodegas</h3><p>Zuccardi y Catena el sábado. Reservar antes del jueves.</p></div>
+        <div class="cosa-e e-lista"><h3>Valija</h3>
+          <ul>
+            <li><label><input type="checkbox" checked><span>Abrigo para la noche</span></label></li>
+            <li><label><input type="checkbox" id="e-lentes"><span>Lentes de sol</span></label></li>
+            <li><label><input type="checkbox"><span>Mate y termo</span></label></li>
+          </ul>
+        </div>
+        <div class="cosa-e e-kanban"><h3>Organización</h3>
+          <div class="columnas">
+            <div><b><i style="background:var(--celeste)"></i>Por hacer</b><span>Alquilar el auto</span></div>
+            <div><b><i style="background:var(--sol)"></i>Haciendo</b><span>Reservar el hotel</span></div>
+            <div><b><i style="background:var(--brote)"></i>Listo</b><span>Pasajes</span><span>Repartir los gastos</span></div>
+          </div>
+        </div>
+        <div class="mouse m-ana" id="mouse-ana" aria-hidden="true"><svg viewBox="0 0 16 18"><path d="M1 1l13 7-6 1.6L5 16z"/></svg><span>@ana</span></div>
+        <div class="mouse m-beto" id="mouse-beto" aria-hidden="true"><svg viewBox="0 0 16 18"><path d="M1 1l13 7-6 1.6L5 16z"/></svg><span>@beto</span></div>
+      </div>
+      <div class="espacio-texto">
+        <span class="sello-beta">Beta</span>
+        <h2 id="titulo-espacio">El Espacio. Un lugar para tu grupo.</h2>
+        <p>Una lona sin bordes para armar algo entre varios: un viaje, un trabajo práctico, la mudanza. Ven el mouse de cada uno y lo que escribe, al instante.</p>
+        <ul class="espacio-lista">
+          <li><b>Todo junto.</b> Notas, listas, kanban, tablas, calendario, pomodoro, pizarrones y archivos: PDF, Word, fotos, audio y video.</li>
+          <li><b>Escriban a la vez.</b> Si dos cambian lo mismo, los cambios se juntan en vez de pisarse. Con Ctrl Z deshacés lo tuyo.</li>
+          <li><b>Nada se pierde.</b> El historial guarda 14 días: recuperás lo que alguien sacó.</li>
+          <li><b>Invitá con un link.</b> Dura 24 horas y entra cualquiera, sin cuenta y sin instalar nada.</li>
+        </ul>
+        <p class="detalle">Un espacio gratis, tres con Premium.</p>
+        <p class="mano" aria-hidden="true">Mové las cosas, la lona es tuya.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="bloque" aria-labelledby="titulo-mas" style="padding-top:20px">
     <div class="ancho">
       <div class="cabeza">
@@ -194,11 +237,11 @@
           </div>
         </article>
         <article class="tarjeta" style="--i:1;background:var(--menta)">
-          <div><span class="que">Espacio</span><h3>Un lugar para tu grupo.</h3><p>Una lona compartida con notas, archivos, kanban, pizarrones y chat. Invitá con un link, aunque todavía no estén en Teire.</p></div>
+          <div><span class="que">Chat</span><h3>Hablen sin salir de Teire.</h3><p>Con amigos y grupos: mensajes, fotos, notas adjuntas y cartas que se abren una sola vez. Respondé un mensaje en particular, como en WhatsApp.</p></div>
           <div class="ilus" aria-hidden="true">
             <div class="globo">¿Quién lleva el hielo?</div>
             <div class="globo mio">Yo, y paso por el carbón</div>
-            <div class="globo">Genial. Les paso el código a los chicos: VPZK-3D23</div>
+            <div class="globo">Genial. Lo anoto en el Espacio del asado</div>
           </div>
         </article>
         <article class="tarjeta" style="--i:2;background:var(--celeste)">
