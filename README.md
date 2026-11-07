@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/img/readme/hero.webp" alt="Teire en la compu y en el celular: Inicio con Para hoy, tu semana y tus notas recientes" width="100%">
+  <img src="docs/img/readme/hero.webp" alt="Teire en la compu y en el celular: Inicio con Para hoy, esta semana, tus guardados y tus notas recientes" width="100%">
 </p>
 
 **Teire** es una app de notas para cuidar lo tuyo y compartirlo con tu gente. Simple, rápida y gratis, para Windows, Linux, Android e iPhone. La hace un creador independiente en Argentina.
@@ -78,11 +78,12 @@ Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. El
 <td width="56%"><img src="docs/img/readme/pizarron.webp" alt="Pizarrón de Teire a pantalla completa con un esquema dibujado a mano" width="100%"></td>
 </tr>
 <tr>
-<td colspan="2" valign="middle">
+<td width="56%"><img src="docs/img/readme/espacio.webp" alt="Espacio de Teire: una lona con notas, una lista, un kanban y una tabla, y los mouses de dos amigos" width="100%"></td>
+<td width="44%" valign="middle">
 
 ### El Espacio
 
-Un lugar para tu grupo: una lona con **notas, archivos, kanban, tablas, calendario y pizarrones**, chat y mouses en vivo. Invitá a quien quieras con un **link de 24 horas**, aunque no tenga Teire.
+Un lugar para tu grupo: una lona con **notas, archivos, kanban, tablas, calendario y pizarrones**, chat y mouses en vivo. Si dos escriben a la vez, los cambios se juntan; y con el **historial** recuperás lo que se sacó. Invitá a quien quieras con un **link de 24 horas**, aunque no tenga Teire.
 
 </td>
 </tr>
@@ -94,7 +95,7 @@ Un lugar para tu grupo: una lona con **notas, archivos, kanban, tablas, calendar
 Reels, videos, links, textos y capturas, agrupados por día. Pegá con `Ctrl+V` o arrastralo, y pasalo a una nota cuando quieras. En el celular, **Compartir → Teire** desde cualquier app.
 
 </td>
-<td width="56%"><img src="docs/img/readme/guardados.webp" alt="Guardados de Teire en la compu y en el celular" width="100%"></td>
+<td width="56%"><img src="docs/img/readme/guardados.webp" alt="Guardados de Teire: links, textos y reels agrupados por día" width="100%"></td>
 </tr>
 <tr>
 <td width="56%"><img src="docs/img/readme/calendario.webp" alt="Calendario de Teire con los recordatorios del día" width="100%"></td>
