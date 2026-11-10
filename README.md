@@ -17,7 +17,7 @@
 <p align="center">
   <a href="https://useteire.app"><b>useteire.app</b></a> &nbsp;·&nbsp;
   <a href="#lo-que-hace"><b>Lo que hace</b></a> &nbsp;·&nbsp;
-  <a href="#la-burbuja"><b>La burbuja</b></a> &nbsp;·&nbsp;
+  <a href="#la-isla"><b>La isla</b></a> &nbsp;·&nbsp;
   <a href="#descargar"><b>Descargar</b></a> &nbsp;·&nbsp;
   <a href="#antes-éramos-noty"><b>¿Venís de Noty?</b></a> &nbsp;·&nbsp;
   <a href="#preguntas-frecuentes"><b>Preguntas</b></a>
@@ -146,18 +146,19 @@ Un **lienzo compartido por todos**, sin dueño, estilo r/place: cada día tenés
 </tr>
 </table>
 
-## La burbuja
+## La isla
 
-Una pelotita que vive al costado de tu pantalla (**Windows, con cuenta**). Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
+Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows, con cuenta**). Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
 
 <p align="center">
-  <img src="docs/img/burbuja-demo.svg" alt="Arrastrás un link hasta la burbuja de Teire y queda guardado" width="640">
+  <img src="docs/img/isla-demo.svg" alt="Arrastrás un link hasta la isla de Teire, arriba al centro de la pantalla, y queda guardado" width="640">
 </p>
 
-- **Arrastrás y soltás** un link, un texto o una imagen desde cualquier programa.
+- **Arrastrás y soltás** un link, un texto o una imagen desde cualquier programa: la isla se abre para recibirlo.
 - **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás, sin sacarte de lo que estás haciendo.
-- **Capturas:** si sacaste una captura mientras no estabas en Teire, te ofrece guardarla.
-- **Te avisa** de mensajes y recordatorios con un puntito verde, y podés **responder un mensaje desde la burbuja** sin abrir la app.
+- **Capturas:** copiás una captura y te ofrece guardarla.
+- **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app. Si algo quedó sin ver, se prende una lucecita verde.
+- **Teire IA** te escucha y te contesta en la isla.
 - Se esconde sola si estás en un juego o un video en pantalla completa.
 
 ## Teire Premium
@@ -170,7 +171,7 @@ Opcional, para quien quiere darle su toque.
 
 - **19 temas** para toda la app, en colecciones: Pastel, Vivos, Mundos y los hechos para Teire (**Jardín**, **Oro** y **Papel**). Sin Premium los podés **probar un minuto**.
 - **El sello dorado:** la hojita de Teire en dorado, en tu chip y en el aro de tu foto.
-- **Colores para tus notas**, estilos de burbuja (Comelón, Monstruito, Brote) y colores del orbe.
+- **Colores para tus notas**, para la isla y para el orbe de Teire IA.
 - **El triple de pedidos** a Teire IA.
 
 Se paga con **Mercado Pago** o **PayPal**, y **se lo podés regalar a un amigo** por 1, 3, 6 o 12 meses.
@@ -191,7 +192,7 @@ La página reconoce tu sistema y te da el instalador justo. Si preferís elegir 
 | **Cualquier Linux** | `Teire_….AppImage` |
 | **Fedora / openSUSE** | `Teire-….rpm` |
 
-¿No querés instalar nada? [Usala en el navegador](https://useteire.app/app/) y entrá con tu cuenta, también con Google, Discord o GitHub. Ahí no están la burbuja ni la voz de Teire IA, y las notificaciones llegan con la pestaña abierta.
+¿No querés instalar nada? [Usala en el navegador](https://useteire.app/app/) y entrá con tu cuenta, también con Google, Discord o GitHub. Ahí no están la isla ni la voz de Teire IA, y las notificaciones llegan con la pestaña abierta.
 
 ### Cómo instalar
 
@@ -225,7 +226,7 @@ Es gratis y no pasa por la App Store. Necesitás iOS 16.4 o más nuevo.
 
 Para guardar un link, copialo y tocá **Pegar** en Guardados. Si querés guardar desde Compartir sin abrir Teire, armá el atajo.
 
-En iPhone no están la burbuja ni la voz de Teire IA. Todos los pasos, con el atajo y qué hacer si algo falla, están en la [guía de iPhone](https://useteire.app/iphone/).
+En iPhone no están la isla ni la voz de Teire IA. Todos los pasos, con el atajo y qué hacer si algo falla, están en la [guía de iPhone](https://useteire.app/iphone/).
 </details>
 
 <details>
@@ -260,7 +261,7 @@ No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan ent
 <details>
 <summary><b>¿Es gratis?</b></summary>
 
-Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el sello dorado, colores para tus notas, estilos de burbuja y más pedidos a Teire IA.
+Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el sello dorado, colores para tus notas y para la isla, y más pedidos a Teire IA.
 </details>
 
 <details>
@@ -277,9 +278,9 @@ Porque el instalador todavía no tiene una firma de código paga, y Windows desc
 </details>
 
 <details>
-<summary><b>¿La burbuja funciona en Linux o sin cuenta?</b></summary>
+<summary><b>¿La isla funciona en Linux o sin cuenta?</b></summary>
 
-Por ahora no: la burbuja es solo para Windows y con cuenta (la creás gratis desde la app). El aviso de capturas sí funciona en Linux.
+Por ahora no: la isla es solo para Windows y con cuenta (la creás gratis desde la app). El aviso de capturas sí funciona en Linux.
 </details>
 
 <details>

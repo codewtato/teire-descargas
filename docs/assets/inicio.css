@@ -1,4 +1,4 @@
-/* Teire: la portada. La burbuja es la protagonista: le tirás cosas y se las come. Después, notas
+/* Teire: la portada. La isla es la protagonista: le tirás cosas y las guarda. Después, notas
    que se mueven, funciones que se apilan al bajar, Premium que se prueba sobre la página y los
    cuatro sistemas para descargar. */
 
@@ -12,41 +12,49 @@
 .nota-so { color: var(--gris); font-size: .9rem; margin-top: 14px; }
 .nota-so a { color: var(--crema); }
 
-/* El juego de la burbuja */
-.juego { position: relative; z-index: 0; isolation: isolate; height: 440px; margin-top: 40px; touch-action: pan-y; }
-.juego::before { content: ""; position: absolute; left: 50%; top: 54%; width: 460px; height: 460px; margin: -230px 0 0 -230px; border-radius: 50%; background: radial-gradient(closest-side, rgba(95,212,160,.2), rgba(95,212,160,.06) 60%, transparent); pointer-events: none; }
-@media (max-width: 760px) { .juego::before { width: 340px; height: 340px; margin: -170px 0 0 -170px; top: 50%; } }
-.orbe-caja { position: absolute; left: 50%; top: 54%; width: 200px; height: 200px; margin: -100px 0 0 -100px; }
-.orbe { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 36% 32%, #F4EFE6 0%, #8FE3BC 40%, #1F9D6E 100%); box-shadow: 0 30px 80px -10px rgba(95,212,160,.45), inset -14px -18px 40px rgba(15,21,19,.25); animation: respira 4s ease-in-out infinite; }
-.orbe-hoja { position: absolute; right: 8px; top: -18px; width: 70px; height: 40px; rotate: 8deg; transform-origin: 0% 100%; animation: mece 3.2s ease-in-out infinite; }
-.orbe-caja .aro { position: absolute; inset: -26px; border-radius: 50%; border: 2px dashed var(--brote); opacity: 0; transition: opacity .2s, scale .3s; scale: .9; }
-.orbe-caja.cerca .aro { opacity: .9; scale: 1; animation: girar 8s linear infinite; }
-.orbe-caja .ojos { position: absolute; left: 50%; top: 44%; translate: -50% 0; display: flex; gap: 26px; }
-.orbe-caja .ojos i { width: 12px; height: 16px; border-radius: 50%; background: var(--tinta); animation: parpadea 5s infinite; }
-.orbe-caja.cerca .ojos i { height: 18px; width: 14px; }
-.orbe-caja .boca { position: absolute; left: 50%; top: 62%; width: 26px; height: 10px; translate: -50% 0; border-radius: 0 0 26px 26px; background: var(--tinta); transition: height .2s, width .2s; }
-.orbe-caja.cerca .boca { height: 26px; width: 34px; border-radius: 50%; }
-@keyframes respira { 50% { scale: 1.035; } }
-@keyframes mece { 50% { rotate: -6deg; } }
-@keyframes parpadea { 0%, 46%, 50%, 100% { scale: 1 1; } 48% { scale: 1 .1; } }
-.contador { position: absolute; left: 50%; bottom: 6px; translate: -50% 0; font-size: .92rem; color: var(--gris); white-space: nowrap; }
+/* El juego de la isla: un pedazo de escritorio con la isla arriba al centro, igual a la de la app de Windows */
+.juego { position: relative; z-index: 0; isolation: isolate; height: 440px; margin-top: 40px; touch-action: pan-y; border-radius: 32px; border: 1px solid var(--linea); background: radial-gradient(130% 120% at 80% 0%, #1f3a2f 0%, #132520 45%, #0b1311 100%); overflow: hidden; }
+.ventana-falsa { position: absolute; left: 50%; top: 120px; bottom: -1px; width: min(460px, 62%); translate: -50% 0; border-radius: 16px 16px 0 0; background: #1b2320; border: 1px solid #2f3a35; border-bottom: 0; box-shadow: 0 14px 30px rgba(0,0,0,.25); pointer-events: none; }
+.ventana-falsa::before { content: ""; position: absolute; inset: 0 0 auto; height: 34px; border-radius: 16px 16px 0 0; background: #232d29; }
+.ventana-falsa i { position: absolute; left: 22px; top: 62px; width: 62%; height: 12px; border-radius: 6px; background: #2f3a35; }
+.ventana-falsa i:nth-child(2) { top: 90px; width: 40%; } .ventana-falsa i:nth-child(3) { top: 118px; width: 54%; }
+.isla { --w: 96px; --h: 30px; position: absolute; left: 50%; top: 14px; z-index: 2; width: var(--w); height: var(--h); border-radius: calc(var(--h) / 2); translate: -50% 0; overflow: hidden; background: #050807; color: var(--crema); font: 500 .84rem/1.3 var(--sans); box-shadow: 0 8px 22px rgba(0,0,0,.32), inset 0 0 0 1px rgba(255,255,255,.07); transition: width .55s cubic-bezier(.34,1.3,.5,1), height .55s cubic-bezier(.34,1.3,.5,1), box-shadow .3s; }
+.isla .capa { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; opacity: 0; transition: opacity .16s ease; }
+.isla[data-estado="reposo"] .c-reposo, .isla[data-estado="encima"] .c-encima, .isla[data-estado="guardando"] .c-guardando, .isla[data-estado="guardado"] .c-guardado { opacity: 1; transition: opacity .22s ease .14s; }
+.isla .c-reposo { justify-content: space-between; padding: 0 12px 0 11px; }
+.isla .t { width: 16px; height: 16px; }
+.isla .luz { width: 7px; height: 7px; border-radius: 50%; background: rgba(244,239,230,.28); }
+.isla[data-estado="encima"] { --w: 220px; --h: 46px; box-shadow: 0 8px 22px rgba(0,0,0,.32), inset 0 0 0 1.5px var(--brote), 0 0 0 6px rgba(95,212,160,.16); }
+.isla .c-encima { color: var(--brote); font-weight: 600; }
+.isla .c-encima svg { width: 18px; height: 18px; }
+.isla[data-estado="guardando"] { --w: 148px; --h: 34px; }
+.isla[data-estado="guardado"] { --w: 330px; --h: 34px; }
+.isla .c-guardado { padding: 0 14px; }
+.isla .c-guardado span { overflow: hidden; text-overflow: ellipsis; }
+.isla .giro { width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(244,239,230,.18); border-top-color: var(--brote); animation: girar .7s linear infinite; }
+.isla .ok { flex: none; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--brote); color: var(--tinta); }
+.isla .ok svg { width: 14px; height: 14px; }
+.isla[data-estado="guardado"] .ok { animation: isla-pop .5s cubic-bezier(.34,1.3,.5,1) .14s both; }
+@keyframes isla-pop { 0% { scale: 0; } 60% { scale: 1.2; } 100% { scale: 1; } }
+.contador { position: absolute; z-index: 1; left: 50%; bottom: 12px; translate: -50% 0; padding: 6px 14px; border-radius: 999px; background: rgba(10,15,13,.86); font-size: .92rem; color: var(--gris); white-space: nowrap; }
 .contador b { color: var(--brote); }
 .cosa { position: absolute; display: inline-flex; align-items: center; gap: 9px; padding: 10px 16px 10px 10px; border-radius: 16px; background: var(--superficie); border: 1px solid var(--linea); color: var(--crema); font: 600 .9rem/1.25 var(--sans); cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none; box-shadow: 0 16px 30px -18px rgba(0,0,0,.7); white-space: nowrap; }
 .cosa:active { cursor: grabbing; }
 .cosa .ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; font-size: .74rem; font-weight: 800; color: var(--tinta); }
 .cosa small { display: block; font-weight: 500; color: var(--gris); font-size: .76rem; line-height: 1.2; }
 .cosa span:last-child { text-align: left; }
-.c1 { left: 6%; top: 14%; } .c2 { left: 12%; top: 64%; } .c3 { right: 5%; top: 10%; } .c4 { right: 9%; top: 62%; } .c5 { left: 30%; top: 2%; }
-.pista { position: absolute; left: 18%; top: 40%; font-family: var(--mano); font-size: 1.6rem; color: var(--sol); rotate: -6deg; pointer-events: none; transition: opacity .3s; }
-.toast { position: absolute; left: 0; right: 0; width: max-content; margin: 0 auto; bottom: 38px; display: flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--superficie-2); border: 1px solid var(--linea); font-size: .86rem; font-weight: 600; opacity: 0; white-space: nowrap; pointer-events: none; }
-.toast i { width: 8px; height: 8px; border-radius: 50%; background: var(--brote); }
+.c1 { left: 5%; top: 20%; } .c2 { left: 8%; top: 66%; } .c3 { right: 4%; top: 18%; } .c4 { right: 6%; top: 64%; } .c5 { left: 3%; top: 43%; }
+.pista { position: absolute; left: 50%; top: 68px; translate: -50% 0; font-family: var(--mano); font-size: 1.6rem; color: var(--sol); rotate: -3deg; pointer-events: none; transition: opacity .3s; }
+/* En el celular el juego es el mismo (así se sabe que en Windows existe), con las tarjetas arriba y abajo de la ventana. */
 @media (max-width: 760px) {
-  .juego { height: 560px; }
-  .orbe-caja { width: 150px; height: 150px; top: 50%; margin: -75px 0 0 -75px; }
-  .orbe-caja .ojos { gap: 20px; }
-  .c1 { left: 0; top: 0; } .c5 { left: auto; right: 0; top: 58px; } .c4 { right: auto; left: 0; top: 116px; }
-  .c3 { right: auto; left: 0; top: 376px; } .c2 { left: auto; right: 0; top: 432px; }
+  .juego { height: 630px; border-radius: 24px; }
+  .ventana-falsa { top: 250px; bottom: 180px; width: 84%; border-radius: 16px; border-bottom: 1px solid #2f3a35; }
+  .c1 { left: 10px; top: 64px; } .c5 { left: auto; right: 10px; top: 122px; } .c4 { right: auto; left: 10px; top: 180px; }
+  .c3 { right: auto; left: 10px; top: 440px; } .c2 { left: auto; right: 10px; top: 500px; }
   .pista { display: none; }
+  .isla[data-estado="guardado"] { --w: min(330px, calc(100% - 24px)); }
+}
+}
 }
 
 /* Cinta de cosas guardadas */

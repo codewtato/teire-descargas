@@ -1,4 +1,4 @@
-// La portada: el juego de la burbuja, la cinta de cosas guardadas, las notas que se mueven,
+// La portada: el juego de la isla, la cinta de cosas guardadas, las notas que se mueven,
 // las tarjetas que se apilan, los comandos de Teire IA y los temas de Premium.
 (() => {
   const quieto = window.teireQuieto;
@@ -13,25 +13,32 @@
   document.getElementById("cinta-1").innerHTML = c1 + c1;
   document.getElementById("cinta-2").innerHTML = c2 + c2;
 
-  // ---------- El juego: tirale cosas a la burbuja ----------
+  // ---------- El juego: tirale cosas a la isla ----------
+  // La isla es la misma pastilla que la de la app de Windows: quieta, se abre cuando le acercás algo
+  // ("Soltá para guardar"), guarda y lo confirma ahí mismo.
   const juego = document.getElementById("juego");
-  const orbe = document.getElementById("orbe");
+  const isla = document.getElementById("isla");
+  const islaTexto = document.getElementById("isla-texto");
   const contador = document.getElementById("contador");
-  const toast = document.getElementById("toast");
-  const toastTexto = document.getElementById("toast-texto");
   const pista = document.getElementById("pista");
   const cosas = [...document.querySelectorAll(".cosa")];
-  let guardadas = 0, tocado = false;
+  let guardadas = 0, tocado = false, reloj = 0;
 
-  const centroOrbe = () => { const r = orbe.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, radio: r.width / 2 }; };
   const centro = (el) => { const r = el.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; };
-  const cerca = (el) => { const o = centroOrbe(), c = centro(el); return Math.hypot(o.x - c.x, o.y - c.y) < o.radio + 70; };
-
-  const avisar = (texto) => {
-    toastTexto.textContent = texto;
-    if (!animar) { toast.style.opacity = 1; return; }
-    gsap.killTweensOf(toast);
-    gsap.timeline().to(toast, { opacity: 1, y: 0, duration: .3, ease: "back.out(2)" }).to(toast, { opacity: 0, duration: .4 }, "+=1.6");
+  // Cerca: a menos de 90 px del borde de la isla.
+  const cerca = (el) => {
+    const i = isla.getBoundingClientRect(), c = centro(el);
+    const dx = Math.max(i.left - c.x, 0, c.x - i.right), dy = Math.max(i.top - c.y, 0, c.y - i.bottom);
+    return Math.hypot(dx, dy) < 90;
+  };
+  const poner = (estado) => { clearTimeout(reloj); isla.dataset.estado = estado; };
+  const confirmar = (nombre) => {
+    poner("guardando");
+    reloj = setTimeout(() => {
+      islaTexto.textContent = `«${nombre}» guardado`;
+      poner("guardado");
+      reloj = setTimeout(() => poner("reposo"), 1900);
+    }, 550);
   };
   const volver = () => {
     cosas.forEach((el, i) => {
@@ -40,49 +47,44 @@
     });
     guardadas = 0; contador.textContent = "Volvieron. Tirale de nuevo";
   };
-  const comer = (el) => {
+  const guardar = (el) => {
     if (el.dataset.comida) return;
     el.dataset.comida = "1";
     tocado = true; pista.style.opacity = 0;
     const nombre = el.querySelector("span:last-child").firstChild.textContent.trim();
-    orbe.classList.remove("cerca");
     const fin = () => {
+      el.style.visibility = "hidden";
       guardadas++;
       contador.innerHTML = `Guardaste <b>${guardadas}</b> ${guardadas === 1 ? "cosa" : "cosas"} en Guardados`;
-      avisar(`«${nombre}» guardado`);
-      if (guardadas === cosas.length) setTimeout(volver, 2200);
+      confirmar(nombre);
+      if (guardadas === cosas.length) setTimeout(volver, 3200);
     };
-    if (!animar) { el.style.visibility = "hidden"; fin(); return; }
-    const o = centroOrbe(), c = centro(el);
-    gsap.timeline({ onComplete: fin })
-      .to(el, { x: `+=${o.x - c.x}`, y: `+=${o.y - c.y}`, scale: .15, opacity: 0, rotate: gsap.utils.random(-30, 30), duration: .45, ease: "power3.in" })
-      .to(orbe, { scale: 1.14, duration: .14, ease: "power2.out" }, "-=.1")
-      .to(orbe, { scale: 1, duration: .6, ease: "elastic.out(1.2, .4)" });
+    if (!animar) return fin();
+    poner("encima");
+    const o = centro(isla), c = centro(el);
+    gsap.to(el, { x: `+=${o.x - c.x}`, y: `+=${o.y - c.y}`, scale: .15, opacity: 0, rotate: gsap.utils.random(-20, 20), duration: .45, ease: "power3.in", onComplete: fin });
   };
-  cosas.forEach((el) => el.addEventListener("click", () => { if (!el.dataset.arrastrada) comer(el); }));
+  cosas.forEach((el) => el.addEventListener("click", () => { if (!el.dataset.arrastrada) guardar(el); }));
 
   if (animar && window.Draggable) {
     cosas.forEach((el, i) => gsap.to(el, { y: "+=8", rotate: i % 2 ? 1.5 : -1.5, duration: 2 + i * .3, yoyo: true, repeat: -1, ease: "sine.inOut" }));
     Draggable.create(cosas, {
       bounds: juego, zIndexBoost: true,
       onPress() { gsap.killTweensOf(this.target, "y,rotate"); gsap.to(this.target, { scale: 1.06, rotate: 0, duration: .2 }); },
-      onDrag() { this.target.dataset.arrastrada = "1"; orbe.classList.toggle("cerca", cerca(this.target)); },
+      onDrag() {
+        this.target.dataset.arrastrada = "1";
+        const esta = cerca(this.target);
+        if (esta && isla.dataset.estado !== "encima") poner("encima");
+        else if (!esta && isla.dataset.estado === "encima") poner("reposo");
+      },
       onRelease() {
         gsap.to(this.target, { scale: 1, duration: .2 });
-        if (cerca(this.target)) comer(this.target); else orbe.classList.remove("cerca");
+        if (cerca(this.target)) guardar(this.target); else if (isla.dataset.estado === "encima") poner("reposo");
         const t = this.target; setTimeout(() => delete t.dataset.arrastrada, 50);
       },
     });
     // Si no tocás nada, la primera se tira sola para mostrar cómo es
-    if (window.ScrollTrigger) ScrollTrigger.create({ trigger: juego, start: "top 70%", once: true, onEnter: () => setTimeout(() => { if (!tocado) comer(cosas[0]); }, 2600) });
-
-    // Los ojos siguen al mouse
-    const ojos = orbe.querySelector(".ojos");
-    const ox = gsap.quickTo(ojos, "x", { duration: .4 }), oy = gsap.quickTo(ojos, "y", { duration: .4 });
-    addEventListener("pointermove", (e) => {
-      const o = centroOrbe(), dx = e.clientX - o.x, dy = e.clientY - o.y, d = Math.hypot(dx, dy) || 1;
-      ox(dx / d * Math.min(10, d / 30)); oy(dy / d * Math.min(8, d / 30));
-    }, { passive: true });
+    if (window.ScrollTrigger) ScrollTrigger.create({ trigger: juego, start: "top 70%", once: true, onEnter: () => setTimeout(() => { if (!tocado) guardar(cosas[0]); }, 2600) });
   }
 
   // ---------- Notas que se mueven y se tildan ----------
