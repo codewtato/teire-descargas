@@ -32,11 +32,26 @@
     return Math.hypot(dx, dy) < 90;
   };
   const poner = (estado) => { clearTimeout(reloj); isla.dataset.estado = estado; };
-  const confirmar = (nombre) => {
+  // El mismo «pop» que hace la app al guardar. Solo suena si la tarjeta la tiraste vos (el navegador no deja
+  // sonar nada antes de que toques la página, y la que se tira sola de muestra va en silencio).
+  let audio = null;
+  const pop = () => {
+    try {
+      audio ??= new (window.AudioContext || window.webkitAudioContext)();
+      if (audio.state === "suspended") audio.resume();
+      const t = audio.currentTime, osc = audio.createOscillator(), g = audio.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(320, t); osc.frequency.exponentialRampToValueAtTime(760, t + .07);
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.16, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + .14);
+      osc.connect(g).connect(audio.destination); osc.start(t); osc.stop(t + .2);
+    } catch { /* sin audio: no pasa nada */ }
+  };
+  const confirmar = (nombre, conSonido) => {
     poner("guardando");
     reloj = setTimeout(() => {
       islaTexto.textContent = `«${nombre}» guardado`;
       poner("guardado");
+      if (conSonido) pop();
       reloj = setTimeout(() => poner("reposo"), 1900);
     }, 550);
   };
@@ -47,7 +62,7 @@
     });
     guardadas = 0; contador.textContent = "Volvieron. Tirale de nuevo";
   };
-  const guardar = (el) => {
+  const guardar = (el, sola = false) => {
     if (el.dataset.comida) return;
     el.dataset.comida = "1";
     tocado = true; pista.style.opacity = 0;
@@ -56,7 +71,7 @@
       el.style.visibility = "hidden";
       guardadas++;
       contador.innerHTML = `Guardaste <b>${guardadas}</b> ${guardadas === 1 ? "cosa" : "cosas"} en Guardados`;
-      confirmar(nombre);
+      confirmar(nombre, !sola);
       if (guardadas === cosas.length) setTimeout(volver, 3200);
     };
     if (!animar) return fin();
@@ -84,7 +99,7 @@
       },
     });
     // Si no tocás nada, la primera se tira sola para mostrar cómo es
-    if (window.ScrollTrigger) ScrollTrigger.create({ trigger: juego, start: "top 70%", once: true, onEnter: () => setTimeout(() => { if (!tocado) guardar(cosas[0]); }, 2600) });
+    if (window.ScrollTrigger) ScrollTrigger.create({ trigger: juego, start: "top 70%", once: true, onEnter: () => setTimeout(() => { if (!tocado) guardar(cosas[0], true); }, 2600) });
   }
 
   // ---------- Notas que se mueven y se tildan ----------

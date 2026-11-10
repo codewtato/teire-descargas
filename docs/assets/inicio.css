@@ -54,8 +54,6 @@
   .pista { display: none; }
   .isla[data-estado="guardado"] { --w: min(330px, calc(100% - 24px)); }
 }
-}
-}
 
 /* Cinta de cosas guardadas */
 .cinta-marco { padding-block: 56px 20px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); overflow: hidden; display: grid; gap: 12px; }
