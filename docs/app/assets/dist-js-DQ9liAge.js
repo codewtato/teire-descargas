@@ -1,1 +1,0 @@
-import{invoke as e}from"./core-CnP0-wGC.js";import{listen as t}from"./event-y468jsb1.js";async function n(t){return await e(`plugin:oauth|start`,{config:t})}async function r(t){await e(`plugin:oauth|cancel`,{port:t})}function i(e){return t(`oauth://url`,t=>{e(t.payload)})}export{r as cancel,i as onUrl,n as start};
