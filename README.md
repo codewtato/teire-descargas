@@ -158,6 +158,7 @@ Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows, con cue
 - **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás, sin sacarte de lo que estás haciendo.
 - **Capturas:** copiás una captura y te ofrece guardarla.
 - **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app. Si algo quedó sin ver, se prende una lucecita verde.
+- **Tu música de Spotify** queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**.
 - **Teire IA** te escucha y te contesta en la isla.
 - Se esconde sola si estás en un juego o un video en pantalla completa.
 
