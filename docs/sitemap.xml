@@ -10,10 +10,64 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/"/>
   </url>
-  <url><loc>https://useteire.app/iphone/</loc><lastmod>2026-11-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://useteire.app/notas-compartidas/</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://useteire.app/alternativa-google-keep/</loc><lastmod>2026-11-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://useteire.app/privacidad/</loc><lastmod>2026-11-04</lastmod><priority>0.4</priority></url>
-  <url><loc>https://useteire.app/terminos/</loc><lastmod>2026-11-03</lastmod><priority>0.4</priority></url>
-  <url><loc>https://useteire.app/arrepentimiento/</loc><lastmod>2026-11-03</lastmod><priority>0.3</priority></url>
+  <url><loc>https://useteire.app/privacidad/</loc><lastmod>2026-11-13</lastmod><priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/privacidad/"/>
+  </url>
+  <url><loc>https://useteire.app/en/privacy/</loc><lastmod>2026-11-13</lastmod><priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/privacidad/"/>
+  </url>
+  <url><loc>https://useteire.app/terminos/</loc><lastmod>2026-11-13</lastmod><priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/terminos/"/>
+  </url>
+  <url><loc>https://useteire.app/en/terms/</loc><lastmod>2026-11-13</lastmod><priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/terminos/"/>
+  </url>
+  <url><loc>https://useteire.app/arrepentimiento/</loc><lastmod>2026-11-13</lastmod><priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/arrepentimiento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/withdrawal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/arrepentimiento/"/>
+  </url>
+  <url><loc>https://useteire.app/en/withdrawal/</loc><lastmod>2026-11-13</lastmod><priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/arrepentimiento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/withdrawal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/arrepentimiento/"/>
+  </url>
+  <url><loc>https://useteire.app/iphone/</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/iphone/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/iphone/"/>
+  </url>
+  <url><loc>https://useteire.app/en/iphone/</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/iphone/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/iphone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/iphone/"/>
+  </url>
+  <url><loc>https://useteire.app/notas-compartidas/</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/notas-compartidas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/shared-notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/notas-compartidas/"/>
+  </url>
+  <url><loc>https://useteire.app/en/shared-notes/</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/notas-compartidas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/shared-notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/notas-compartidas/"/>
+  </url>
+  <url><loc>https://useteire.app/alternativa-google-keep/</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/alternativa-google-keep/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/google-keep-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/alternativa-google-keep/"/>
+  </url>
+  <url><loc>https://useteire.app/en/google-keep-alternative/</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://useteire.app/alternativa-google-keep/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://useteire.app/en/google-keep-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useteire.app/alternativa-google-keep/"/>
+  </url>
 </urlset>

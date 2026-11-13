@@ -14,7 +14,6 @@ const aca = dirname(fileURLToPath(import.meta.url));
 const docs = join(aca, "..", "..", "docs");
 const plantilla = readFileSync(join(aca, "plantilla.html"), "utf8");
 const EN = JSON.parse(readFileSync(join(aca, "en.json"), "utf8"));
-const HOY = new Date().toISOString().slice(0, 10);
 const SITIO = "https://useteire.app";
 
 // ---------------------------------------------------------------- textos que cambian por idioma
@@ -314,23 +313,7 @@ writeFileSync(join(docs, "index.html"), armar("es"));
 mkdirSync(join(docs, "en"), { recursive: true });
 writeFileSync(join(docs, "en", "index.html"), armar("en"));
 
-// Mapa del sitio: la portada en los dos idiomas, cada una apuntando a la otra.
-const otras = [
-    ["iphone/", "2026-11-04", "0.7"], ["notas-compartidas/", "2026-11-04", "0.8"], ["alternativa-google-keep/", "2026-11-04", "0.7"],
-    ["privacidad/", "2026-11-04", "0.4"], ["terminos/", "2026-11-03", "0.4"], ["arrepentimiento/", "2026-11-03", "0.3"],
-];
-const par = (ruta, prioridad) => `  <url><loc>${SITIO}/${ruta}</loc><lastmod>${HOY}</lastmod><priority>${prioridad}</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="${SITIO}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="${SITIO}/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${SITIO}/"/>
-  </url>`;
-writeFileSync(join(docs, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${par("", "1.0")}
-${par("en/", "1.0")}
-${otras.map(([r, f, p]) => `  <url><loc>${SITIO}/${r}</loc><lastmod>${f}</lastmod><priority>${p}</priority></url>`).join("\n")}
-</urlset>
-`);
+// El mapa del sitio (docs/sitemap.xml) lo arma armar-paginas.mjs, junto con las demás páginas.
 
 if (faltan.size) {
     console.log(`\nFalta traducir al inglés (agregalo a scripts/sitio/en.json):\n- ${[...faltan].join("\n- ")}`);
