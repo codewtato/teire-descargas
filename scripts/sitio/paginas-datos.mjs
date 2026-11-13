@@ -74,7 +74,7 @@ export const PAGINAS = [
 <li><strong>Notas con PIN:</strong> se cifran en tu equipo antes de subirse. Nosotros guardamos solo el texto cifrado y no lo podemos leer. Si te olvidás el PIN, no hay forma de recuperarlas.</li>
 <li><strong>«Oye Teire»:</strong> la app reconoce esas palabras en tu compu, sin mandar audio a ningún lado. Solo cuando la escucha (o cuando apretás Ctrl K) graba lo que pedís y lo manda a Teire IA.</li>
 <li><strong>La isla, el portapapeles y las capturas:</strong> Teire mira en tu compu si copiaste un link o sacaste una captura para ofrecerte guardarla. No se manda nada hasta que tocás Guardar.</li>
-<li><strong>La música de la isla:</strong> la isla lee en tu compu qué está sonando (el tema, el artista y la portada) y no lo manda a nuestros servidores. Para mostrar la letra, la app le pide a LRCLIB (lrclib.net) la letra del tema con su título, su artista y su duración.</li>
+<li><strong>La música de la isla:</strong> la isla lee en tu compu qué está sonando (el tema, el artista y la portada) y no lo manda a nuestros servidores. Para mostrar la letra, la app le pide a LRCLIB (lrclib.net) la letra del tema con su título, su artista y su duración y, si ahí no está, a lyrics.ovh.</li>
 <li><strong>Foco y notas pegadas al escritorio:</strong> lo que escribís en qué te enfocás y la posición de las notas pegadas quedan en tu equipo.</li>
 <li><strong>Archivos que arrastrás a una nota:</strong> salvo las imágenes, no se suben. Queda solo el nombre del archivo.</li>
 </ul>`,
@@ -82,7 +82,7 @@ export const PAGINAS = [
 <li><strong>PIN-protected notes:</strong> they're encrypted on your device before being uploaded. We only store the encrypted text and can't read it. If you forget the PIN, there's no way to recover them.</li>
 <li><strong>“Oye Teire”:</strong> the app recognizes those words on your computer, without sending audio anywhere. Only when it hears them (or when you press Ctrl K) does it record what you ask and send it to Teire AI.</li>
 <li><strong>The island, the clipboard and screenshots:</strong> Teire checks on your computer whether you copied a link or took a screenshot, to offer to save it. Nothing is sent until you tap Save.</li>
-<li><strong>The island's music:</strong> the island reads on your computer what's playing (the track, the artist and the cover) and doesn't send it to our servers. To show the lyrics, the app asks LRCLIB (lrclib.net) for the track's lyrics using its title, artist and duration.</li>
+<li><strong>The island's music:</strong> the island reads on your computer what's playing (the track, the artist and the cover) and doesn't send it to our servers. To show the lyrics, the app asks LRCLIB (lrclib.net) for the track's lyrics using its title, artist and duration and, if it isn't there, lyrics.ovh.</li>
 <li><strong>Focus and notes pinned to the desktop:</strong> what you write as your focus and the position of pinned notes stay on your device.</li>
 <li><strong>Files you drag into a note:</strong> except for images, they aren't uploaded. Only the file name is kept.</li>
 </ul>`]],
@@ -113,7 +113,7 @@ export const PAGINAS = [
 <tr><td>Mercado Pago y PayPal</td><td>Cobrar Premium y los regalos.</td><td>Los datos del pago, que cargás directamente en sus páginas.</td></tr>
 <tr><td>Google, Discord y GitHub</td><td>Entrar con esas cuentas, si lo elegís.</td><td>Que elegiste entrar a Teire con esa cuenta.</td></tr>
 <tr><td>Photon (komoot) y OpenStreetMap</td><td>Buscar lugares y mostrar el mapa en una nota.</td><td>Lo que buscás y la zona del mapa.</td></tr>
-<tr><td>LRCLIB</td><td>La letra de la música que suena en la isla.</td><td>El título, el artista y la duración del tema.</td></tr>
+<tr><td>LRCLIB y lyrics.ovh</td><td>La letra de la música que suena en la isla.</td><td>El título, el artista y la duración del tema.</td></tr>
 <tr><td>GitHub</td><td>Las descargas, las actualizaciones y este sitio.</td><td>Tu dirección IP al bajar o actualizar la app.</td></tr>
 </tbody></table></div>
 <p><strong>Sobre Teire IA:</strong> hoy usamos el plan gratuito de Gemini. En ese plan, Google puede revisar y usar lo que se le manda para mejorar sus productos. No le pidas a Teire IA nada que no quieras que lea otra persona. Teire IA solo funciona en español.</p>
@@ -129,7 +129,7 @@ export const PAGINAS = [
 <tr><td>Mercado Pago and PayPal</td><td>Charging for Premium and gifts.</td><td>The payment details, which you enter directly on their pages.</td></tr>
 <tr><td>Google, Discord and GitHub</td><td>Signing in with those accounts, if you choose to.</td><td>That you chose to sign in to Teire with that account.</td></tr>
 <tr><td>Photon (komoot) and OpenStreetMap</td><td>Searching for places and showing the map in a note.</td><td>What you search for and the area of the map.</td></tr>
-<tr><td>LRCLIB</td><td>The lyrics of the music playing on the island.</td><td>The track's title, artist and duration.</td></tr>
+<tr><td>LRCLIB and lyrics.ovh</td><td>The lyrics of the music playing on the island.</td><td>The track's title, artist and duration.</td></tr>
 <tr><td>GitHub</td><td>Downloads, updates and this website.</td><td>Your IP address when you download or update the app.</td></tr>
 </tbody></table></div>
 <p><strong>About Teire AI:</strong> we currently use Gemini's free plan. On that plan, Google may review and use what is sent to it to improve its products. Don't ask Teire AI anything you wouldn't want someone else to read. Teire AI only works in Spanish.</p>
