@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{{HEAD}}
+<style>
+@font-face{font-family:'Inter';src:url('/assets/fuentes/inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('/assets/fuentes/playfair-display-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('/assets/fuentes/playfair-display-latin-600-italic.woff2') format('woff2');font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:'Material Symbols Rounded';src:url('/assets/fuentes/material-symbols-rounded.woff2') format('woff2');font-display:block}
+:root{--bg:#F4EFE6;--sup:#FFFDF9;--linea:#E1DACB;--texto:#0B0B0C;--gris:#5E6B64;--acento:#157A55;--brote:#5FD4A0;--boton:#0B0B0C;--botontxt:#F4EFE6;--hueso:#EAE5DA;--sombra:0 1px 2px rgba(11,11,12,.05),0 12px 32px rgba(11,11,12,.06)}
+:root[data-tema="oscuro"]{--bg:#0B0B0C;--sup:#161618;--linea:#2a2a2e;--texto:#F4EFE6;--gris:#9B9BA1;--acento:#5FD4A0;--boton:#F4EFE6;--botontxt:#0B0B0C;--hueso:#1E1E21;--sombra:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--texto);font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mi{font-family:'Material Symbols Rounded';font-style:normal;font-weight:400;font-size:20px;line-height:1;display:inline-block;vertical-align:middle;letter-spacing:normal;text-transform:none;white-space:nowrap;font-feature-settings:'liga'}
+.ancho{max-width:1120px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Playfair Display',serif}
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+.nav .ancho{display:flex;align-items:center;gap:28px;height:64px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:21px;letter-spacing:-.045em;text-decoration:none}
+.logo svg{width:26px;height:26px}
+.nav nav{display:flex;gap:26px;margin:0 auto;font-size:14.5px;color:var(--gris)}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--texto)}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:99px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn.p{background:var(--boton);color:var(--botontxt)}
+.btn.s{background:transparent;border-color:var(--linea);color:var(--texto)}
+.btn.chico{padding:9px 18px;font-size:14px}
+.tema{width:38px;height:38px;border-radius:50%;border:1px solid var(--linea);background:transparent;color:var(--gris);display:grid;place-items:center;cursor:pointer}
+/* hero */
+.hero{text-align:center;padding:72px 0 0}
+.pildora{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--linea);background:var(--sup);border-radius:99px;padding:6px 14px 6px 8px;font-size:13px;color:var(--gris);box-shadow:var(--sombra)}
+.pildora b{background:var(--brote);color:#0B0B0C;border-radius:99px;padding:1px 9px;font-size:12px}
+h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.04;letter-spacing:-.025em;max-width:15ch;margin:22px auto 0}
+h1 em{font-style:italic;font-weight:600;color:var(--acento)}
+.bajada{color:var(--gris);font-size:1.15rem;max-width:40em;margin:22px auto 0}
+.acciones{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.datos{display:flex;gap:8px 22px;justify-content:center;flex-wrap:wrap;margin-top:18px;font-size:13.5px;color:var(--gris)}
+.datos span{display:inline-flex;align-items:center;gap:6px}.datos .mi{font-size:17px;color:var(--acento)}
+/* producto (siempre oscuro) */
+.dev{--d-bg:#0B0B0C;--d-sup:#161618;--d-sup2:#1E1E21;--d-linea:#2a2a2e;--d-txt:#F4EFE6;--d-gris:#9B9BA1;--d-brote:#5FD4A0;--d-sol:#FFC86B;color:var(--d-txt)}
+.pc{margin:48px auto 0;max-width:1060px}
+.marco{border-radius:22px;background:#050506;padding:11px;box-shadow:0 40px 90px rgba(11,11,12,.3),0 0 0 1px #26262a}
+.pc .base{height:12px;margin:0 6%;border-radius:0 0 14px 14px;background:linear-gradient(#2a2a2e,#101012);box-shadow:0 14px 30px rgba(11,11,12,.25)}
+.pantalla{position:relative;border-radius:12px;overflow:hidden;height:600px;background:radial-gradient(55% 75% at 18% 8%,#2f7a86 0%,transparent 62%),radial-gradient(48% 70% at 86% 22%,#3d54b0 0%,transparent 62%),radial-gradient(70% 55% at 55% 105%,#1f6a50 0%,transparent 62%),#0a1013}
+.tb{position:absolute;left:0;right:0;bottom:0;height:46px;background:rgba(20,22,26,.78);backdrop-filter:blur(22px);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;gap:8px}
+.tb .ap{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;position:relative}
+.tb .ap.on::after{content:'';position:absolute;bottom:-6px;left:50%;width:14px;height:3px;margin-left:-7px;border-radius:3px;background:var(--d-brote)}
+.tb .bandeja{position:absolute;right:14px;top:0;bottom:0;display:flex;align-items:center;gap:14px;color:#cfd2d6;font-size:11.5px;line-height:1.25;text-align:right}
+.tb .bandeja .mi{font-size:16px;color:#cfd2d6}
+.isla-mini{position:absolute;left:50%;top:14px;translate:-50% 0;height:34px;border-radius:99px;background:#000;display:flex;align-items:center;gap:12px;padding:0 14px;font-size:12.5px;color:var(--d-txt);box-shadow:0 0 0 1px #1d1d20}
+.isla-mini .eq{display:flex;gap:2px;align-items:flex-end;height:12px}.isla-mini .eq i{width:2.5px;background:var(--d-brote);border-radius:2px}
+.isla-mini .eq i:nth-child(1){height:6px}.isla-mini .eq i:nth-child(2){height:12px}.isla-mini .eq i:nth-child(3){height:8px}
+.isla-mini small{color:var(--d-gris)}
+.ventana{position:absolute;left:50%;translate:-50% 0;top:58px;bottom:60px;width:86%;display:flex;flex-direction:column;border-radius:12px;border:1px solid #34343a;background:var(--d-bg);overflow:hidden;text-align:left;font-size:13px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.ventana .tit{height:34px;flex:none;display:flex;align-items:center;gap:8px;padding-left:12px;background:#161618;border-bottom:1px solid var(--d-linea);font-size:12px;color:var(--d-gris)}
+.ventana .tit .ctl2{margin-left:auto;display:flex;height:100%}
+.ventana .tit .ctl2 i{width:44px;display:grid;place-items:center;font-style:normal;color:#c9c9cf;font-size:12px}
+.ventana .in{display:flex;flex:1;min-height:0}
+.lado{width:170px;flex:none;border-right:1px solid var(--d-linea);padding:16px 10px;display:flex;flex-direction:column;gap:1px}
+.lado .lg{font-weight:800;font-size:18px;letter-spacing:-.045em;padding:0 10px 10px}
+.lado .gr{font-size:10px;letter-spacing:.14em;color:#6f6f76;font-weight:600;padding:12px 10px 5px}
+.lado .it{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:10px;color:var(--d-gris)}
+.lado .it.on{background:#2a2a2d;color:var(--d-txt)}.lado .it .mi{font-size:18px}
+.cuerpo{flex:1;padding:20px 24px;min-width:0}
+.cuerpo .sal{font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1.1}
+.cuerpo .fr{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:15px;color:var(--d-brote);margin-top:4px}
+.gr2{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-top:16px}
+.col{display:flex;flex-direction:column;gap:14px}
+.tarj{background:var(--d-sup);border:1px solid var(--d-linea);border-radius:14px;padding:13px 15px}
+.tarj h4{font-size:13.5px;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.tarj h4 .mi{font-size:18px;color:var(--d-brote)}
+.fl{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid #232327;font-size:13px}.fl:first-of-type{border-top:0}
+.cr{width:16px;height:16px;border-radius:50%;border:2px solid #55555b;flex:none}
+.et{margin-left:auto;color:var(--d-gris);font-size:12px}
+.av{display:inline-grid;place-items:center;border-radius:50%;font-weight:700;font-size:11px;color:#0B0B0C;width:26px;height:26px;background:var(--d-brote);flex:none}
+.sm{display:flex;justify-content:space-between;text-align:center;font-size:10.5px;color:var(--d-gris);margin-top:4px}
+.sm span b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;margin-top:3px;font-size:12.5px;color:var(--d-txt);font-weight:500;position:relative}
+.sm .h b{background:#2f8f6b;color:#fff}.sm .p b::after{content:'';position:absolute;bottom:-6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--d-brote)}
+/* franja */
+.franja{display:grid;grid-template-columns:repeat(5,1fr);margin-top:72px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.franja div{padding:26px 20px;text-align:center;border-left:1px solid var(--linea)}.franja div:first-child{border-left:0}
+.franja b{display:block;font-weight:800;font-size:2.2rem;line-height:1.1;letter-spacing:-.04em;margin-bottom:4px}
+.franja span{color:var(--gris);font-size:13.5px}
+/* secciones */
+section{padding:96px 0 0}
+.k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acento);text-align:center}
+h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;text-align:center;max-width:18ch;margin:10px auto 0}
+.sub{color:var(--gris);text-align:center;max-width:38em;margin:14px auto 0;font-size:1.05rem}
+/* tour */
+.tabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.tabs button{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:9px 16px;font:600 14px 'Inter';border:1px solid var(--linea);background:var(--sup);color:var(--gris);cursor:pointer}
+.tabs button.on{background:var(--boton);color:var(--botontxt);border-color:var(--boton)}
+.tabs .mi{font-size:18px}
+.escena{margin-top:22px;border-radius:26px;height:430px;position:relative;overflow:hidden;background:radial-gradient(110% 100% at 80% 0%,#1d3a30 0%,#0e1512 50%,#0B0B0C 100%);border:1px solid #1c1c20;display:flex;justify-content:center;padding-top:26px}
+.isla{position:relative;overflow:hidden;width:470px;max-width:calc(100% - 28px);height:300px;border-radius:30px;background:#050506;border:1px solid #232327;box-shadow:0 30px 60px rgba(0,0,0,.5);text-align:left;transition:width .6s cubic-bezier(.34,1.22,.5,1),height .6s cubic-bezier(.34,1.22,.5,1),border-radius .5s ease,box-shadow .4s ease}
+.isla .dentro{padding:14px 20px;opacity:1;transition:opacity .28s ease .24s}
+.isla .mini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.isla .mini svg{width:17px;height:17px}
+.isla .mini .eq{display:flex;gap:2px;align-items:flex-end;height:12px}.isla .mini .eq i{width:2.5px;background:var(--d-brote);border-radius:2px;animation:bailar 1s ease-in-out infinite}
+.isla .mini .eq i:nth-child(1){height:6px}.isla .mini .eq i:nth-child(2){height:12px;animation-delay:.2s}.isla .mini .eq i:nth-child(3){height:8px;animation-delay:.4s}
+@keyframes bailar{50%{transform:scaleY(.45)}}
+.isla.reposo{width:132px;height:38px;border-radius:19px;border-color:#1d1d20;box-shadow:0 0 0 1px #1d1d20,0 10px 24px rgba(0,0,0,.45);animation:respira 2.6s ease-in-out infinite}
+.isla.reposo .dentro{opacity:0;pointer-events:none;transition-delay:0s;transition-duration:.12s}
+.isla.reposo .mini{opacity:1;transition-delay:.3s}
+@keyframes respira{50%{box-shadow:0 0 0 1px #1d1d20,0 0 0 7px color-mix(in srgb,var(--d-brote) 16%,transparent),0 10px 24px rgba(0,0,0,.45)}}
+.panel.on{animation:entra .42s cubic-bezier(.3,1.2,.5,1) .12s both}
+@keyframes entra{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.isla,.isla .dentro,.isla .mini{transition:none}.isla.reposo{animation:none}.panel.on{animation:none}}
+.isla .ic{display:flex;justify-content:center;gap:15px;color:#8d8d94;align-items:center}
+.isla .ic .mi{font-size:21px}.isla .ic .on{color:var(--d-txt);position:relative}
+.isla .ic .on::after{content:'';position:absolute;left:50%;bottom:-7px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--d-brote)}
+.isla .lg2{font-weight:800;font-size:17px;letter-spacing:-.045em;margin-right:4px}
+.panel{display:none;margin-top:22px}.panel.on{display:block}
+.pie-tab{margin-top:16px;text-align:center}
+.pie-tab b{display:block;font-size:1.05rem}.pie-tab span{color:var(--gris);font-size:.95rem}
+.cap{display:none}.cap.on{display:block}
+.mus{display:flex;gap:16px;align-items:center}
+.tapa{width:70px;height:70px;border-radius:14px;background:linear-gradient(135deg,#e0457b,#3b2bd8);flex:none;display:grid;place-items:center}
+.tapa i{width:30px;height:30px;border-radius:50%;background:#fff;opacity:.7}
+.mus h5{font-size:17px}.mus small{color:var(--d-gris)}
+.ctl{margin-left:auto;display:flex;align-items:center;gap:12px}
+.ctl .g{width:42px;height:42px;border-radius:50%;background:var(--d-txt);color:#0B0B0C;display:grid;place-items:center}
+.bar{height:5px;border-radius:9px;background:#222226;margin:14px 0 8px}.bar b{display:block;width:34%;height:100%;border-radius:9px;background:var(--d-txt)}
+.let{text-align:center;color:#6f6f76;font-size:13px;line-height:1.7}.let b{display:block;color:var(--d-txt);font-size:15.5px}
+.tm{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;text-align:center;line-height:1.1}
+.tm small{display:block;font:500 13px 'Inter';color:var(--d-gris);margin-top:2px}
+.bt{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.bt span{border-radius:99px;padding:7px 18px;font-size:13px;font-weight:600;background:var(--d-txt);color:#0B0B0C}.bt span.o{background:transparent;border:1px solid var(--d-linea);color:var(--d-txt)}
+.caras{display:flex;gap:16px}.caras div{text-align:center;font-size:12px;color:var(--d-gris)}
+.caras .av{width:46px;height:46px;font-size:16px;display:grid}
+.campo{display:flex;align-items:center;gap:10px;margin-top:14px;background:var(--d-sup2);border-radius:14px;padding:11px 14px;color:#76767d;font-size:14px}
+.campo .mi{margin-left:auto;background:var(--d-brote);color:#0B0B0C;border-radius:10px;padding:5px}
+.zonas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.zonas div{border:1.5px dashed #3a3a40;border-radius:16px;padding:22px 10px;text-align:center;color:var(--d-gris);font-size:14px}
+.zonas div .mi{display:block;margin:0 auto 6px;color:var(--d-brote);font-size:26px}
+/* usos */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.card{background:var(--sup);border:1px solid var(--linea);border-radius:22px;padding:26px;box-shadow:var(--sombra)}
+.card .ib{width:44px;height:44px;border-radius:14px;background:var(--hueso);display:grid;place-items:center;color:var(--acento);margin-bottom:16px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p{color:var(--gris);font-size:.96rem}
+.card ul{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:.93rem}
+.card li{display:flex;gap:9px;align-items:flex-start}.card li .mi{font-size:18px;color:var(--acento);margin-top:2px}
+/* funciones */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.f{padding:20px;border:1px solid var(--linea);border-radius:18px;background:var(--sup)}
+.f .mi{color:var(--acento);font-size:24px;margin-bottom:10px}
+.f h3{font-size:.98rem;margin-bottom:4px}.f p{color:var(--gris);font-size:.88rem;line-height:1.5}
+/* espacio */
+.par{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center;margin-top:0}
+.par h2,.par .k,.par .sub{text-align:left;margin-left:0}
+.par ul.l{list-style:none;margin-top:22px;display:grid;gap:12px}
+.par ul.l li{display:flex;gap:12px}.par ul.l .mi{color:var(--acento);margin-top:1px}
+.par ul.l b{display:block}.par ul.l span{color:var(--gris);font-size:.93rem}
+.lona{border-radius:24px;padding:24px;background:radial-gradient(110% 100% at 0% 0%,#1d3a30 0%,#0e1512 55%,#0B0B0C 100%);border:1px solid #1c1c20;min-height:340px;position:relative;box-shadow:0 30px 70px rgba(11,11,12,.25)}
+.post{position:absolute;border-radius:12px;padding:13px 15px;color:#0B0B0C;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.35);width:170px}
+.post b{display:block;margin-bottom:3px}
+.cur{position:absolute;display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700}
+.cur i{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid;rotate:-25deg}
+/* confianza y premium */
+.conf{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.prem{margin-top:44px;border-radius:26px;padding:40px;background:var(--boton);color:var(--botontxt);display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.prem h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.1}
+.prem p{opacity:.75;margin-top:10px}
+.prem ul{list-style:none;display:grid;gap:10px;font-size:.96rem}
+.prem li{display:flex;gap:10px}.prem .mi{color:#FFC86B}
+.chipp{display:inline-block;background:#FFC86B;color:#0B0B0C;border-radius:99px;font-size:12px;font-weight:700;padding:2px 11px;margin-bottom:12px}
+/* descarga */
+.cuatro{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.os{padding:24px 20px;border:1px solid var(--linea);border-radius:20px;background:var(--sup);text-align:center}
+.os .mi{font-size:34px;color:var(--acento)}
+.os h3{margin:8px 0 2px;font-size:1.05rem}.os p{color:var(--gris);font-size:.85rem;margin-bottom:16px}
+.os.rec{border-color:var(--acento);box-shadow:0 0 0 3px color-mix(in srgb,var(--acento) 14%,transparent)}
+/* faq */
+.faq{max-width:760px;margin:44px auto 0}
+details{border-top:1px solid var(--linea);padding:18px 4px}details:last-child{border-bottom:1px solid var(--linea)}
+summary{cursor:pointer;font-weight:600;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:'+';font-size:22px;line-height:1;color:var(--gris)}
+details[open] summary::after{content:'–'}
+details p{color:var(--gris);margin-top:10px;font-size:.96rem}
+/* cierre y pie */
+.cierre{margin-top:96px;text-align:center;padding:72px 24px;border-radius:30px;background:radial-gradient(120% 120% at 50% 0%,#1d3a30 0%,#0e1512 55%,#0B0B0C 100%);color:#F4EFE6}
+.cierre h2{color:#F4EFE6;max-width:16ch}.cierre .sub{color:#9B9BA1}
+.cierre .btn.p{background:#F4EFE6;color:#0B0B0C}.cierre .btn.s{color:#F4EFE6;border-color:#3a3a40}
+footer{margin-top:72px;border-top:1px solid var(--linea);padding:40px 0 56px;color:var(--gris);font-size:14px}
+footer .ancho{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+footer h4{color:var(--texto);font-size:13px;margin-bottom:10px}
+footer a{display:block;text-decoration:none;margin:6px 0}footer a:hover{color:var(--texto)}
+footer .ult{grid-column:1/-1;border-top:1px solid var(--linea);padding-top:20px;font-size:13px}
+/* selector de idioma y botón Preguntá */
+.idioma{display:inline-flex;border:1px solid var(--linea);border-radius:99px;padding:2px;background:var(--sup)}
+.idioma a{display:block;color:var(--gris);font:700 12.5px 'Inter';padding:6px 11px;border-radius:99px;text-decoration:none}
+.idioma a[aria-current="true"]{background:var(--boton);color:var(--botontxt)}
+.saltar{position:absolute;left:-999px;top:8px;background:var(--boton);color:var(--botontxt);padding:8px 14px;border-radius:99px;z-index:50}.saltar:focus{left:8px}
+footer .ult a{display:inline;margin:0}
+.os .extra{font-size:.8rem;margin:-6px 0 14px}.os .extra a{color:var(--acento)}
+.nota-win{max-width:760px;margin:22px auto 0;text-align:center;color:var(--gris);font-size:.88rem}
+.preg-btn{position:fixed;right:22px;bottom:22px;z-index:40;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:99px;background:#0B0B0C;color:#F4EFE6;font:700 15px 'Inter';padding:13px 20px;cursor:pointer;box-shadow:0 0 0 4px color-mix(in srgb,var(--acento) 30%,transparent),0 12px 30px rgba(0,0,0,.28)}
+:root[data-tema="oscuro"] .preg-btn{background:#F4EFE6;color:#0B0B0C}
+.preg-panel{padding:0;position:fixed;right:22px;bottom:22px;z-index:41;width:min(390px,calc(100vw - 32px));height:min(560px,calc(100vh - 44px));display:none;flex-direction:column;border-radius:20px;background:var(--sup);border:1px solid var(--linea);box-shadow:0 30px 70px rgba(0,0,0,.3);overflow:hidden}
+.preg-panel.abierto{display:flex}
+.preg-cab{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--linea);font-weight:700}
+.preg-cab button{border:0;background:transparent;color:var(--gris);cursor:pointer;display:grid;place-items:center}
+.preg-msgs{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.preg-m{max-width:88%;padding:11px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;background:var(--hueso);color:var(--texto)}
+.preg-m.yo{align-self:flex-end;background:var(--boton);color:var(--botontxt)}
+.preg-m a{color:var(--acento);font-weight:600}
+.preg-sug{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.preg-sug button{border:1px solid var(--linea);background:var(--sup);color:var(--texto);border-radius:99px;padding:9px 14px;font:500 13.5px 'Inter';cursor:pointer;text-align:left}
+.preg-sug button:hover{border-color:var(--acento)}
+.preg-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--linea)}
+.preg-form input{flex:1;border:1px solid var(--linea);border-radius:99px;padding:11px 16px;font:14.5px 'Inter';background:var(--bg);color:var(--texto);outline:none}
+.preg-form input:focus{border-color:var(--acento)}
+.preg-form button{width:42px;height:42px;border-radius:50%;border:0;background:var(--brote);color:#0B0B0C;cursor:pointer;display:grid;place-items:center}
+.preg-pie{padding:0 16px 12px;text-align:center;font-size:11.5px;color:var(--gris)}
+@media(max-width:900px){.nav nav{display:none}.nav .ancho{gap:14px}.nav .logo{margin-right:auto}.tres,.conf{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.cuatro{grid-template-columns:1fr 1fr}.par,.prem{grid-template-columns:1fr}.franja{grid-template-columns:1fr 1fr}.franja div:nth-child(3){border-left:0}.franja div:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--linea)}footer .ancho{grid-template-columns:1fr 1fr}.lado{display:none}.pantalla{height:520px}.ventana{width:94%}.gr2{grid-template-columns:1fr}.gr2 .col:last-child{display:none}.lona{overflow:hidden}}
+@media(max-width:560px){.nav .btn.chico{display:none}.hero{padding-top:44px}.escena{height:400px}.prem{padding:28px}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#vistazo">Saltar al contenido</a>
+
+<header class="nav">
+  <div class="ancho">
+    <a class="logo" href="{{HOME}}"><svg viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg>teire</a>
+    <nav aria-label="Principal"><a href="#vistazo">Un vistazo</a><a href="#funciones">Funciones</a><a href="#espacio">Espacio</a><a href="#premium">Premium</a><a href="#descargar">Descargar</a><a href="#preguntas">Preguntas</a></nav>
+    <button class="tema" id="tema" aria-label="Cambiar entre claro y oscuro"><i class="mi">dark_mode</i></button>
+    <div class="idioma" role="group" aria-label="Idioma / Language"><a href="/" hreflang="es" lang="es" data-lang="es" {{ES_ACTUAL}}>ES</a><a href="/en/" hreflang="en" lang="en" data-lang="en" {{EN_ACTUAL}}>EN</a></div>
+    <a class="btn p chico" href="#descargar">Descargar gratis</a>
+  </div>
+</header>
+
+<main>
+<div class="hero ancho">
+  <span class="pildora"><b>Nuevo</b>La isla muestra la letra de tu música y te deja escribirle a tus amigos</span>
+  <h1>Tu día y el de tu gente, <em>en un solo lugar.</em></h1>
+  <p class="bajada">Teire junta tus tareas, recordatorios y calendario con las listas, los chats y los espacios que compartís con tus amigos. Y una isla arriba de tu pantalla que guarda todo al toque.</p>
+  <div class="acciones">
+    <a class="btn p" data-descargar href="https://github.com/codewtato/teire-descargas/releases/latest"><i class="mi">download</i><span data-texto>Descargar para Windows</span></a>
+    <a class="btn s" href="/app/">Abrir en el navegador</a>
+  </div>
+  <div class="datos">
+    <span><i class="mi">check</i>Gratis</span>
+    <span><i class="mi">check</i>Windows, Linux, Android e iPhone</span>
+    <span><i class="mi">check</i>Funciona sin internet</span>
+    <span><i class="mi">check</i>Se puede usar sin cuenta</span>
+  </div>
+
+  <div class="pc dev" aria-label="Teire abierta en una compu con Windows, con la isla arriba"><div class="marco"><div class="pantalla">
+    <div class="isla-mini"><svg width="14" height="14" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/></svg>Luz de tarde <small>Los Brotes</small><span class="eq"><i></i><i></i><i></i></span></div>
+    <div class="ventana">
+      <div class="tit"><svg width="13" height="13" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg>Teire<span class="ctl2"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span></div>
+      <div class="in">
+      <div class="lado">
+        <div class="lg">teire</div>
+        <div class="gr">HOY</div><div class="it on"><i class="mi">home</i>Inicio</div><div class="it"><i class="mi">calendar_month</i>Calendario</div>
+        <div class="gr">LO MÍO</div><div class="it"><i class="mi">description</i>Notas</div><div class="it"><i class="mi">bookmarks</i>Guardados</div>
+        <div class="gr">GENTE</div><div class="it"><i class="mi">person_add</i>Amigos</div><div class="it"><i class="mi">group</i>Compartidas</div><div class="it"><i class="mi">fit_screen</i>Espacio</div>
+      </div>
+      <div class="cuerpo">
+        <div class="sal">Buen día, @valen.</div>
+        <div class="fr">Tenés 4 cosas para hoy y 2 de tu gente.</div>
+        <div class="gr2">
+          <div class="col">
+            <div class="tarj"><h4><i class="mi">checklist</i>Para hoy</h4>
+              <div class="fl"><span class="cr"></span>Llamar al contador<span class="et">10:30</span></div>
+              <div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pagar el alquiler<span class="et">18:00</span></div>
+              <div class="fl"><span class="cr" style="border-style:dashed"></span>Cena en lo de Mateo<span class="et">21:00</span></div>
+              <div class="fl"><span class="cr"></span>Comprar el regalo de Lucía<span class="et">1 de 4</span></div></div>
+            <div class="tarj"><h4><i class="mi">groups</i>Con tu gente</h4>
+              <div class="fl"><span class="av" style="background:#FFC86B">M</span>Mateo · 2 mensajes<span class="et">Responder</span></div>
+              <div class="fl"><span class="av" style="background:#8fb8ff">F</span>Familia · lista «Super»<span class="et">3 de 5</span></div></div>
+          </div>
+          <div class="col">
+            <div class="tarj"><h4>Esta semana</h4><div class="sm"><span>L<b>9</b></span><span>M<b>10</b></span><span>M<b>11</b></span><span class="p">J<b>12</b></span><span class="h">V<b>13</b></span><span class="p">S<b>14</b></span><span>D<b>15</b></span></div></div>
+            <div class="tarj"><h4>Guardados</h4><div class="fl"><span class="av" style="background:#ff9fb0;border-radius:8px">IG</span>Reel de cocina</div></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="tb">
+      <span class="ap"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4cc2ff" d="M2 3.5 11 2.3v9H2zM12 2.2 22 .8v10.5H12zM2 12.3h9v9L2 20.5zM12 12.3h10V23l-10-1.4z"/></svg></span>
+      <span class="ap"><i class="mi" style="color:#cfd2d6;font-size:19px">search</i></span>
+      <span class="ap on" style="background:#0B0B0C;box-shadow:0 0 0 1px #2a2a2e"><svg width="17" height="17" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg></span>
+      <span class="ap" style="background:#1db954"><i class="mi" style="color:#0B0B0C;font-size:18px">music_note</i></span>
+      <span class="ap" style="background:#f6b73c"><i class="mi" style="color:#5b3a00;font-size:18px">bookmarks</i></span>
+      <span class="ap" style="background:#3a7bd5"><i class="mi" style="color:#fff;font-size:18px">language</i></span>
+      <div class="bandeja"><i class="mi">wifi</i><i class="mi">volume_up</i><span>9:41<br>13/11/2026</span></div>
+    </div>
+    </div></div><div class="base"></div>
+  </div>
+
+  <div class="franja">
+    <div><b>+1.300</b><span>descargas desde octubre</span></div>
+    <div><b>+70</b><span>versiones en 3 semanas</span></div>
+    <div><b>4</b><span>sistemas: Windows, Linux, Android e iPhone</span></div>
+    <div><b>0</b><span>publicidad, analíticas o venta de datos</span></div>
+    <div><b>1</b><span>persona la hace, desde Argentina</span></div>
+  </div>
+</div>
+
+<section id="vistazo"><div class="ancho">
+  <div class="k">Un vistazo</div>
+  <h2>Todo tu día, a un toque.</h2>
+  <p class="sub">Pasás el mouse por la isla, arriba de tu pantalla, y se abre con lo tuyo. Sin abrir Teire.</p>
+  <div class="tabs" role="tablist" aria-label="Qué hace la isla">
+    <button data-t="musica" role="tab"><i class="mi">music_note</i>Música</button>
+    <button data-t="hoy" role="tab"><i class="mi">calendar_month</i>Tu día</button>
+    <button data-t="foco" role="tab"><i class="mi">timer</i>Foco</button>
+    <button data-t="gente" role="tab"><i class="mi">chat</i>Tu gente</button>
+    <button data-t="guardar" role="tab"><i class="mi">bookmarks</i>Guardar</button>
+  </div>
+  <div class="escena dev">
+    <div class="isla reposo">
+      <div class="mini" aria-hidden="true"><svg viewBox="70 80 340 340"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg><span class="eq"><i></i><i></i><i></i></span></div>
+      <div class="dentro">
+      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi">notifications</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi">groups</i></div>
+      <div class="panel" data-p="musica"><div class="mus"><div class="tapa"><i></i></div><div><h5>De Música Ligera</h5><small>Soda Stereo · Spotify</small></div><div class="ctl"><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M6 6h2v12H6zM9.5 12 18 6v12z"/></svg><span class="g"><i class="mi">pause</i></span><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M16 6h2v12h-2zM6 18V6l8.5 6z"/></svg></div></div><div class="bar"><b></b></div><div class="let">Ni pienso evitar un roce secreto<b>De aquel amor</b>De música ligera</div></div>
+      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Llamar al contador<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pagar el alquiler<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Reunión de equipo · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Entrar</span></div></div></div>
+      <div class="panel" data-p="foco"><div class="tm">24:10<small>Terminar el informe</small></div><div class="bt"><span>Pausa</span><span class="o">Terminar</span></div><div class="et" style="text-align:center;margin-top:12px;color:var(--d-gris);font-size:12.5px">Avisos en silencio mientras dure</div></div>
+      <div class="panel" data-p="gente"><div class="caras"><div><span class="av">L</span>Lucía</div><div><span class="av" style="background:#FFC86B">M</span>Mateo</div><div><span class="av" style="background:#8fb8ff">S</span>Sofi</div><div><span class="av" style="background:#ff9fb0">F</span>Familia</div></div><div class="campo">Escribile a Mateo…<i class="mi">send</i></div></div>
+      <div class="panel" data-p="guardar"><div class="zonas"><div><i class="mi">bookmarks</i>Guardar</div><div><i class="mi">download</i>Al estante</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pie-tab">
+    <div class="cap on" data-c="reposo"><b>Probá la isla: tocá una pestaña.</b><span>Así se ve la pastilla cuando no la estás usando. Tocá una pestaña y se abre.</span></div>
+    <div class="cap" data-c="musica"><b>Tu música, con tapa y letra.</b><span>Lo que suena en Spotify y otras apps, con la letra al ritmo de la canción.</span></div>
+    <div class="cap" data-c="hoy"><b>Tu día, sin abrir nada.</b><span>Tareas, recordatorios y «Entrar» a tus videollamadas de Meet, Zoom o Teams.</span></div>
+    <div class="cap" data-c="foco"><b>Un foco que te cuida.</b><span>Elegís en qué te enfocás y por cuánto, y los avisos esperan.</span></div>
+    <div class="cap" data-c="gente"><b>Escribile a quien quieras.</b><span>Elegís una cara y mandás el mensaje desde la isla.</span></div>
+    <div class="cap" data-c="guardar"><b>Soltá y listo.</b><span>Un link, un texto o una foto: queda guardado, o lo mandás a tu celu o a un amigo.</span></div>
+  </div>
+</div></section>
+
+<section id="usos"><div class="ancho">
+  <div class="k">Para qué sirve</div>
+  <h2>Para vos, y para tu gente.</h2>
+  <div class="tres">
+    <article class="card"><div class="ib"><i class="mi">calendar_month</i></div><h3>Tu día</h3><p>Lo que tenés que hacer, en orden y sin ruido.</p><ul><li><i class="mi">check</i>Tareas y recordatorios que te avisan</li><li><i class="mi">check</i>Calendario con mes, semana y agenda</li><li><i class="mi">check</i>Modo foco con reloj</li></ul></article>
+    <article class="card"><div class="ib"><i class="mi">groups</i></div><h3>Tu gente</h3><p>Lo que compartís con tus amigos y tu familia.</p><ul><li><i class="mi">check</i>Listas que se completan en vivo</li><li><i class="mi">check</i>Chat con amigos y grupos</li><li><i class="mi">check</i>Espacios para trabajar juntos</li></ul></article>
+    <article class="card"><div class="ib"><i class="mi">bookmarks</i></div><h3>Lo que guardás</h3><p>Todo lo que encontrás, a mano cuando lo necesites.</p><ul><li><i class="mi">check</i>Links, fotos y capturas con un gesto</li><li><i class="mi">check</i>Notas con PIN, audios y lugares</li><li><i class="mi">check</i>Mandalo a tu celu en un toque</li></ul></article>
+  </div>
+</div></section>
+
+<section id="funciones"><div class="ancho">
+  <div class="k">Funciones</div>
+  <h2>Todo lo que necesitás, sin vueltas.</h2>
+  <p class="sub">Lo justo para organizarte, sin una pantalla llena de cosas.</p>
+  <div class="grid">
+    <div class="f"><i class="mi">checklist</i><h3>Tareas de hoy</h3><p>Lo de hoy, junto, con tilde para marcar.</p></div>
+    <div class="f"><i class="mi">alarm</i><h3>Recordatorios</h3><p>Te avisan aunque Teire esté cerrada.</p></div>
+    <div class="f"><i class="mi">calendar_month</i><h3>Calendario</h3><p>Mes, semana, agenda y actividad.</p></div>
+    <div class="f"><i class="mi">timer</i><h3>Modo foco</h3><p>Reloj, pausa y avisos en silencio.</p></div>
+    <div class="f"><i class="mi">group</i><h3>Listas en vivo</h3><p>Ves quién tilda cada cosa, al instante.</p></div>
+    <div class="f"><i class="mi">chat</i><h3>Chat y grupos</h3><p>Mandá mensajes sin salir de lo que hacés.</p></div>
+    <div class="f"><i class="mi">fit_screen</i><h3>Espacio</h3><p>Una lona para armar algo entre varios.</p></div>
+    <div class="f"><i class="mi">draw</i><h3>Pizarrón</h3><p>Dibujá y ve lo que dibujan los demás.</p></div>
+    <div class="f"><i class="mi">bubble_chart</i><h3>La isla</h3><p>Guarda, avisa y muestra tu música.</p></div>
+    <div class="f"><i class="mi">mic</i><h3>Teire IA</h3><p>«Oye Teire»: creá, recordá, mandá.</p></div>
+    <div class="f"><i class="mi">lock</i><h3>Notas con PIN</h3><p>Cifradas en tu equipo: no las leemos.</p></div>
+    <div class="f"><i class="mi">cloud_off</i><h3>Sin internet</h3><p>Anda igual y se sincroniza al volver.</p></div>
+  </div>
+</div></section>
+
+<section id="espacio"><div class="ancho">
+  <div class="par">
+    <div>
+      <div class="k">Espacio · Beta</div>
+      <h2>Un lugar para tu grupo.</h2>
+      <p class="sub">Una lona sin bordes para armar un viaje, un trabajo práctico o la mudanza. Ves el mouse de cada uno mientras escribe.</p>
+      <ul class="l">
+        <li><i class="mi">check_circle</i><div><b>Todo junto</b><span>Notas, listas, kanban, tablas, calendario y archivos en la misma lona.</span></div></li>
+        <li><i class="mi">check_circle</i><div><b>Escriban a la vez</b><span>Los cambios se juntan en vez de pisarse. Ctrl Z deshace lo tuyo.</span></div></li>
+        <li><i class="mi">check_circle</i><div><b>Invitá con un link</b><span>Dura 24 horas y entra cualquiera, sin cuenta y sin instalar nada.</span></div></li>
+      </ul>
+    </div>
+    <div class="lona dev">
+      <div class="post" style="left:24px;top:28px;background:#FFE08A;rotate:-3deg"><b>Bodegas</b>Zuccardi y Catena el sábado. Reservar antes del jueves.</div>
+      <div class="post" style="left:210px;top:60px;background:#BFE3FF;rotate:2deg"><b>Valija</b>Abrigo, lentes de sol, termo</div>
+      <div class="post" style="left:60px;top:190px;background:#C8F0DD;rotate:1.5deg"><b>Alquilar el auto</b>3 en línea ahora</div>
+      <div class="cur" style="left:190px;top:150px;color:#FFC86B"><i style="border-bottom-color:#FFC86B"></i>Ana</div>
+      <div class="cur" style="left:300px;top:230px;color:#5FD4A0"><i style="border-bottom-color:#5FD4A0"></i>Beto</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="privacidad"><div class="ancho">
+  <div class="k">Cuidá lo tuyo</div>
+  <h2>Tus cosas son tuyas.</h2>
+  <div class="conf">
+    <article class="card"><div class="ib"><i class="mi">block</i></div><h3>Sin publicidad</h3><p>Ni analíticas, ni seguimiento, ni venta de datos. Ni en la app ni en este sitio.</p></article>
+    <article class="card"><div class="ib"><i class="mi">lock</i></div><h3>Notas con PIN</h3><p>Se cifran en tu equipo. Sin tu PIN, ni nosotros las podemos leer.</p></article>
+    <article class="card"><div class="ib"><i class="mi">visibility_off</i></div><h3>Vos mandás</h3><p>Sin cuenta, todo queda en tu equipo. Con cuenta, borrás tus datos cuando quieras.</p></article>
+  </div>
+</div></section>
+
+<section id="premium"><div class="ancho">
+  <div class="prem">
+    <div><span class="chipp">Premium · opcional</span><h3>Todo lo importante es gratis.</h3><p>Premium suma temas y colores, el triple de Teire IA y ayuda a que Teire siga creciendo.</p></div>
+    <ul><li><i class="mi">palette</i>Temas pastel y colores para tus notas</li><li><i class="mi">bubble_chart</i>Color y vidrio para la isla</li><li><i class="mi">auto_awesome</i>60 pedidos por día a Teire IA, en vez de 20</li></ul>
+  </div>
+</div></section>
+
+<section id="descargar"><div class="ancho">
+  <div class="k">Descargar</div>
+  <h2>Bajala gratis.</h2>
+  <p class="sub">Se actualiza sola. Elegí tu sistema.</p>
+  <div class="cuatro">
+    <div class="os rec"><i class="mi">computer</i><h3>Windows</h3><p>10 y 11 · con la isla</p><a class="btn p chico" data-buscar="setup.exe" href="https://github.com/codewtato/teire-descargas/releases/latest">Descargar</a></div>
+    <div class="os"><i class="mi">devices</i><h3>Linux</h3><p>AppImage y .rpm</p><a class="btn s chico" data-buscar=".appimage" href="https://github.com/codewtato/teire-descargas/releases/latest">Descargar</a></div>
+    <div class="os"><i class="mi">smartphone</i><h3>Android</h3><p>APK directo</p><a class="btn s chico" data-buscar=".apk" href="https://github.com/codewtato/teire-descargas/releases/latest/download/Teire.apk">Descargar</a></div>
+    <div class="os"><i class="mi">language</i><h3>iPhone y web</h3><p>Sin instalar nada</p><a class="btn s chico" href="/app/">Abrir</a></div>
+  </div>
+  <p class="nota-win">Si Windows muestra una advertencia al instalar, tocá «Más información» y «Ejecutar de todas formas»: el instalador todavía no tiene firma paga.</p>
+</div></section>
+
+<section id="preguntas"><div class="ancho">
+  <div class="k">Preguntas</div>
+  <h2>Lo que más nos preguntan.</h2>
+  <div class="faq">
+{{FAQ}}
+  </div>
+
+  <div class="cierre dev">
+    <h2>Armemos tu primer día.</h2>
+    <p class="sub">Descargala, anotá una cosa para hoy y sumá a un amigo. Con eso ya arrancaste.</p>
+    <div class="acciones"><a class="btn p" href="#descargar"><i class="mi">download</i>Descargar gratis</a><a class="btn s" href="/app/">Abrir en el navegador</a></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="ancho">
+  <div><a class="logo" href="{{HOME}}" style="color:var(--texto)">teire</a><p style="margin-top:10px;max-width:26ch">Tu día y el de tu gente, en un solo lugar. Hecha en Argentina.</p></div>
+  <div><h4>Teire</h4><a href="#vistazo">Un vistazo</a><a href="#funciones">Funciones</a><a href="#espacio">Espacio</a><a href="#premium">Premium</a></div>
+<!--solo:es-->
+  <div><h4>Comparar</h4><a href="/alternativa-google-keep/">Alternativa a Google Keep</a><a href="/notas-compartidas/">Notas compartidas</a><a href="/iphone/">Teire en el iPhone</a></div>
+  <div><h4>Legal</h4><a href="/privacidad/">Privacidad</a><a href="/terminos/">Términos</a><a href="/arrepentimiento/">Botón de arrepentimiento</a></div>
+  <div class="ult">© 2026 Teire · useteire.app · <a href="https://github.com/codewtato/teire-descargas/releases">Versiones anteriores</a> · <a href="https://github.com/codewtato/teire-descargas/issues">Reportar un problema</a></div>
+<!--/solo-->
+<!--solo:en-->
+  <div><h4>Get it</h4><a href="/app/">Open in your browser</a><a href="https://github.com/codewtato/teire-downloads/releases">Previous versions</a><a href="https://github.com/codewtato/teire-downloads/issues">Report a problem</a></div>
+  <div><h4>Legal (in Spanish)</h4><a href="/privacidad/">Privacy</a><a href="/terminos/">Terms</a><a href="/arrepentimiento/">Right of withdrawal</a></div>
+  <div class="ult">© 2026 Teire · useteire.app · <a href="https://github.com/codewtato/teire-downloads">GitHub</a></div>
+<!--/solo-->
+</div></footer>
+
+
+<button type="button" class="preg-btn" id="preg-abrir" aria-haspopup="dialog"><i class="mi">help</i><span id="preg-btn-txt">Preguntá</span></button>
+<section class="preg-panel" id="preg-panel" role="dialog" aria-label="Preguntale a Teire">
+  <div class="preg-cab"><span id="preg-tit">Preguntale a Teire</span><button type="button" id="preg-cerrar" aria-label="Cerrar"><i class="mi">close</i></button></div>
+  <div class="preg-msgs" id="preg-msgs" aria-live="polite"></div>
+  <form class="preg-form" id="preg-form"><input id="preg-campo" autocomplete="off" maxlength="200" placeholder="Hacé una pregunta…"><button type="submit" aria-label="Enviar"><i class="mi">send</i></button></form>
+  <p class="preg-pie" id="preg-pie">Las respuestas salen de useteire.app: lo que escribís queda en esta página.</p>
+</section>
+
+{{SCRIPT}}
+</body>
+</html>
