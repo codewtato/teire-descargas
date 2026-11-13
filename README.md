@@ -158,8 +158,8 @@ Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows, con cue
 - **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás, sin sacarte de lo que estás haciendo.
 - **Capturas:** copiás una captura y te ofrece guardarla.
 - **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app. Si algo quedó sin ver, se prende una lucecita verde.
-- **Tu música** (Spotify, YouTube Music, Apple Music, Deezer, Tidal, VLC y otras apps de música) queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**.
-- **Pasás el mouse y se abre con pestañas:** lo que tenés hoy (con **«Entrar»** a tus videollamadas), tus recordatorios, tus amigos, tus notas, tus grupos y los avisos del día, todo sin abrir la app.
+- **Tu música** (Spotify, YouTube Music, Apple Music, Deezer, Tidal, VLC y otras apps de música) queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**, la **tapa del disco** y la **letra** al ritmo de la canción.
+- **Pasás el mouse y se abre con pestañas:** lo que tenés hoy (con **«Entrar»** a tus videollamadas), tus recordatorios, tus amigos (**le escribís a quien quieras desde ahí**), tus notas, tus grupos y los avisos del día, todo sin abrir la app.
 - **Modo foco:** elegís en qué te enfocás y por cuánto tiempo, y la isla te acompaña con el reloj. Si querés, los avisos esperan hasta que termines.
 - **Notas pegadas al escritorio:** sacás una nota o una lista de la isla y queda flotando, como un post-it, para ir tachando.
 - **Mandá cosas a tu celu:** un link, una foto o algo que copiaste te llega al celular en segundos.
