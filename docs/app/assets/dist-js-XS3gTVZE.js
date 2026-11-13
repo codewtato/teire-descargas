@@ -1,1 +1,0 @@
-import{invoke as e}from"./core-CwBWH9_g.js";import{t}from"./image-B343TjYf.js";async function n(){return await e(`plugin:clipboard-manager|read_image`).then(e=>new t(e))}export{n as readImage};
