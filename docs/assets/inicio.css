@@ -261,7 +261,7 @@
 .sello-nuevo { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .04em; padding: 4px 11px; border-radius: 999px; color: var(--brote); background: rgba(95,212,160,.12); border: 1px solid rgba(95,212,160,.3); }
 .ia-escena { position: relative; min-height: 440px; padding: 22px 18px 150px; border-radius: 26px; border: 1px solid var(--linea); overflow: hidden;
   background: radial-gradient(420px 220px at 15% 110%, rgba(95,212,160,.22), transparent 65%), radial-gradient(360px 200px at 95% -10%, rgba(255,200,107,.2), transparent 65%), linear-gradient(160deg, #2b4a5c, #1b2d3a 55%, #152029); }
-.ia-isla { position: relative; z-index: 2; margin: 0 auto; max-width: 520px; border-radius: 28px; background: #050505; color: var(--crema); box-shadow: 0 18px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.07); font-size: .9rem; line-height: 1.35; }
+.ia-isla { position: relative; z-index: 2; margin: 0 auto; max-width: 460px; border-radius: 28px; background: #050505; color: var(--crema); box-shadow: 0 18px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.07); font-size: .9rem; line-height: 1.35; }
 .ia-pestanas { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 10px 12px 0; }
 .ia-t { width: 18px; height: 18px; margin: 0 4px; }
 .ia-sep { width: 1px; height: 16px; margin: 0 6px; background: rgba(244,239,230,.12); }
