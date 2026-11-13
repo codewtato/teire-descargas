@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/img/banner.svg" alt="Teire: cuidá lo tuyo. Notas, listas y pizarrones para compartir en vivo con tus amigos." width="100%">
+  <img src="docs/img/banner.svg" alt="Teire: cuidá lo tuyo. Tu día y el de tu gente, en un solo lugar." width="100%">
 </p>
 
 <p align="center">
@@ -23,10 +23,12 @@
 </p>
 
 <p align="center">
-  <img src="docs/img/readme/hero.webp" alt="Teire en la compu y en el celular: Inicio con Para hoy, esta semana, tus guardados y tus notas recientes" width="100%">
+  <img src="docs/img/readme/hero.webp" alt="Teire en una compu con Windows: el Inicio con Para hoy, Con tu gente y la semana, y la isla arriba al centro de la pantalla" width="100%">
 </p>
 
-**Teire** es una app de notas para cuidar lo tuyo y compartirlo con tu gente. Simple, rápida y gratis, para Windows, Linux, Android e iPhone. La hace un creador independiente en Argentina.
+# Teire: tu día y el de tu gente, en un solo lugar
+
+**Teire** es una **app gratis para organizar tu día y compartirlo con tus amigos**: tareas, recordatorios, calendario, listas que se completan en vivo, chat y una **isla** arriba de tu pantalla que guarda todo al toque. Para **Windows, Linux, Android e iPhone**. La hace un creador independiente en Argentina.
 
 El nombre viene del japonés 手入れ (*teire*): cuidar y mantener algo con cariño, como a una planta. Por eso la hojita.
 
@@ -34,20 +36,20 @@ El nombre viene del japonés 手入れ (*teire*): cuidar y mantener algo con car
 <tr>
 <td width="33%" valign="top">
 
-**En vivo**<br>
-Notas, listas y pizarrones que editás con tus amigos al mismo tiempo.
+**Tu día**<br>
+Tareas, recordatorios y calendario en un solo lugar, con modo foco para concentrarte.
 
 </td>
 <td width="33%" valign="top">
 
-**Al vuelo**<br>
-Lo que encontrás en cualquier programa queda guardado en un gesto.
+**Tu gente**<br>
+Listas, chats y espacios que completás en vivo con tus amigos y tu familia.
 
 </td>
 <td width="33%" valign="top">
 
-**Tuyo**<br>
-Sin publicidad, funciona sin internet y las notas con PIN se cifran en tu equipo.
+**Lo que guardás**<br>
+Links, fotos y capturas quedan guardados en un gesto. Sin publicidad y sin internet también.
 
 </td>
 </tr>
@@ -57,21 +59,21 @@ Sin publicidad, funciona sin internet y las notas con PIN se cifran en tu equipo
 
 <table>
 <tr>
-<td width="56%"><img src="docs/img/readme/notas.webp" alt="Mis notas de Teire: tarjetas con notas, listas y recordatorios" width="100%"></td>
+<td width="56%"><img src="docs/img/readme/calendario.webp" alt="Calendario de Teire con los recordatorios y las tareas del día" width="100%"></td>
 <td width="44%" valign="middle">
 
-### Tus notas, a la vista
+### Tu día, en orden
 
-Notas, listas y pizarrones que se pintan con el **color de su categoría**. Las fijadas van arriba y cada tarjeta te dice cuánto falta de una lista o a qué hora es el recordatorio. Con imágenes, audios, lugares y `[[enlaces]]` entre notas.
+**Para hoy** junta tus tareas, recordatorios y eventos en una sola lista, y te dice cuántas cosas tenés hoy y cuántas de tu gente. Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Con el **modo foco** elegís en qué te concentrás y los avisos esperan.
 
 </td>
 </tr>
 <tr>
 <td width="44%" valign="middle">
 
-### En vivo con tus amigos
+### Tu gente, en vivo
 
-Compartí una nota por su `@usuario` y mirá cómo escriben, letra por letra. El **pizarrón** es un lienzo a pantalla completa: ves lo que dibujan los demás mientras lo dibujan.
+Compartí una lista o una nota por su `@usuario` y mirá cómo la completan, letra por letra. **Con tu gente** te muestra los mensajes por contestar, las listas compartidas que avanzan y quién está en línea. El **pizarrón** es un lienzo a pantalla completa: ves lo que dibujan los demás mientras lo dibujan.
 
 </td>
 <td width="56%"><img src="docs/img/readme/pizarron.webp" alt="Pizarrón de Teire a pantalla completa con un esquema dibujado a mano" width="100%"></td>
@@ -97,12 +99,12 @@ Reels, videos, links, textos y capturas, agrupados por día. Pegá con `Ctrl+V` 
 <td width="56%"><img src="docs/img/readme/guardados.webp" alt="Guardados de Teire: links, textos y reels agrupados por día" width="100%"></td>
 </tr>
 <tr>
-<td width="56%"><img src="docs/img/readme/calendario.webp" alt="Calendario de Teire con los recordatorios del día" width="100%"></td>
+<td width="56%"><img src="docs/img/readme/notas.webp" alt="Notas de Teire: tarjetas con notas, listas y recordatorios pintadas por categoría" width="100%"></td>
 <td width="44%" valign="middle">
 
-### Que no se te pase nada
+### Y tus notas, a la vista
 
-Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Si estás jugando en pantalla completa, no te interrumpen.
+Notas, listas y pizarrones que se pintan con el **color de su categoría**. Las fijadas van arriba y cada tarjeta te dice cuánto falta de una lista o a qué hora es el recordatorio. Con imágenes, audios, lugares y `[[enlaces]]` entre notas.
 
 </td>
 </tr>
@@ -111,7 +113,7 @@ Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres
 
 ### Pedíselo con la voz
 
-En la compu decí **«Oye Teire»** (o apretá `Ctrl K`): *«creá una lista de compras con pan y leche»*, *«recordame mañana a las 9»*, *«mandale a Fede que llego tarde»*. Compartir una nota siempre te pide confirmar.
+En la compu decí **«Oye Teire»** (o apretá `Ctrl K`): *«creá una lista de compras con pan y leche»*, *«recordame mañana a las 9»*, *«mandale a Fede que llego tarde»*. Compartir una nota siempre te pide confirmar. Teire IA funciona **solo en español** por ahora.
 
 </td>
 <td width="56%"><img src="docs/img/readme/ia.webp" alt="Teire IA abierta en la app de escritorio" width="100%"></td>
@@ -242,6 +244,12 @@ En iPhone no están la isla ni la voz de Teire IA. Todos los pasos, con el atajo
 </details>
 
 ## Preguntas frecuentes
+
+<details>
+<summary><b>¿Teire es solo una app de notas?</b></summary>
+
+No: es un organizador. Tiene notas, pero también tareas, recordatorios, calendario, modo foco y todo lo que compartís con tu gente: listas en vivo, chat, grupos y espacios.
+</details>
 
 <details>
 <summary><b>¿Necesito una cuenta?</b></summary>
