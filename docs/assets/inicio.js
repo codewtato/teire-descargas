@@ -166,7 +166,7 @@
   const iaReloj = () => `${String(Math.floor(iaSeg / 60)).padStart(2, "0")}:${String(iaSeg % 60).padStart(2, "0")}`;
   const IA_ANILLO = 2 * Math.PI * 46;
   const iaCara = (letra, color, extra = "") => `<span class="ia-ava ${extra}" style="background:${color}">${letra}</span>`;
-  const SPOTIFY = `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.5 9c4.5-1.3 9.5-1 13 1M6.2 12.4c3.8-1 8-.7 11 1M7 15.6c3-.7 6.3-.5 8.8.9" stroke="#0a0d0c" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg>`;
+  const SPOTIFY = `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.5 9c4.5-1.3 9.5-1 13 1M6.2 12.4c3.8-1 8-.7 11 1M7 15.6c3-.7 6.3-.5 8.8.9" stroke="#0a0a0b" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg>`;
   const IA = {
     musica: () => `<div class="ia-mus">
       <div class="ia-tapa">${SPOTIFY}</div>
@@ -247,7 +247,7 @@
 
   // ---------- Premium: los temas pintan la caja ----------
   const TEMAS = {
-    teire: { fondo: "#151D1A", texto: "#F4EFE6", acento: "#5FD4A0", tarjeta: "#1C2622" },
+    teire: { fondo: "#161618", texto: "#F4EFE6", acento: "#5FD4A0", tarjeta: "#1E1E21" },
     jardin: { fondo: "#0E1C14", texto: "#E4F5EA", acento: "#8BD9A0", tarjeta: "#1D3A2A" },
     oro: { fondo: "#17130B", texto: "#FFF1D6", acento: "#FFC86B", tarjeta: "#2E2412" },
     papel: { fondo: "#F6F0E4", texto: "#2B2620", acento: "#8A6F4E", tarjeta: "#E8DDC8" },
