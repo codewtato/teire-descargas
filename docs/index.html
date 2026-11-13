@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Teire: app de notas gratis para compartir con amigos</title>
-<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, un Espacio para trabajar en grupo, recordatorios y una isla en tu pantalla que guarda links y fotos.">
+<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, un Espacio para trabajar en grupo, recordatorios y una isla en tu pantalla que guarda links y fotos, te muestra tu día y te acompaña en modo foco.">
 <link rel="canonical" href="https://useteire.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0F1513">
@@ -47,7 +47,7 @@
       "@id": "https://useteire.app/#app",
       "name": "Teire",
       "alternateName": "Noty",
-      "description": "App de notas gratis para compartir en vivo con tus amigos: listas, pizarrones, recordatorios, una isla en la pantalla que guarda links y fotos desde cualquier programa y una asistente por voz.",
+      "description": "App de notas gratis para compartir en vivo con tus amigos: listas, pizarrones, recordatorios, una isla en la pantalla que guarda links y fotos desde cualquier programa, te muestra tu día y tiene modo foco, y una asistente por voz.",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Windows 10, Windows 11, Android, iOS, Linux",
       "url": "https://useteire.app/",
@@ -64,7 +64,7 @@
       "@id": "https://useteire.app/#preguntas",
       "mainEntity": [
         { "@type": "Question", "name": "Tenía Noty. ¿Pierdo algo?", "acceptedAnswer": { "@type": "Answer", "text": "Nada. Es la misma app con otro nombre: tus notas, tu cuenta, tus amigos y tu Premium siguen igual. Se actualiza sola." } },
-        { "@type": "Question", "name": "¿Teire es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas y para la isla, y más pedidos a Teire IA." } },
+        { "@type": "Question", "name": "¿Teire es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas y para la isla (también de vidrio), y más pedidos a Teire IA." } },
         { "@type": "Question", "name": "¿Necesito una cuenta?", "acceptedAnswer": { "@type": "Answer", "text": "No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan entre tus dispositivos y las podés compartir. Entrás con correo, Google, Discord o GitHub." } },
         { "@type": "Question", "name": "¿La isla anda en Linux y en el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Por ahora la isla es solo para Windows y con cuenta. En Android, usá Compartir y elegí Teire desde cualquier app. En iPhone, tocá Pegar en Guardados o armá el atajo para Compartir." } },
         { "@type": "Question", "name": "¿Puedo usarla sin instalar nada?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abrí Teire en el navegador en useteire.app/app y entrá con tu cuenta, también con Google, Discord o GitHub. Ahí no están la isla ni la voz de Teire IA, y las notificaciones llegan con la pestaña abierta." } },
@@ -102,6 +102,7 @@
   <div class="ancho">
     <a class="marca" href="./" aria-label="Teire, inicio"><svg aria-hidden="true"><use href="#logo"/></svg>teire</a>
     <nav aria-label="Secciones">
+      <a href="#isla-abierta">Isla</a>
       <a href="#funciones">Funciones</a>
       <a href="#espacio">Espacio</a>
       <a href="#premium">Premium</a>
@@ -147,6 +148,40 @@
     <div class="cinta-marco" aria-hidden="true">
       <div class="cinta" id="cinta-1"></div>
       <div class="cinta al-reves" id="cinta-2"></div>
+    </div>
+  </section>
+
+  <section class="bloque isla-abierta" id="isla-abierta" aria-labelledby="titulo-isla">
+    <div class="ancho">
+      <div class="ia-texto">
+        <span class="sello-nuevo">Nuevo en Windows</span>
+        <h2 id="titulo-isla">La isla, ahora se abre.</h2>
+        <p>Pasale el mouse y te muestra lo tuyo sin abrir Teire: tu día, tus recordatorios, tus amigos y tus notas, cada cosa en su pestaña.</p>
+        <ul class="espacio-lista">
+          <li><b>Tu día.</b> Lo que tenés hoy, con «Entrar» a tus videollamadas de Meet, Zoom o Teams.</li>
+          <li><b>Modo foco.</b> Elegís en qué te enfocás y por cuánto tiempo, y la isla te acompaña con el reloj. Si querés, los avisos esperan.</li>
+          <li><b>Al toque.</b> Posponé un recordatorio, contestá un mensaje o anotá algo sin cambiar de ventana.</li>
+          <li><b>Notas en el escritorio.</b> Sacás una lista de la isla y queda flotando, como un post-it, para ir tachando.</li>
+          <li><b>Mandalo a tu celu.</b> Un link, una foto o lo que copiaste te llega al celular en segundos.</li>
+        </ul>
+        <p class="detalle">En Windows, con cuenta. Con Premium, la isla puede ser de vidrio o quedar pegada arriba, como un notch.</p>
+        <p class="mano" aria-hidden="true">Tocá las pestañas.</p>
+      </div>
+      <div class="ia-escena">
+        <div class="ia-isla" id="ia-isla" role="group" aria-label="La isla abierta de ejemplo: tocá las pestañas">
+          <div class="ia-pestanas" role="tablist">
+            <svg class="ia-t" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 104 368 104 Z" fill="#5FD4A0"/></svg>
+            <i class="ia-sep"></i>
+            <button type="button" role="tab" aria-selected="true" data-ia="hoy" aria-label="Hoy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span class="ia-num">3</span></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="foco" aria-label="Foco"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="recordatorios" aria-label="Recordatorios"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15zM10 20.5h4"/></svg><span class="ia-num sol">1</span></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="notas" aria-label="Notas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h12M4 11h12M4 16h7M15 19l5-5-2-2-5 5v2z"/></svg></button>
+          </div>
+          <div class="ia-cuerpo" id="ia-cuerpo" aria-live="polite"></div>
+        </div>
+        <div class="ia-pastilla" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4"/></svg><span>Terminar el informe</span><b class="ia-reloj">18:42</b></div>
+        <div class="ia-postit" aria-hidden="true"><b>Lista del súper</b><span class="hecho">Yerba</span><span class="hecho">Pan</span><span>Tomates</span><span>Queso cremoso</span></div>
+      </div>
     </div>
   </section>
 
@@ -267,7 +302,7 @@
         <div>
           <span class="sello"><svg aria-hidden="true"><use href="#hojita"/></svg>Teire Premium</span>
           <h2 id="titulo-premium">Probá un tema sobre esta página.</h2>
-          <p>Premium es opcional: 19 temas, la hojita dorada en tu perfil, colores para tus notas y para la isla, y el triple de pedidos a Teire IA. Lo pagás con Mercado Pago o PayPal, o se lo regalás a un amigo.</p>
+          <p>Premium es opcional: 19 temas, la hojita dorada en tu perfil, colores para tus notas y para la isla (también de vidrio), y el triple de pedidos a Teire IA. Lo pagás con Mercado Pago o PayPal, o se lo regalás a un amigo.</p>
           <div class="elegir-tema" id="elegir-tema" role="group" aria-label="Temas">
             <button type="button" aria-pressed="true" data-tema="teire"><i style="background:#5FD4A0"></i>Teire</button>
             <button type="button" aria-pressed="false" data-tema="jardin"><i style="background:#8BD9A0"></i>Jardín</button>
@@ -326,7 +361,7 @@
       <div class="preguntas">
         <div class="preguntas-col">
           <details class="pregunta" id="pregunta-noty"><summary>Tenía Noty. ¿Pierdo algo?</summary><div class="respuesta"><p>Nada. Es la misma app con otro nombre: tus notas, tu cuenta, tus amigos y tu Premium siguen igual. Se actualiza sola.</p></div></details>
-          <details class="pregunta"><summary>¿Teire es gratis?</summary><div class="respuesta"><p>Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas y para la isla, y más pedidos a Teire IA.</p></div></details>
+          <details class="pregunta"><summary>¿Teire es gratis?</summary><div class="respuesta"><p>Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, la hojita dorada, colores para tus notas y para la isla (también de vidrio), y más pedidos a Teire IA.</p></div></details>
           <details class="pregunta"><summary>¿Necesito una cuenta?</summary><div class="respuesta"><p>No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan entre tus dispositivos y las podés compartir. Entrás con correo, Google, Discord o GitHub.</p></div></details>
           <details class="pregunta"><summary>¿La isla anda en Linux y en el celular?</summary><div class="respuesta"><p>Por ahora la isla es solo para Windows y con cuenta. En Android, usá Compartir y elegí Teire desde cualquier app. En iPhone, tocá Pegar en Guardados o armá el <a href="iphone/#atajo">atajo para Compartir</a>.</p></div></details>
           <details class="pregunta"><summary>¿Puedo usarla sin instalar nada?</summary><div class="respuesta"><p>Sí. <a href="app/">Abrí Teire en el navegador</a> y entrá con tu cuenta, también con Google, Discord o GitHub. Ahí no están la isla ni la voz de Teire IA, y las notificaciones llegan con la pestaña abierta.</p></div></details>

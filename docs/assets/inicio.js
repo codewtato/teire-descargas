@@ -1,4 +1,4 @@
-// La portada: el juego de la isla, la cinta de cosas guardadas, las notas que se mueven,
+// La portada: el juego de la isla, la isla abierta con pestañas, la cinta de cosas guardadas, las notas que se mueven,
 // las tarjetas que se apilan, los comandos de Teire IA y los temas de Premium.
 (() => {
   const quieto = window.teireQuieto;
@@ -156,6 +156,48 @@
     paseoAna(); paseoBeto();
   };
   if (animar && window.ScrollTrigger) ScrollTrigger.create({ trigger: lona, start: "top 85%", once: true, onEnter: andarPorLaLona });
+
+  // ---------- La isla abierta: pestañas de ejemplo, con el foco andando ----------
+  // Lo mismo que la isla de Windows con el diseño nuevo (src/ui/islaPestanas.ts en la app), en chico.
+  const iaCuerpo = document.getElementById("ia-cuerpo");
+  const iaBotones = document.querySelectorAll("#ia-isla [data-ia]");
+  let iaSeg = 18 * 60 + 42;
+  const iaReloj = () => `${String(Math.floor(iaSeg / 60)).padStart(2, "0")}:${String(iaSeg % 60).padStart(2, "0")}`;
+  const IA_ANILLO = 2 * Math.PI * 46;
+  const IA = {
+    hoy: () => `<div class="ia-tit"><b>Jueves 12</b><span>4 cosas · 1 hecha</span></div>
+      <div class="ia-fila hecha"><i class="ia-check"></i><span class="hora">09:30</span><span class="txt">Daily con el equipo</span></div>
+      <div class="ia-fila"><i class="ia-check"></i><span class="hora">11:30</span><span class="txt">Reunión con el cliente</span><button type="button" class="ia-chip si">Entrar</button></div>
+      <div class="ia-fila"><i class="ia-check"></i><span class="hora">16:00</span><span class="txt">Pagar la luz</span><span class="ia-chip sol">recordatorio</span></div>
+      <div class="ia-fila"><i class="ia-check"></i><span class="hora">19:30</span><span class="txt">Fútbol 5 <small>Los del jueves</small></span></div>`,
+    foco: () => `<div class="ia-foco">
+      <div class="ia-anillo"><svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="46" fill="none" stroke="rgba(244,239,230,.12)" stroke-width="8"/><circle class="ia-arco" cx="54" cy="54" r="46" fill="none" stroke="#5FD4A0" stroke-width="8" stroke-linecap="round" stroke-dasharray="${IA_ANILLO}" stroke-dashoffset="${IA_ANILLO * (iaSeg / 1500)}" transform="rotate(-90 54 54)"/></svg><div><b class="ia-reloj">${iaReloj()}</b><small>de 25 min</small></div></div>
+      <div><small class="de">Estás con</small><span class="tarea">Terminar el informe</span>
+        <span class="ia-sw on"><i></i>Silenciar avisos (quedan en Avisos)</span>
+        <span class="ia-sw"><i></i>Ponerme en «No molestar»</span></div></div>`,
+    recordatorios: () => `
+      <div class="ia-fila"><span class="txt">Pagar la luz <small>en 40 min</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>
+      <div class="ia-fila"><span class="txt">Sacar la basura <small>se pasó · se repite</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>
+      <div class="ia-fila"><span class="txt">Llamar al dentista <small>mañana 10:00</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>`,
+    notas: () => `<div class="ia-campo">Escribí y apretá Enter: queda en Notas</div>
+      <div class="ia-fila"><span class="txt">Ideas para el cumple de mamá</span><span class="ia-chip">Pegar al escritorio</span></div>
+      <div class="ia-fila"><span class="txt">Lista del súper <small>2 de 4</small></span><span class="ia-chip si">En el escritorio</span></div>
+      <div class="ia-fila"><span class="txt">Viaje a Córdoba <small>con Martín</small></span><span class="ia-chip">Pegar al escritorio</span></div>`,
+  };
+  const iaMostrar = (que) => {
+    iaBotones.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.ia === que)));
+    iaCuerpo.innerHTML = IA[que]();
+    iaCuerpo.style.animation = "none"; void iaCuerpo.offsetWidth; iaCuerpo.style.animation = "";
+  };
+  iaBotones.forEach((b) => b.addEventListener("click", () => iaMostrar(b.dataset.ia)));
+  // Las filas de ejemplo se tildan (como en la isla de verdad).
+  iaCuerpo.addEventListener("click", (e) => { const f = e.target.closest(".ia-fila"); if (f && f.querySelector(".ia-check")) f.classList.toggle("hecha"); });
+  iaMostrar("hoy");
+  setInterval(() => {
+    iaSeg = iaSeg > 0 ? iaSeg - 1 : 1500;
+    document.querySelectorAll(".ia-reloj").forEach((r) => (r.textContent = iaReloj()));
+    document.querySelectorAll(".ia-arco").forEach((a) => a.setAttribute("stroke-dashoffset", String(IA_ANILLO * (iaSeg / 1500))));
+  }, 1000);
 
   // ---------- Premium: los temas pintan la caja ----------
   const TEMAS = {

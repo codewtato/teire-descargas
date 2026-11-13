@@ -176,7 +176,7 @@ Opcional, para quien quiere darle su toque.
 
 - **19 temas** para toda la app, en colecciones: Pastel, Vivos, Mundos y los hechos para Teire (**Jardín**, **Oro** y **Papel**). Sin Premium los podés **probar un minuto**.
 - **El sello dorado:** la hojita de Teire en dorado, en tu chip y en el aro de tu foto.
-- **Colores para tus notas**, para la isla y para el orbe de Teire IA.
+- **Colores para tus notas**, para la isla y para el orbe de Teire IA, y la **isla de vidrio** o **pegada arriba**, como un notch.
 - **El triple de pedidos** a Teire IA.
 
 Se paga con **Mercado Pago** o **PayPal**, y **se lo podés regalar a un amigo** por 1, 3, 6 o 12 meses.
@@ -266,7 +266,7 @@ No. Sin cuenta tus notas quedan solo en tu equipo. Con cuenta se sincronizan ent
 <details>
 <summary><b>¿Es gratis?</b></summary>
 
-Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el sello dorado, colores para tus notas y para la isla, y más pedidos a Teire IA.
+Sí, y todo lo importante es gratis. Teire Premium es opcional: suma temas, el sello dorado, colores para tus notas y para la isla (también de vidrio), y más pedidos a Teire IA.
 </details>
 
 <details>
