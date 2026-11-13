@@ -157,14 +157,25 @@
   };
   if (animar && window.ScrollTrigger) ScrollTrigger.create({ trigger: lona, start: "top 85%", once: true, onEnter: andarPorLaLona });
 
-  // ---------- La isla abierta: pestañas de ejemplo, con el foco andando ----------
-  // Lo mismo que la isla de Windows con el diseño nuevo (src/ui/islaPestanas.ts en la app), en chico.
+  // ---------- La isla: las pestañas de ejemplo, con la música y el foco andando ----------
+  // La misma isla que la app de Windows (src/ui/islaPestanas.ts en la app), en chico y con datos de ejemplo.
+  const iaIsla = document.getElementById("ia-isla");
   const iaCuerpo = document.getElementById("ia-cuerpo");
   const iaBotones = document.querySelectorAll("#ia-isla [data-ia]");
-  let iaSeg = 18 * 60 + 42;
+  let iaSeg = 18 * 60 + 42, iaSuena = true, iaSub = "estante";
   const iaReloj = () => `${String(Math.floor(iaSeg / 60)).padStart(2, "0")}:${String(iaSeg % 60).padStart(2, "0")}`;
   const IA_ANILLO = 2 * Math.PI * 46;
+  const iaCara = (letra, color, extra = "") => `<span class="ia-ava ${extra}" style="background:${color}">${letra}</span>`;
+  const SPOTIFY = `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.5 9c4.5-1.3 9.5-1 13 1M6.2 12.4c3.8-1 8-.7 11 1M7 15.6c3-.7 6.3-.5 8.8.9" stroke="#0a0d0c" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg>`;
   const IA = {
+    musica: () => `<div class="ia-mus">
+      <div class="ia-tapa">${SPOTIFY}</div>
+      <div class="ia-mus-txt"><b>Luz de tarde</b><span>Los Brotes</span><small>Spotify ${iaSuena ? `<span class="ia-eq"><i></i><i></i><i></i></span>` : "· en pausa"}</small></div>
+      <div class="ia-ctl">
+        <button type="button" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M11 6v12L2.5 12zM21 6v12l-8.5-6z"/></svg></button>
+        <button type="button" class="grande" data-ia-play aria-label="${iaSuena ? "Pausa" : "Reproducir"}">${iaSuena ? `<svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>` : `<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>`}</button>
+        <button type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M13 6v12l8.5-6zM3 6v12l8.5-6z"/></svg></button>
+      </div></div>`,
     hoy: () => `<div class="ia-tit"><b>Jueves 12</b><span>4 cosas · 1 hecha</span></div>
       <div class="ia-fila hecha"><i class="ia-check"></i><span class="hora">09:30</span><span class="txt">Daily con el equipo</span></div>
       <div class="ia-fila"><i class="ia-check"></i><span class="hora">11:30</span><span class="txt">Reunión con el cliente</span><button type="button" class="ia-chip si">Entrar</button></div>
@@ -179,20 +190,55 @@
       <div class="ia-fila"><span class="txt">Pagar la luz <small>en 40 min</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>
       <div class="ia-fila"><span class="txt">Sacar la basura <small>se pasó · se repite</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>
       <div class="ia-fila"><span class="txt">Llamar al dentista <small>mañana 10:00</small></span><button type="button" class="ia-chip sol">+10 min</button><button type="button" class="ia-chip si">Listo</button></div>`,
+    amigos: () => `<div class="ia-caras">
+        <span class="ia-cara">${iaCara("S", "var(--brote)")}<i class="en"></i><span class="ia-num">2</span>sofi</span>
+        <span class="ia-cara">${iaCara("M", "var(--sol)")}<i class="en"></i>Martín</span>
+        <span class="ia-cara">${iaCara("L", "var(--rosa)")}lu</span>
+        <span class="ia-cara">${iaCara("J", "var(--celeste)")}juan</span></div>
+      <div class="ia-fila">${iaCara("S", "var(--brote)", "chica")}<span class="txt"><b>@sofi</b> ¿Llevo algo para el almuerzo?</span></div>
+      <div class="ia-campo">Contestale a @sofi…</div>`,
     notas: () => `<div class="ia-campo">Escribí y apretá Enter: queda en Notas</div>
       <div class="ia-fila"><span class="txt">Ideas para el cumple de mamá</span><span class="ia-chip">Pegar al escritorio</span></div>
       <div class="ia-fila"><span class="txt">Lista del súper <small>2 de 4</small></span><span class="ia-chip si">En el escritorio</span></div>
       <div class="ia-fila"><span class="txt">Viaje a Córdoba <small>con Martín</small></span><span class="ia-chip">Pegar al escritorio</span></div>`,
+    guardados: () => `<div class="ia-seg">${[["estante", "Estante"], ["copiado", "Copiado"], ["hoy", "Hoy"]].map(([k, t]) => `<button type="button" data-ia-sub="${k}" class="${iaSub === k ? "on" : ""}">${t}</button>`).join("")}</div>
+      ${iaSub === "estante"
+        ? `<div class="ia-estante"><span><i style="background:linear-gradient(135deg,#2b4a5c,#5FD4A0)"></i>depto-living.jpg</span><span><i style="background:var(--rosa)"></i>presupuesto.pdf</span><span><i style="background:var(--celeste)"></i>airbnb.com/…</span></div>
+           <div class="ia-fila"><span class="txt"><small style="margin:0">Mandar los 3 a:</small></span><span class="ia-chip si">Mi celu</span><span class="ia-chip">Guardados</span></div>`
+        : iaSub === "copiado"
+          ? `<div class="ia-fila"><span class="txt">instagram.com/p/receta-ñoquis <small>hace 5 min</small></span><span class="ia-chip">Guardar</span><span class="ia-chip">Al celu</span></div>
+             <div class="ia-fila"><span class="txt">Captura de pantalla <small>hace 20 min</small></span><span class="ia-chip">Guardar</span></div>
+             <div class="ia-pie" style="color:var(--gris)">Solo links y capturas. El texto que copiás no se mira.</div>`
+          : `<div class="ia-estante"><span><i style="background:linear-gradient(135deg,#FF7A66,#FFC86B)"></i>Receta de ñoquis</span><span><i style="background:var(--menta)"></i>Pasajes a Córdoba</span><span><i style="background:var(--amarillo)"></i>Reel de cocina</span></div>
+             <div class="ia-pie" style="color:var(--gris)">Hoy guardaste 3</div>`}`,
+    grupos: () => `<div class="ia-grupo">
+      <div><div class="ia-tit"><b>Casa</b></div>
+        <div class="ia-apilar">${iaCara("L", "var(--rosa)", "chica")}${iaCara("M", "var(--sol)", "chica")}${iaCara("V", "var(--celeste)", "chica")}</div>
+        <small class="de">2 conectados ahora</small><div class="ia-prog"><i style="width:50%"></i></div><small class="de">Compras de la semana · 2 de 4</small></div>
+      <div><div class="ia-fila hecha"><i class="ia-check"></i><span class="txt">Leche</span></div><div class="ia-fila hecha"><i class="ia-check"></i><span class="txt">Pan</span></div><div class="ia-fila"><i class="ia-check"></i><span class="txt">Detergente</span></div><div class="ia-fila"><i class="ia-check"></i><span class="txt">Yerba</span></div></div></div>`,
+    avisos: () => `<div class="ia-tit"><span>1 llegó mientras estabas en foco</span></div>
+      <div class="ia-fila">${iaCara("S", "var(--brote)", "chica")}<span class="txt">@sofi: ¿Llevo algo para el almuerzo? <small>12:10 · en foco</small></span></div>
+      <div class="ia-fila">${iaCara("M", "var(--sol)", "chica")}<span class="txt">@martin te invitó a Viaje a Córdoba <small>11:52</small></span></div>
+      <div class="ia-fila"><i class="ia-campanita"></i><span class="txt">Daily con el equipo <small>09:30</small></span></div>`,
   };
-  const iaMostrar = (que) => {
+  let iaActual = "musica";
+  const iaMostrar = (que, animar = true) => {
+    iaActual = que;
     iaBotones.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.ia === que)));
+    iaIsla.classList.toggle("en-musica", que === "musica");
     iaCuerpo.innerHTML = IA[que]();
-    iaCuerpo.style.animation = "none"; void iaCuerpo.offsetWidth; iaCuerpo.style.animation = "";
+    if (animar) { iaCuerpo.style.animation = "none"; void iaCuerpo.offsetWidth; iaCuerpo.style.animation = ""; }
   };
   iaBotones.forEach((b) => b.addEventListener("click", () => iaMostrar(b.dataset.ia)));
-  // Las filas de ejemplo se tildan (como en la isla de verdad).
-  iaCuerpo.addEventListener("click", (e) => { const f = e.target.closest(".ia-fila"); if (f && f.querySelector(".ia-check")) f.classList.toggle("hecha"); });
-  iaMostrar("hoy");
+  iaCuerpo.addEventListener("click", (e) => {
+    if (e.target.closest("[data-ia-play]")) { iaSuena = !iaSuena; return iaMostrar("musica", false); }
+    const sub = e.target.closest("[data-ia-sub]");
+    if (sub) { iaSub = sub.dataset.iaSub; return iaMostrar("guardados", false); }
+    // Las filas con tilde se tildan (como en la isla de verdad).
+    const f = e.target.closest(".ia-fila");
+    if (f && f.querySelector(".ia-check")) f.classList.toggle("hecha");
+  });
+  iaMostrar("musica", false);
   setInterval(() => {
     iaSeg = iaSeg > 0 ? iaSeg - 1 : 1500;
     document.querySelectorAll(".ia-reloj").forEach((r) => (r.textContent = iaReloj()));

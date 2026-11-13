@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Teire: app de notas gratis para compartir con amigos</title>
-<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, un Espacio para trabajar en grupo, recordatorios y una isla en tu pantalla que guarda links y fotos, te muestra tu día y te acompaña en modo foco.">
+<meta name="description" content="Teire (antes Noty) es una app de notas gratis: listas que completás en vivo con tus amigos, un Espacio para trabajar en grupo, recordatorios y una isla en tu pantalla que guarda links y fotos, muestra tu música y tu día, y te acompaña en modo foco.">
 <link rel="canonical" href="https://useteire.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0F1513">
@@ -47,7 +47,7 @@
       "@id": "https://useteire.app/#app",
       "name": "Teire",
       "alternateName": "Noty",
-      "description": "App de notas gratis para compartir en vivo con tus amigos: listas, pizarrones, recordatorios, una isla en la pantalla que guarda links y fotos desde cualquier programa, te muestra tu día y tiene modo foco, y una asistente por voz.",
+      "description": "App de notas gratis para compartir en vivo con tus amigos: listas, pizarrones, recordatorios, una isla en la pantalla que guarda links y fotos desde cualquier programa, muestra tu música y tu día y tiene modo foco, y una asistente por voz.",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Windows 10, Windows 11, Android, iOS, Linux",
       "url": "https://useteire.app/",
@@ -154,30 +154,37 @@
   <section class="bloque isla-abierta" id="isla-abierta" aria-labelledby="titulo-isla">
     <div class="ancho">
       <div class="ia-texto">
-        <span class="sello-nuevo">Nuevo en Windows</span>
-        <h2 id="titulo-isla">La isla, ahora se abre.</h2>
-        <p>Pasale el mouse y te muestra lo tuyo sin abrir Teire: tu día, tus recordatorios, tus amigos y tus notas, cada cosa en su pestaña.</p>
+        <span class="sello-nuevo">En Windows</span>
+        <h2 id="titulo-isla">La isla. Lo tuyo, arriba de todo.</h2>
+        <p>Una pastilla que vive arriba, al centro de tu pantalla. Le soltás lo que encontrás y lo guarda; le pasás el mouse y se abre con tu música, tu día y todo lo tuyo, cada cosa en su pestaña. Sin abrir Teire.</p>
         <ul class="espacio-lista">
+          <li><b>Tu música.</b> Lo que suena en Spotify, YouTube Music, Apple Music, Deezer y otras apps, con anterior, pausa y siguiente.</li>
           <li><b>Tu día.</b> Lo que tenés hoy, con «Entrar» a tus videollamadas de Meet, Zoom o Teams.</li>
           <li><b>Modo foco.</b> Elegís en qué te enfocás y por cuánto tiempo, y la isla te acompaña con el reloj. Si querés, los avisos esperan.</li>
-          <li><b>Al toque.</b> Posponé un recordatorio, contestá un mensaje o anotá algo sin cambiar de ventana.</li>
+          <li><b>Al toque.</b> Posponé un recordatorio, contestá un mensaje, anotá algo o tachá la lista del grupo sin cambiar de ventana.</li>
+          <li><b>Soltá y guardá.</b> Arrastrale un link, un texto o una foto desde cualquier programa, o mandalo a tu celu en segundos.</li>
           <li><b>Notas en el escritorio.</b> Sacás una lista de la isla y queda flotando, como un post-it, para ir tachando.</li>
-          <li><b>Mandalo a tu celu.</b> Un link, una foto o lo que copiaste te llega al celular en segundos.</li>
         </ul>
-        <p class="detalle">En Windows, con cuenta. Con Premium, la isla puede ser de vidrio o quedar pegada arriba, como un notch.</p>
+        <p class="detalle">En Windows, con cuenta. Con Premium le cambiás el color, y puede ser de vidrio o quedar pegada arriba, como un notch.</p>
         <p class="mano" aria-hidden="true">Tocá las pestañas.</p>
       </div>
       <div class="ia-escena">
-        <div class="ia-isla" id="ia-isla" role="group" aria-label="La isla abierta de ejemplo: tocá las pestañas">
+        <div class="ia-isla" id="ia-isla" role="group" aria-label="Una isla de ejemplo: tocá las pestañas">
           <div class="ia-pestanas" role="tablist">
             <svg class="ia-t" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 104 368 104 Z" fill="#5FD4A0"/></svg>
             <i class="ia-sep"></i>
-            <button type="button" role="tab" aria-selected="true" data-ia="hoy" aria-label="Hoy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span class="ia-num">3</span></button>
-            <button type="button" role="tab" aria-selected="false" data-ia="foco" aria-label="Foco"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></button>
-            <button type="button" role="tab" aria-selected="false" data-ia="recordatorios" aria-label="Recordatorios"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15zM10 20.5h4"/></svg><span class="ia-num sol">1</span></button>
-            <button type="button" role="tab" aria-selected="false" data-ia="notas" aria-label="Notas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h12M4 11h12M4 16h7M15 19l5-5-2-2-5 5v2z"/></svg></button>
+            <button type="button" role="tab" aria-selected="true" data-ia="musica" aria-label="Música" title="Música"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12M9 18a3 3 0 11-6 0 3 3 0 016 0zM19 16a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="hoy" aria-label="Hoy" title="Hoy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h12a2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2zM4 10h16M9 3v4M15 3v4"/></svg><span class="ia-num">3</span></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="foco" aria-label="Foco" title="Foco"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5a7 7 0 100-14 7 7 0 000 14zM12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="recordatorios" aria-label="Recordatorios" title="Recordatorios"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0112 0v5l1.5 2h-15zM10 20.5h4"/></svg><span class="ia-num sol">1</span></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="amigos" aria-label="Amigos" title="Amigos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4zM8 9.5h8M8 12.5h5"/></svg><span class="ia-num">2</span></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="notas" aria-label="Notas" title="Notas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h12M4 11h12M4 16h7M15 19l5-5-2-2-5 5v2z"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="guardados" aria-label="Guardados" title="Guardados"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v16l-5-3.5L7 20z"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="grupos" aria-label="Grupos" title="Grupos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3 3 0 100-6 3 3 0 000 6zM3 19c0-3 2.7-5 6-5s6 2 6 5M16 11a2.5 2.5 0 100-5M17 14c2.4.3 4 2 4 5"/></svg></button>
+            <button type="button" role="tab" aria-selected="false" data-ia="avisos" aria-label="Avisos de hoy" title="Avisos de hoy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 102.5-6M3.5 4v4h4M12 8v4.5l3 2"/></svg><span class="ia-num">2</span></button>
           </div>
           <div class="ia-cuerpo" id="ia-cuerpo" aria-live="polite"></div>
+          <div class="ia-brillo" aria-hidden="true"></div>
         </div>
         <div class="ia-pastilla" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4"/></svg><span>Terminar el informe</span><b class="ia-reloj">18:42</b></div>
         <div class="ia-postit" aria-hidden="true"><b>Lista del súper</b><span class="hecho">Yerba</span><span class="hecho">Pan</span><span>Tomates</span><span>Queso cremoso</span></div>

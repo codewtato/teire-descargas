@@ -322,3 +322,56 @@
   .ia-pastilla span { display: none; }
   .ia-postit { width: 150px; }
 }
+
+/* La isla de ejemplo: música, amigos, guardados, grupos y avisos */
+.ia-isla { overflow: hidden; isolation: isolate; }
+.ia-brillo { position: absolute; inset: 0; z-index: -1; opacity: 0; pointer-events: none; transition: opacity .5s;
+  background: radial-gradient(260px 140px at 18% 62%, rgba(95,212,160,.3), transparent 70%), radial-gradient(240px 120px at 82% 35%, rgba(255,200,107,.18), transparent 70%); }
+.ia-isla.en-musica .ia-brillo { opacity: 1; }
+.ia-mus { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; min-height: 170px; }
+.ia-tapa { width: 96px; height: 96px; display: grid; place-items: center; border-radius: 18px; background: linear-gradient(135deg, #2a8f68, #0d3325); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.ia-tapa svg { width: 48px; height: 48px; }
+.ia-mus-txt { display: grid; gap: 2px; min-width: 0; }
+.ia-mus-txt b { font-size: 1.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ia-mus-txt > span { color: var(--gris); }
+.ia-mus-txt small { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: .72rem; color: var(--gris); }
+.ia-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 11px; }
+.ia-eq i { width: 3px; border-radius: 2px; background: var(--brote); transform-origin: bottom; animation: ia-eq 1s ease-in-out infinite; }
+.ia-eq i:nth-child(1) { height: 6px; } .ia-eq i:nth-child(2) { height: 11px; animation-delay: .2s; } .ia-eq i:nth-child(3) { height: 8px; animation-delay: .4s; }
+@keyframes ia-eq { 50% { transform: scaleY(.4); } }
+.ia-ctl { display: flex; align-items: center; gap: 2px; }
+.ia-ctl button { width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 50%; color: var(--crema); background: none; cursor: pointer; }
+.ia-ctl button:hover { background: rgba(244,239,230,.08); }
+.ia-ctl svg { width: 22px; height: 22px; fill: currentColor; }
+.ia-ctl .grande svg { width: 30px; height: 30px; }
+.ia-ava { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; font-weight: 700; font-size: .85rem; color: var(--tinta); }
+.ia-ava.chica { width: 22px; height: 22px; font-size: .66rem; }
+.ia-caras { display: flex; gap: 14px; margin-bottom: 6px; }
+.ia-cara { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: .7rem; color: var(--gris); }
+.ia-cara .en { position: absolute; top: 26px; left: 26px; width: 10px; height: 10px; border-radius: 50%; background: var(--brote); box-shadow: 0 0 0 2.5px #050807; }
+.ia-cara .ia-num { top: -3px; right: -4px; }
+.ia-seg { display: inline-flex; gap: 2px; padding: 3px; margin-bottom: 8px; border-radius: 99px; background: rgba(244,239,230,.08); }
+.ia-seg button { height: 26px; padding: 0 12px; border: 0; border-radius: 99px; font: 600 .74rem/1 var(--sans); color: var(--gris); background: none; cursor: pointer; }
+.ia-seg button.on { color: #050807; background: var(--crema); }
+.ia-estante { display: flex; gap: 8px; margin-bottom: 6px; }
+.ia-estante span { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; padding: 7px; border-radius: 12px; background: rgba(244,239,230,.07); font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ia-estante i { display: block; height: 44px; border-radius: 8px; }
+.ia-grupo { display: grid; grid-template-columns: .9fr 1.1fr; gap: 14px; }
+.ia-grupo .de { display: block; color: var(--gris); font-size: .72rem; margin-top: 4px; }
+.ia-apilar { display: flex; margin-top: 4px; }
+.ia-apilar .ia-ava { margin-left: -6px; box-shadow: 0 0 0 2.5px #050807; }
+.ia-apilar .ia-ava:first-child { margin-left: 0; }
+.ia-prog { height: 6px; margin-top: 8px; border-radius: 9px; background: rgba(244,239,230,.08); overflow: hidden; }
+.ia-prog i { display: block; height: 100%; border-radius: 9px; background: var(--brote); }
+.ia-campanita { flex: none; width: 9px; height: 9px; margin: 0 6px; border-radius: 50%; background: var(--sol); box-shadow: 0 0 0 4px rgba(255,200,107,.18); }
+.ia-pestanas svg { stroke-width: 1.7; }
+@media (max-width: 560px) {
+  .ia-pestanas { gap: 0; padding: 8px 6px 0; }
+  .ia-pestanas button { width: 31px; }
+  .ia-t, .ia-sep { display: none; }
+  .ia-mus { grid-template-columns: auto 1fr; min-height: 0; }
+  .ia-mus .ia-ctl { grid-column: 1 / -1; justify-content: center; }
+  .ia-tapa { width: 72px; height: 72px; }
+  .ia-grupo { grid-template-columns: 1fr; }
+  .ia-caras { gap: 10px; }
+}
