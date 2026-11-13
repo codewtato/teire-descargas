@@ -29,12 +29,6 @@ img, svg { max-width: 100%; }
 .saltar { position: absolute; left: 12px; top: -60px; z-index: 40; padding: 10px 16px; border-radius: 999px; background: var(--brote); color: var(--tinta); font-weight: 600; text-decoration: none; }
 .saltar:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
 
-/* Cartel de Noty */
-.cartel { background: var(--brote); color: var(--tinta); font-size: .9rem; font-weight: 500; }
-.cartel .ancho { display: flex; justify-content: center; align-items: center; gap: 4px 10px; min-height: 40px; padding-block: 6px; text-align: center; flex-wrap: wrap; }
-.cartel b { font-family: var(--mano); font-size: 1.3rem; font-weight: 600; line-height: 1; }
-.cartel a { font-weight: 700; }
-
 /* Barra */
 .barra { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; }
 .barra .ancho { position: relative; display: flex; align-items: center; gap: 24px; height: 72px; }

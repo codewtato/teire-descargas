@@ -19,7 +19,6 @@
   <a href="#lo-que-hace"><b>Lo que hace</b></a> &nbsp;·&nbsp;
   <a href="#la-isla"><b>La isla</b></a> &nbsp;·&nbsp;
   <a href="#descargar"><b>Descargar</b></a> &nbsp;·&nbsp;
-  <a href="#antes-éramos-noty"><b>¿Venís de Noty?</b></a> &nbsp;·&nbsp;
   <a href="#preguntas-frecuentes"><b>Preguntas</b></a>
 </p>
 
@@ -238,24 +237,11 @@ En iPhone no están la isla ni la voz de Teire IA. Todos los pasos, con el atajo
 <summary><b>🐧 Linux</b></summary>
 
 - **AppImage:** `chmod +x Teire_*.AppImage` y abrilo con doble clic. Se actualiza sola.
-- **Fedora / openSUSE:** `sudo dnf install ./Teire-*.rpm` (reemplaza solo a Noty si lo tenías).
+- **Fedora / openSUSE:** `sudo dnf install ./Teire-*.rpm`.
 - En **GNOME**, para ver el ícono en la bandeja necesitás la extensión [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/).
 </details>
 
-## Antes éramos Noty
-
-> [!NOTE]
-> Noty va a dejar de existir… ¡porque le cambiamos el nombre! Es **la misma app**, con tus notas, tus amigos y tu cuenta como siempre.
->
-> **No tenés que reinstalar nada:** si ya tenés Noty, se actualiza sola a Teire. En Windows, la primera vez que abre, Teire saca sola la app vieja (tus notas y tu sesión no se tocan). Si la tenías anclada en la barra de tareas, solo volvé a anclarla.
-
 ## Preguntas frecuentes
-
-<details>
-<summary><b>Tenía Noty. ¿Pierdo algo?</b></summary>
-
-Nada. Es la misma app con otro nombre: tus notas, tu cuenta, tus amigos y tu Premium siguen igual. Se actualiza sola; si alguna vez la tenés que bajar a mano, ahora el archivo se llama `Teire`.
-</details>
 
 <details>
 <summary><b>¿Necesito una cuenta?</b></summary>

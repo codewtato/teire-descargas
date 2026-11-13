@@ -97,7 +97,7 @@ def pagina(ruta, titulo, descripcion, h1, resumen, secciones, actual):
 privacidad = [
     ("quien", "Quién cuida tus datos", f"""
 <p>Teire es una app hecha por <strong>Matías D'Agostino</strong>, un creador independiente de Argentina. Él es el responsable de los datos que se guardan cuando usás Teire con una cuenta. Para cualquier consulta sobre tus datos, escribí a {CORREO}.</p>
-<p>Esta política vale para la app de Teire (Windows, Linux, Android e iPhone) y para este sitio. Antes la app se llamaba Noty: si tenías Noty, esto también es para vos.</p>"""),
+<p>Esta política vale para la app de Teire (Windows, Linux, Android e iPhone) y para este sitio.</p>"""),
     ("sin-cuenta", "Si usás Teire sin cuenta", """
 <p>Podés usar Teire sin crear una cuenta. En ese caso <strong>tus notas quedan solo en tu equipo</strong> y no se mandan a ningún servidor nuestro. Si desinstalás la app o borrás sus datos, esas notas se pierden.</p>
 <p>Algunas funciones necesitan una cuenta y no se usan sin ella: compartir, la Mesa, el chat, la Comunidad, Teire IA y la burbuja.</p>"""),
