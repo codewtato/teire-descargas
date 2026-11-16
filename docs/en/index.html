@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Teire: free app to organize your day and share it</title>
-<meta name="description" content="Calendar, tasks, reminders and live shared lists with your friends, plus an island on your screen that saves links and photos. Free for Windows, Android and iPhone.">
+<meta name="description" content="Calendar, tasks, reminders, habits and live shared lists with your friends, plus an island on your screen that saves links and photos. Free for Windows, Android and iPhone.">
 <link rel="canonical" href="https://useteire.app/en/">
 <link rel="alternate" hreflang="es" href="https://useteire.app/">
 <link rel="alternate" hreflang="en" href="https://useteire.app/en/">
@@ -17,7 +17,7 @@
 <meta property="og:locale:alternate" content="es_AR">
 <meta property="og:site_name" content="Teire">
 <meta property="og:title" content="Teire: free app to organize your day and share it">
-<meta property="og:description" content="Your day and your people's, all in one place. Tasks, reminders, calendar, live lists and an island on your screen. Free.">
+<meta property="og:description" content="Your day and your people's, all in one place. Tasks, reminders, habits, calendar, live lists and an island on your screen. Free.">
 <meta property="og:url" content="https://useteire.app/en/">
 <meta property="og:image" content="https://useteire.app/img/compartir-en.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Teire: your day and your people's, all in one place">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Teire: free app to organize your day and share it">
-<meta name="twitter:description" content="Your day and your people's, all in one place. Tasks, reminders, calendar, live lists and an island on your screen. Free.">
+<meta name="twitter:description" content="Your day and your people's, all in one place. Tasks, reminders, habits, calendar, live lists and an island on your screen. Free.">
 <meta name="twitter:image" content="https://useteire.app/img/compartir-en.png">
 <link rel="icon" href="/icono.svg" type="image/svg+xml">
 <link rel="icon" href="/img/icono-32.png" type="image/png" sizes="32x32">
@@ -55,7 +55,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://useteire.app/en/#app",
       "name": "Teire",
-      "description": "Free organizer for your day and your people's: tasks, reminders, calendar, live lists with friends, a Space to work as a group and an island on your screen that saves links and photos and shows your music and your day. For Windows, Android, iPhone and Linux.",
+      "description": "Free organizer for your day and your people's: tasks, reminders, habits, calendar, live lists with friends, a Space to work as a group and an island on your screen that saves links and photos, shows your music and your day, and sets up your way. For Windows, Android, iPhone and Linux.",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Windows 10, Windows 11, Android, iOS, Linux",
       "url": "https://useteire.app/en/",
@@ -102,6 +102,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No: it's an organizer. It has notes, but also tasks, reminders, a calendar, focus mode and everything you share with your people."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Teire have habits and streaks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You add up to 8 habits (water, walking, reading or your own), check each one once a day and Teire counts your streak of days in a row. If you give a habit a time, at that time it nudges you on the island with \"Done\" or \"In 30 min\"; without the island, with an in-app alert. For now they live on the device where you set them up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose what the island shows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. With the island's settings button you turn tabs on and off, and in Apps you build your own Scenes: give them a name, pick the apps and one tap opens them all. In the notes field you can also write to Teire AI in your own words, like \"note that I have an exam tomorrow\" (Spanish only)."
           }
         },
         {
@@ -283,6 +299,14 @@ h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4vw
 .tm small{display:block;font:500 13px 'Inter';color:var(--d-gris);margin-top:2px}
 .bt{display:flex;gap:10px;justify-content:center;margin-top:12px}
 .bt span{border-radius:99px;padding:7px 18px;font-size:13px;font-weight:600;background:var(--d-txt);color:#0B0B0C}.bt span.o{background:transparent;border:1px solid var(--d-linea);color:var(--d-txt)}
+.habs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.hb{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;background:var(--d-sup2);border:1.5px solid transparent;font-size:12.5px;color:var(--d-txt)}
+.hb.on{border-color:var(--d-brote)}.hb.off{opacity:.45}
+.habs small{margin-left:auto;color:var(--d-gris);font-size:12px}
+.esc{display:flex;gap:12px;flex-wrap:wrap}
+.ce{flex:1;min-width:150px;background:var(--d-sup2);border-radius:14px;padding:12px 14px}
+.ce b{display:block;font-size:14.5px;margin-bottom:2px}.ce small{color:var(--d-gris);font-size:12.5px}
+.ce.mas{display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px dashed var(--d-linea);background:transparent;color:var(--d-brote);font-size:13.5px;font-weight:600}
 .caras{display:flex;gap:16px}.caras div{text-align:center;font-size:12px;color:var(--d-gris)}
 .caras .av{width:46px;height:46px;font-size:16px;display:grid}
 .campo{display:flex;align-items:center;gap:10px;margin-top:14px;background:var(--d-sup2);border-radius:14px;padding:11px 14px;color:#76767d;font-size:14px}
@@ -389,9 +413,9 @@ footer .ult a{display:inline;margin:0}
 
 <main>
 <div class="hero ancho">
-  <span class="pildora"><b>New</b>The island shows your music's lyrics and lets you message your friends</span>
+  <span class="pildora"><b>New</b>The island is now yours: pick your tabs, build Scenes and add habits</span>
   <h1>Your day and your people's, <em>all in one place.</em></h1>
-  <p class="bajada">Teire brings your tasks, reminders and calendar together with the lists, chats and spaces you share with your friends. Plus an island at the top of your screen that saves everything in one gesture.</p>
+  <p class="bajada">Teire brings your tasks, reminders, habits and calendar together with the lists, chats and spaces you share with your friends. Plus an island at the top of your screen that saves everything in one gesture.</p>
   <div class="acciones">
     <a class="btn p" data-descargar href="https://github.com/codewtato/teire-descargas/releases/latest"><i class="mi">download</i><span data-texto>Download for Windows</span></a>
     <a class="btn s" href="/app/">Open in your browser</a>
@@ -467,27 +491,33 @@ footer .ult a{display:inline;margin:0}
     <button data-t="foco" role="tab"><i class="mi">timer</i>Focus</button>
     <button data-t="gente" role="tab"><i class="mi">chat</i>Your people</button>
     <button data-t="guardar" role="tab"><i class="mi">bookmarks</i>Save</button>
+    <button data-t="escenas" role="tab"><i class="mi">bolt</i>Scenes</button>
+    <button data-t="ajustes" role="tab"><i class="mi">tune</i>Your way</button>
   </div>
   <div class="escena dev">
     <div class="isla reposo">
       <div class="mini" aria-hidden="true"><svg viewBox="70 80 340 340"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg><span class="eq"><i></i><i></i><i></i></span></div>
       <div class="dentro">
-      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi">notifications</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi">groups</i></div>
+      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi" data-i="escenas">bolt</i><i class="mi" data-i="ajustes">tune</i></div>
       <div class="panel" data-p="musica"><div class="mus"><div class="tapa"><i></i></div><div><h5>De Música Ligera</h5><small>Soda Stereo · Spotify</small></div><div class="ctl"><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M6 6h2v12H6zM9.5 12 18 6v12z"/></svg><span class="g"><i class="mi">pause</i></span><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M16 6h2v12h-2zM6 18V6l8.5 6z"/></svg></div></div><div class="bar"><b></b></div><div class="let">Ni pienso evitar un roce secreto<b>De aquel amor</b>De música ligera</div></div>
-      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Call the accountant<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pay the rent<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Team meeting · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Join</span></div></div></div>
+      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Call the accountant<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pay the rent<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Team meeting · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Join</span></div></div><div class="habs"><span class="hb on">💧 Drink water</span><span class="hb">🚶 Walk 20 min</span><span class="hb">📖 Read 10 pages</span><small>1 of 3</small></div></div>
       <div class="panel" data-p="foco"><div class="tm">24:10<small>Finish the report</small></div><div class="bt"><span>Pause</span><span class="o">Finish</span></div><div class="et" style="text-align:center;margin-top:12px;color:var(--d-gris);font-size:12.5px">Notifications muted while it lasts</div></div>
       <div class="panel" data-p="gente"><div class="caras"><div><span class="av">L</span>Lucía</div><div><span class="av" style="background:#FFC86B">M</span>Mateo</div><div><span class="av" style="background:#8fb8ff">S</span>Sofi</div><div><span class="av" style="background:#ff9fb0">F</span>Family</div></div><div class="campo">Message Mateo…<i class="mi">send</i></div></div>
       <div class="panel" data-p="guardar"><div class="zonas"><div><i class="mi">bookmarks</i>Save</div><div><i class="mi">download</i>To the shelf</div></div></div>
+      <div class="panel" data-p="escenas"><div class="esc"><div class="ce"><b>🎮 Minecraft</b><small>Minecraft · Discord · Spotify</small></div><div class="ce"><b>📚 Study</b><small>Browser · Spotify</small></div><div class="ce mas"><i class="mi">add</i>Create scene</div></div></div>
+      <div class="panel" data-p="ajustes"><div class="habs"><span class="hb on">Today</span><span class="hb on">Focus</span><span class="hb on">Friends</span><span class="hb on">Notes</span><span class="hb on">Saved</span><span class="hb on">Apps</span><span class="hb off">Reminders</span><span class="hb off">Groups</span><span class="hb off">Alerts</span></div></div>
       </div>
     </div>
   </div>
   <div class="pie-tab">
     <div class="cap on" data-c="reposo"><b>Try the island: tap a tab.</b><span>This is how the pill looks when you're not using it. Tap a tab and it opens.</span></div>
     <div class="cap" data-c="musica"><b>Your music, with album art and lyrics.</b><span>What's playing on Spotify and other apps, with the lyrics in time with the song.</span></div>
-    <div class="cap" data-c="hoy"><b>Your day, without opening anything.</b><span>Tasks, reminders and “Join” for your Meet, Zoom or Teams video calls.</span></div>
+    <div class="cap" data-c="hoy"><b>Your day, without opening anything.</b><span>Tasks, reminders, habits that nudge you at your time and "Join" for your Meet, Zoom or Teams calls.</span></div>
     <div class="cap" data-c="foco"><b>A focus that looks after you.</b><span>You pick what to focus on and for how long, and notifications wait.</span></div>
     <div class="cap" data-c="gente"><b>Message whoever you want.</b><span>Pick a face and send the message from the island.</span></div>
     <div class="cap" data-c="guardar"><b>Drop it and done.</b><span>A link, some text or a photo: it's saved, or you send it to your phone or a friend.</span></div>
+    <div class="cap" data-c="escenas"><b>Build your app combo.</b><span>Give it a name, pick the apps (say Minecraft, Discord and Spotify) and open them all with one tap.</span></div>
+    <div class="cap" data-c="ajustes"><b>Your island, your way.</b><span>With the settings button you pick which tabs to show. A fresh install starts with the most used ones.</span></div>
   </div>
 </div></section>
 
@@ -495,7 +525,7 @@ footer .ult a{display:inline;margin:0}
   <div class="k">What it's for</div>
   <h2>For you, and for your people.</h2>
   <div class="tres">
-    <article class="card"><div class="ib"><i class="mi">calendar_month</i></div><h3>Your day</h3><p>What you need to do, in order and without noise.</p><ul><li><i class="mi">check</i>Tasks and reminders that notify you</li><li><i class="mi">check</i>Calendar with month, week and agenda</li><li><i class="mi">check</i>Focus mode with a clock</li></ul></article>
+    <article class="card"><div class="ib"><i class="mi">calendar_month</i></div><h3>Your day</h3><p>What you need to do, in order and without noise.</p><ul><li><i class="mi">check</i>Tasks and reminders that notify you</li><li><i class="mi">check</i>Calendar with month, week and agenda</li><li><i class="mi">check</i>Habits with streaks and a nudge at your time</li></ul></article>
     <article class="card"><div class="ib"><i class="mi">groups</i></div><h3>Your people</h3><p>What you share with your friends and family.</p><ul><li><i class="mi">check</i>Lists you complete live</li><li><i class="mi">check</i>Chat with friends and groups</li><li><i class="mi">check</i>Spaces to work together</li></ul></article>
     <article class="card"><div class="ib"><i class="mi">bookmarks</i></div><h3>What you save</h3><p>Everything you find, at hand when you need it.</p><ul><li><i class="mi">check</i>Links, photos and screenshots in one gesture</li><li><i class="mi">check</i>PIN notes, voice notes and places</li><li><i class="mi">check</i>Send it to your phone in one tap</li></ul></article>
   </div>
@@ -514,7 +544,11 @@ footer .ult a{display:inline;margin:0}
     <div class="f"><i class="mi">chat</i><h3>Chat and groups</h3><p>Send messages without leaving what you're doing.</p></div>
     <div class="f"><i class="mi">fit_screen</i><h3>Space</h3><p>A canvas to build something together.</p></div>
     <div class="f"><i class="mi">draw</i><h3>Whiteboard</h3><p>Draw and see what others draw.</p></div>
-    <div class="f"><i class="mi">bubble_chart</i><h3>The island</h3><p>It saves, notifies and shows your music.</p></div>
+    <div class="f"><i class="mi">bubble_chart</i><h3>The island</h3><p>Saves, notifies and sets up your way.</p></div>
+    <div class="f"><i class="mi">local_fire_department</i><h3>Habits</h3><p>Check off each day and watch your streak.</p></div>
+    <div class="f"><i class="mi">view_agenda</i><h3>Inbox</h3><p>What you jot down on the go, to sort out later.</p></div>
+    <div class="f"><i class="mi">bolt</i><h3>Scenes</h3><p>One tap opens all your apps.</p></div>
+    <div class="f"><i class="mi">edit_note</i><h3>Write it your way</h3><p>“Anotame que mañana tengo un examen” (Spanish only).</p></div>
     <div class="f"><i class="mi">mic</i><h3>Teire AI</h3><p>“Oye Teire”: create, remind, send. (Spanish only for now.)</p></div>
     <div class="f"><i class="mi">lock</i><h3>PIN notes</h3><p>Encrypted on your device: we can't read them.</p></div>
     <div class="f"><i class="mi">cloud_off</i><h3>Offline</h3><p>Works the same and syncs when you're back.</p></div>
@@ -580,6 +614,8 @@ footer .ult a{display:inline;margin:0}
     <details open><summary>Is Teire free?</summary><p>Yes, and everything important is free. Teire Premium is optional: it adds themes, colors and more Teire AI requests.</p></details>
     <details><summary>Do I need an account?</summary><p>No. Without an account your notes stay on your device only. With one they sync across your devices and you can share them. You sign in with email, Google, Discord or GitHub.</p></details>
     <details><summary>Is it just a notes app?</summary><p>No: it's an organizer. It has notes, but also tasks, reminders, a calendar, focus mode and everything you share with your people.</p></details>
+    <details><summary>Does Teire have habits and streaks?</summary><p>Yes. You add up to 8 habits (water, walking, reading or your own), check each one once a day and Teire counts your streak of days in a row. If you give a habit a time, at that time it nudges you on the island with &quot;Done&quot; or &quot;In 30 min&quot;; without the island, with an in-app alert. For now they live on the device where you set them up.</p></details>
+    <details><summary>Can I choose what the island shows?</summary><p>Yes. With the island's settings button you turn tabs on and off, and in Apps you build your own Scenes: give them a name, pick the apps and one tap opens them all. In the notes field you can also write to Teire AI in your own words, like &quot;note that I have an exam tomorrow&quot; (Spanish only).</p></details>
     <details><summary>Does the island work on Linux and on phones?</summary><p>The island is Windows-only. On Linux and Android you get the rest of Teire; on Android, use Share and pick Teire from any app. With the web version you can use it from any browser.</p></details>
     <details><summary>What do you do with my data?</summary><p>We don't show ads or use analytics, and PIN notes are encrypted on your device before they're uploaded. See the privacy policy for details.</p></details>
     <details><summary>Can I use it on iPhone, or without installing anything?</summary><p>Yes. Open useteire.app/app in Safari and add it to your home screen: it gets its own icon like any app, and it doesn't go through the App Store. It also works in any browser, but the island and Teire AI voice aren't there.</p></details>
@@ -616,7 +652,7 @@ footer .ult a{display:inline;margin:0}
 <script>
 (() => {
   const L = "en";
-  const QA = [{"k":["gratis","cuesta","precio","pagar","premium","free","cost","price","pay"],"q":"Is Teire free?","a":"Yes, and everything important is free. Teire Premium is optional: it adds themes, colors and more Teire AI requests."},{"k":["cuenta","registr","login","entrar","account","sign","register"],"q":"Do I need an account?","a":"No. Without an account your notes stay on your device only. With one they sync across your devices and you can share them. You sign in with email, Google, Discord or GitHub."},{"k":["solo notas","app de notas","organizador","just a notes","notes app","organizer"],"q":"Is it just a notes app?","a":"No: it's an organizer. It has notes, but also tasks, reminders, a calendar, focus mode and everything you share with your people."},{"k":["isla","linux","celular","android","island","phone"],"q":"Does the island work on Linux and on phones?","a":"The island is Windows-only. On Linux and Android you get the rest of Teire; on Android, use Share and pick Teire from any app. With the web version you can use it from any browser."},{"k":["datos","privacidad","publicidad","analitic","data","privacy","ads","track"],"q":"What do you do with my data?","a":"We don't show ads or use analytics, and PIN notes are encrypted on your device before they're uploaded. See the privacy policy for details."},{"k":["iphone","ios","apple","ipad","sin instalar","navegador","browser"],"q":"Can I use it on iPhone, or without installing anything?","a":"Yes. Open useteire.app/app in Safari and add it to your home screen: it gets its own icon like any app, and it doesn't go through the App Store. It also works in any browser, but the island and Teire AI voice aren't there."},{"k":["advertencia","windows protegi","smartscreen","virus","warning","protected your pc"],"q":"Why does Windows show a warning?","a":"Because the installer doesn't have a paid code signature yet, and Windows distrusts apps with few downloads. It doesn't mean it has a virus: click “More info” and then “Run anyway”."},{"k":["espacio","invitar","link","space","invite"],"q":"How do I invite someone to a Space?","a":"In your Space tap Share and create a link. Whoever opens it joins without an account and without installing anything. The link lasts 24 hours and you can close it sooner."},{"k":["ingles","english","idioma","language","voz","voice","oye teire","teire ia","teire ai"],"q":"Is Teire available in English? What about Teire AI?","a":"The app is in Spanish and English, picked from your device's language (you can change it in Settings). Teire AI, the voice and commands, works in Spanish only for now."}];
+  const QA = [{"k":["gratis","cuesta","precio","pagar","premium","free","cost","price","pay"],"q":"Is Teire free?","a":"Yes, and everything important is free. Teire Premium is optional: it adds themes, colors and more Teire AI requests."},{"k":["cuenta","registr","login","entrar","account","sign","register"],"q":"Do I need an account?","a":"No. Without an account your notes stay on your device only. With one they sync across your devices and you can share them. You sign in with email, Google, Discord or GitHub."},{"k":["solo notas","app de notas","organizador","just a notes","notes app","organizer"],"q":"Is it just a notes app?","a":"No: it's an organizer. It has notes, but also tasks, reminders, a calendar, focus mode and everything you share with your people."},{"k":["hábito","habito","racha","habit","streak"],"q":"Does Teire have habits and streaks?","a":"Yes. You add up to 8 habits (water, walking, reading or your own), check each one once a day and Teire counts your streak of days in a row. If you give a habit a time, at that time it nudges you on the island with \"Done\" or \"In 30 min\"; without the island, with an in-app alert. For now they live on the device where you set them up."},{"k":["escena","pestaña","personalizar","elegir","scene","tabs","customize","choose"],"q":"Can I choose what the island shows?","a":"Yes. With the island's settings button you turn tabs on and off, and in Apps you build your own Scenes: give them a name, pick the apps and one tap opens them all. In the notes field you can also write to Teire AI in your own words, like \"note that I have an exam tomorrow\" (Spanish only)."},{"k":["isla","linux","celular","android","island","phone"],"q":"Does the island work on Linux and on phones?","a":"The island is Windows-only. On Linux and Android you get the rest of Teire; on Android, use Share and pick Teire from any app. With the web version you can use it from any browser."},{"k":["datos","privacidad","publicidad","analitic","data","privacy","ads","track"],"q":"What do you do with my data?","a":"We don't show ads or use analytics, and PIN notes are encrypted on your device before they're uploaded. See the privacy policy for details."},{"k":["iphone","ios","apple","ipad","sin instalar","navegador","browser"],"q":"Can I use it on iPhone, or without installing anything?","a":"Yes. Open useteire.app/app in Safari and add it to your home screen: it gets its own icon like any app, and it doesn't go through the App Store. It also works in any browser, but the island and Teire AI voice aren't there."},{"k":["advertencia","windows protegi","smartscreen","virus","warning","protected your pc"],"q":"Why does Windows show a warning?","a":"Because the installer doesn't have a paid code signature yet, and Windows distrusts apps with few downloads. It doesn't mean it has a virus: click “More info” and then “Run anyway”."},{"k":["espacio","invitar","link","space","invite"],"q":"How do I invite someone to a Space?","a":"In your Space tap Share and create a link. Whoever opens it joins without an account and without installing anything. The link lasts 24 hours and you can close it sooner."},{"k":["ingles","english","idioma","language","voz","voice","oye teire","teire ia","teire ai"],"q":"Is Teire available in English? What about Teire AI?","a":"The app is in Spanish and English, picked from your device's language (you can change it in Settings). Teire AI, the voice and commands, works in Spanish only for now."}];
   const SUGERIDAS = [0,1,3,5];
   const MSG = {"saludo":"Hi, ask anything about Teire: how to install it, what it does, or something that isn't working. Answers come straight from this site.","nada":"I couldn't find that on the site. Write to us from Help inside the app, or on \u003ca href=\"https://github.com/codewtato/teire-downloads/issues\" target=\"_blank\" rel=\"noopener\">GitHub\u003c/a>, and we'll reply.","campo":"Ask a question…","boton":"Ask","titulo":"Ask Teire","cerrar":"Close","enviar":"Send","pie":"Answers come from useteire.app: what you type stays on this page."};
   const DESCARGAR = {"para":"Download for ","iphone":"Open on iPhone","iphoneUrl":"/app/"};

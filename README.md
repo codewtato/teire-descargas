@@ -28,7 +28,7 @@
 
 # Teire: tu día y el de tu gente, en un solo lugar
 
-**Teire** es una **app gratis para organizar tu día y compartirlo con tus amigos**: tareas, recordatorios, calendario, listas que se completan en vivo, chat y una **isla** arriba de tu pantalla que guarda todo al toque. Para **Windows, Linux, Android e iPhone**. La hace un creador independiente en Argentina.
+**Teire** es una **app gratis para organizar tu día y compartirlo con tus amigos**: tareas, recordatorios, hábitos, calendario, listas que se completan en vivo, chat y una **isla** arriba de tu pantalla que guarda todo al toque. Para **Windows, Linux, Android e iPhone**. La hace un creador independiente en Argentina.
 
 El nombre viene del japonés 手入れ (*teire*): cuidar y mantener algo con cariño, como a una planta. Por eso la hojita.
 
@@ -64,7 +64,7 @@ Links, fotos y capturas quedan guardados en un gesto. Sin publicidad y sin inter
 
 ### Tu día, en orden
 
-**Para hoy** junta tus tareas, recordatorios y eventos en una sola lista, y te dice cuántas cosas tenés hoy y cuántas de tu gente. Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Con el **modo foco** elegís en qué te concentrás y los avisos esperan.
+**Para hoy** junta tus tareas, recordatorios y eventos en una sola lista, y te dice cuántas cosas tenés hoy y cuántas de tu gente. Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Con el **modo foco** elegís en qué te concentrás y los avisos esperan. Sumá **hábitos** (tomar agua, caminar, leer o los tuyos): los tildás una vez por día, Teire cuenta tu **racha** y, si le ponés una hora a alguno, te avisa. Y lo que anotás al paso queda en una **Bandeja de entrada** para ordenarlo después: Hoy, Esta semana o Algún día.
 
 </td>
 </tr>
@@ -160,7 +160,10 @@ Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows, con cue
 - **Capturas:** copiás una captura y te ofrece guardarla.
 - **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app. Si algo quedó sin ver, se prende una lucecita verde.
 - **Tu música** (Spotify, YouTube Music, Apple Music, Deezer, Tidal, VLC y otras apps de música) queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**, la **tapa del disco** y la **letra** al ritmo de la canción.
-- **Pasás el mouse y se abre con pestañas:** lo que tenés hoy (con **«Entrar»** a tus videollamadas), tus recordatorios, tus amigos (**le escribís a quien quieras desde ahí**), tus notas, tus grupos y los avisos del día, todo sin abrir la app.
+- **Pasás el mouse y se abre con pestañas, y elegís cuáles ver:** con el botón de ajustes (⚙) prendés y apagás las que quieras. Una instalación nueva arranca con **Hoy, Foco, Amigos, Notas, Guardados y Apps**; Recordatorios, Grupos y Avisos se suman cuando los querés. En **Hoy** ves lo de hoy (con **«Entrar»** a tus videollamadas) y tus hábitos; en **Amigos** le escribís a quien quieras. Todo sin abrir la app.
+- **Escenas:** en Apps armás tus propios combos, por ejemplo Minecraft, Discord y Spotify: les ponés nombre, elegís las apps y, con un toque, se abren todas. Si querés, la escena también empieza un foco.
+- **Hábitos con hora:** tildás tus hábitos desde la isla y, a los que les pongas una hora, te avisan a esa hora con **«Es hora de…»**, **Hecho** y **En 30 min**.
+- **Escribile con tus palabras:** en el campo de notas podés poner algo como «che, anotame que mañana tengo un examen» o «recordame el jueves a las 9 llamar al contador», y Teire IA lo entiende y lo hace. Lo que no es una orden se guarda como nota, y si Teire IA no puede (sin internet, por ejemplo), tu texto queda como nota: no se pierde. Teire IA entiende solo español.
 - **Modo foco:** elegís en qué te enfocás y por cuánto tiempo, y la isla te acompaña con el reloj. Si querés, los avisos esperan hasta que termines.
 - **Notas pegadas al escritorio:** sacás una nota o una lista de la isla y queda flotando, como un post-it, para ir tachando.
 - **Mandá cosas a tu celu:** un link, una foto o algo que copiaste te llega al celular en segundos.

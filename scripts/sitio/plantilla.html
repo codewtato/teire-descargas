@@ -130,6 +130,14 @@ h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4vw
 .tm small{display:block;font:500 13px 'Inter';color:var(--d-gris);margin-top:2px}
 .bt{display:flex;gap:10px;justify-content:center;margin-top:12px}
 .bt span{border-radius:99px;padding:7px 18px;font-size:13px;font-weight:600;background:var(--d-txt);color:#0B0B0C}.bt span.o{background:transparent;border:1px solid var(--d-linea);color:var(--d-txt)}
+.habs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.hb{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;background:var(--d-sup2);border:1.5px solid transparent;font-size:12.5px;color:var(--d-txt)}
+.hb.on{border-color:var(--d-brote)}.hb.off{opacity:.45}
+.habs small{margin-left:auto;color:var(--d-gris);font-size:12px}
+.esc{display:flex;gap:12px;flex-wrap:wrap}
+.ce{flex:1;min-width:150px;background:var(--d-sup2);border-radius:14px;padding:12px 14px}
+.ce b{display:block;font-size:14.5px;margin-bottom:2px}.ce small{color:var(--d-gris);font-size:12.5px}
+.ce.mas{display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px dashed var(--d-linea);background:transparent;color:var(--d-brote);font-size:13.5px;font-weight:600}
 .caras{display:flex;gap:16px}.caras div{text-align:center;font-size:12px;color:var(--d-gris)}
 .caras .av{width:46px;height:46px;font-size:16px;display:grid}
 .campo{display:flex;align-items:center;gap:10px;margin-top:14px;background:var(--d-sup2);border-radius:14px;padding:11px 14px;color:#76767d;font-size:14px}
@@ -236,9 +244,9 @@ footer .ult a{display:inline;margin:0}
 
 <main>
 <div class="hero ancho">
-  <span class="pildora"><b>Nuevo</b>La isla muestra la letra de tu música y te deja escribirle a tus amigos</span>
+  <span class="pildora"><b>Nuevo</b>La isla ahora es tuya: elegí tus pestañas, armá Escenas y sumá hábitos</span>
   <h1>Tu día y el de tu gente, <em>en un solo lugar.</em></h1>
-  <p class="bajada">Teire junta tus tareas, recordatorios y calendario con las listas, los chats y los espacios que compartís con tus amigos. Y una isla arriba de tu pantalla que guarda todo al toque.</p>
+  <p class="bajada">Teire junta tus tareas, recordatorios, hábitos y calendario con las listas, los chats y los espacios que compartís con tus amigos. Y una isla arriba de tu pantalla que guarda todo al toque.</p>
   <div class="acciones">
     <a class="btn p" data-descargar href="https://github.com/codewtato/teire-descargas/releases/latest"><i class="mi">download</i><span data-texto>Descargar para Windows</span></a>
     <a class="btn s" href="/app/">Abrir en el navegador</a>
@@ -314,27 +322,33 @@ footer .ult a{display:inline;margin:0}
     <button data-t="foco" role="tab"><i class="mi">timer</i>Foco</button>
     <button data-t="gente" role="tab"><i class="mi">chat</i>Tu gente</button>
     <button data-t="guardar" role="tab"><i class="mi">bookmarks</i>Guardar</button>
+    <button data-t="escenas" role="tab"><i class="mi">bolt</i>Escenas</button>
+    <button data-t="ajustes" role="tab"><i class="mi">tune</i>A tu manera</button>
   </div>
   <div class="escena dev">
     <div class="isla reposo">
       <div class="mini" aria-hidden="true"><svg viewBox="70 80 340 340"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg><span class="eq"><i></i><i></i><i></i></span></div>
       <div class="dentro">
-      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi">notifications</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi">groups</i></div>
+      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi" data-i="escenas">bolt</i><i class="mi" data-i="ajustes">tune</i></div>
       <div class="panel" data-p="musica"><div class="mus"><div class="tapa"><i></i></div><div><h5>De Música Ligera</h5><small>Soda Stereo · Spotify</small></div><div class="ctl"><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M6 6h2v12H6zM9.5 12 18 6v12z"/></svg><span class="g"><i class="mi">pause</i></span><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M16 6h2v12h-2zM6 18V6l8.5 6z"/></svg></div></div><div class="bar"><b></b></div><div class="let">Ni pienso evitar un roce secreto<b>De aquel amor</b>De música ligera</div></div>
-      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Llamar al contador<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pagar el alquiler<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Reunión de equipo · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Entrar</span></div></div></div>
+      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Llamar al contador<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pagar el alquiler<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Reunión de equipo · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Entrar</span></div></div><div class="habs"><span class="hb on">💧 Tomar agua</span><span class="hb">🚶 Caminar 20 min</span><span class="hb">📖 Leer 10 páginas</span><small>1 de 3</small></div></div>
       <div class="panel" data-p="foco"><div class="tm">24:10<small>Terminar el informe</small></div><div class="bt"><span>Pausa</span><span class="o">Terminar</span></div><div class="et" style="text-align:center;margin-top:12px;color:var(--d-gris);font-size:12.5px">Avisos en silencio mientras dure</div></div>
       <div class="panel" data-p="gente"><div class="caras"><div><span class="av">L</span>Lucía</div><div><span class="av" style="background:#FFC86B">M</span>Mateo</div><div><span class="av" style="background:#8fb8ff">S</span>Sofi</div><div><span class="av" style="background:#ff9fb0">F</span>Familia</div></div><div class="campo">Escribile a Mateo…<i class="mi">send</i></div></div>
       <div class="panel" data-p="guardar"><div class="zonas"><div><i class="mi">bookmarks</i>Guardar</div><div><i class="mi">download</i>Al estante</div></div></div>
+      <div class="panel" data-p="escenas"><div class="esc"><div class="ce"><b>🎮 Minecraft</b><small>Minecraft · Discord · Spotify</small></div><div class="ce"><b>📚 Estudiar</b><small>Navegador · Spotify</small></div><div class="ce mas"><i class="mi">add</i>Crear escena</div></div></div>
+      <div class="panel" data-p="ajustes"><div class="habs"><span class="hb on">Hoy</span><span class="hb on">Foco</span><span class="hb on">Amigos</span><span class="hb on">Notas</span><span class="hb on">Guardados</span><span class="hb on">Apps</span><span class="hb off">Recordatorios</span><span class="hb off">Grupos</span><span class="hb off">Avisos</span></div></div>
       </div>
     </div>
   </div>
   <div class="pie-tab">
     <div class="cap on" data-c="reposo"><b>Probá la isla: tocá una pestaña.</b><span>Así se ve la pastilla cuando no la estás usando. Tocá una pestaña y se abre.</span></div>
     <div class="cap" data-c="musica"><b>Tu música, con tapa y letra.</b><span>Lo que suena en Spotify y otras apps, con la letra al ritmo de la canción.</span></div>
-    <div class="cap" data-c="hoy"><b>Tu día, sin abrir nada.</b><span>Tareas, recordatorios y «Entrar» a tus videollamadas de Meet, Zoom o Teams.</span></div>
+    <div class="cap" data-c="hoy"><b>Tu día, sin abrir nada.</b><span>Tareas, recordatorios, hábitos que te avisan a tu hora y «Entrar» a tus videollamadas de Meet, Zoom o Teams.</span></div>
     <div class="cap" data-c="foco"><b>Un foco que te cuida.</b><span>Elegís en qué te enfocás y por cuánto, y los avisos esperan.</span></div>
     <div class="cap" data-c="gente"><b>Escribile a quien quieras.</b><span>Elegís una cara y mandás el mensaje desde la isla.</span></div>
     <div class="cap" data-c="guardar"><b>Soltá y listo.</b><span>Un link, un texto o una foto: queda guardado, o lo mandás a tu celu o a un amigo.</span></div>
+    <div class="cap" data-c="escenas"><b>Armá tu combo de apps.</b><span>Ponele nombre, elegí las apps (por ejemplo Minecraft, Discord y Spotify) y las abrís todas con un toque.</span></div>
+    <div class="cap" data-c="ajustes"><b>Tu isla, a tu manera.</b><span>Con el botón de ajustes elegís qué pestañas ver. Una instalación nueva arranca con las más usadas.</span></div>
   </div>
 </div></section>
 
@@ -342,7 +356,7 @@ footer .ult a{display:inline;margin:0}
   <div class="k">Para qué sirve</div>
   <h2>Para vos, y para tu gente.</h2>
   <div class="tres">
-    <article class="card"><div class="ib"><i class="mi">calendar_month</i></div><h3>Tu día</h3><p>Lo que tenés que hacer, en orden y sin ruido.</p><ul><li><i class="mi">check</i>Tareas y recordatorios que te avisan</li><li><i class="mi">check</i>Calendario con mes, semana y agenda</li><li><i class="mi">check</i>Modo foco con reloj</li></ul></article>
+    <article class="card"><div class="ib"><i class="mi">calendar_month</i></div><h3>Tu día</h3><p>Lo que tenés que hacer, en orden y sin ruido.</p><ul><li><i class="mi">check</i>Tareas y recordatorios que te avisan</li><li><i class="mi">check</i>Calendario con mes, semana y agenda</li><li><i class="mi">check</i>Hábitos con racha y aviso a tu hora</li></ul></article>
     <article class="card"><div class="ib"><i class="mi">groups</i></div><h3>Tu gente</h3><p>Lo que compartís con tus amigos y tu familia.</p><ul><li><i class="mi">check</i>Listas que se completan en vivo</li><li><i class="mi">check</i>Chat con amigos y grupos</li><li><i class="mi">check</i>Espacios para trabajar juntos</li></ul></article>
     <article class="card"><div class="ib"><i class="mi">bookmarks</i></div><h3>Lo que guardás</h3><p>Todo lo que encontrás, a mano cuando lo necesites.</p><ul><li><i class="mi">check</i>Links, fotos y capturas con un gesto</li><li><i class="mi">check</i>Notas con PIN, audios y lugares</li><li><i class="mi">check</i>Mandalo a tu celu en un toque</li></ul></article>
   </div>
@@ -361,7 +375,11 @@ footer .ult a{display:inline;margin:0}
     <div class="f"><i class="mi">chat</i><h3>Chat y grupos</h3><p>Mandá mensajes sin salir de lo que hacés.</p></div>
     <div class="f"><i class="mi">fit_screen</i><h3>Espacio</h3><p>Una lona para armar algo entre varios.</p></div>
     <div class="f"><i class="mi">draw</i><h3>Pizarrón</h3><p>Dibujá y ve lo que dibujan los demás.</p></div>
-    <div class="f"><i class="mi">bubble_chart</i><h3>La isla</h3><p>Guarda, avisa y muestra tu música.</p></div>
+    <div class="f"><i class="mi">bubble_chart</i><h3>La isla</h3><p>Guarda, avisa y se arma a tu manera.</p></div>
+    <div class="f"><i class="mi">local_fire_department</i><h3>Hábitos</h3><p>Tildá lo de cada día y mirá tu racha.</p></div>
+    <div class="f"><i class="mi">view_agenda</i><h3>Bandeja de entrada</h3><p>Lo que anotás al paso, para ordenar después.</p></div>
+    <div class="f"><i class="mi">bolt</i><h3>Escenas</h3><p>Un toque abre todas tus apps.</p></div>
+    <div class="f"><i class="mi">edit_note</i><h3>Anotá con tus palabras</h3><p>«Anotame que mañana tengo un examen».</p></div>
     <div class="f"><i class="mi">mic</i><h3>Teire IA</h3><p>«Oye Teire»: creá, recordá, mandá.</p></div>
     <div class="f"><i class="mi">lock</i><h3>Notas con PIN</h3><p>Cifradas en tu equipo: no las leemos.</p></div>
     <div class="f"><i class="mi">cloud_off</i><h3>Sin internet</h3><p>Anda igual y se sincroniza al volver.</p></div>
