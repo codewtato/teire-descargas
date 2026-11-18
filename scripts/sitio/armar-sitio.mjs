@@ -221,22 +221,21 @@ const script = (L) => {
   // Idioma: quien elige con ES · EN no vuelve a ser redirigida
   document.querySelectorAll('.idioma a').forEach((a) => a.addEventListener('click', () => { try { localStorage.setItem('idioma-sitio', a.dataset.lang); } catch (e) {} }));
 
-  // La isla: tocar una pestaña abre la pastilla; tocar la misma otra vez la cierra
-  const isla = document.querySelector('.isla');
+  // La isla de «Un vistazo»: sin pestaña elegida corre el video de la isla real; con una, la captura de esa pestaña. Tocar la misma otra vez vuelve al video.
+  const IMG = { musica: 'musica', hoy: 'hoy', foco: 'foco', gente: 'amigos', guardar: 'guardados', escenas: 'apps', ajustes: 'ajustes' };
+  const CARPETA_ISLA = document.documentElement.lang === 'en' ? 'en/' : '';
+  const video = document.getElementById('islaVideo');
+  const captura = document.getElementById('islaReal');
   let activa = null;
-  const marcar = (t) => {
-    document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.t === t));
-    document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('on', p.dataset.p === t));
-    document.querySelectorAll('.cap').forEach((p) => p.classList.toggle('on', p.dataset.c === (t || 'reposo')));
-    document.querySelectorAll('[data-i]').forEach((i) => i.classList.toggle('on', i.dataset.i === t));
-  };
   const ir = (t) => {
-    if (activa === t) { activa = null; isla.classList.add('reposo'); marcar(null); return; }
-    activa = t; marcar(t); isla.classList.remove('reposo');
+    activa = activa === t ? null : t;
+    document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.t === activa));
+    document.querySelectorAll('.cap').forEach((p) => p.classList.toggle('on', p.dataset.c === (activa || 'reposo')));
+    if (!video || !captura) return;
+    if (activa) { captura.src = '/img/isla/' + CARPETA_ISLA + 'isla-' + IMG[activa] + '.webp'; captura.hidden = false; video.hidden = true; video.pause(); }
+    else { captura.hidden = true; video.hidden = false; video.play().catch(() => {}); }
   };
-  isla.addEventListener('click', () => { if (isla.classList.contains('reposo')) ir('musica'); });
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => ir(b.dataset.t)));
-  marcar(null);
 
   // Descargas: el botón grande reconoce tu sistema y baja directo el instalador de la última versión
   const ua = navigator.userAgent;
@@ -301,6 +300,8 @@ const armar = (L) => {
     if (L === "en") {
         html = html.replace(/<!--solo:es-->\n?[\s\S]*?<!--\/solo-->\n?/g, "");
         html = traducir(html).replace(/<!--\/?solo(:en)?-->\n?/g, "");
+        // las capturas y el video de la isla de la página en inglés están grabados con la app en inglés
+        html = html.replaceAll("/img/isla/", "/img/isla/en/");
     } else {
         html = soloIdioma(html, L);
     }

@@ -397,6 +397,37 @@ footer .ult a{display:inline;margin:0}
 @media(max-width:900px){.nav nav{display:none}.nav .ancho{gap:14px}.nav .logo{margin-right:auto}.tres,.conf{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.cuatro{grid-template-columns:1fr 1fr}.par,.prem{grid-template-columns:1fr}.franja{grid-template-columns:1fr 1fr}.franja div:nth-child(3){border-left:0}.franja div:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--linea)}footer .ancho{grid-template-columns:1fr 1fr}.lado{display:none}.pantalla{height:520px}.ventana{width:94%}.gr2{grid-template-columns:1fr}.gr2 .col:last-child{display:none}.lona{overflow:hidden}}
 @media(max-width:560px){.nav .btn.chico{display:none}.hero{padding-top:44px}.escena{height:400px}.prem{padding:28px}}
 </style>
+<link rel="stylesheet" href="/assets/pepi-web.css">
+<style>
+/* ---- Pepi en el sitio: el de la app (pepi-web.js / pepi-web.css) ---- */
+.pw{display:block}.pw svg.pepi{width:100%;height:100%}
+.pepi-hero{position:relative;width:150px;height:150px;margin:0 auto 6px;cursor:pointer}
+.pepi-hero::before{content:"";position:absolute;inset:-60px;background:radial-gradient(closest-side,color-mix(in srgb,var(--pc,#5FD4A0) 26%,transparent),transparent);z-index:-1;transition:background .5s}
+.isla-mini.real{background:none;padding:0;gap:0}
+.isla-mini.real img{height:36px;width:auto;display:block}
+.ventana .tit .pm{width:17px;height:17px;flex:none}
+.cuerpo{position:relative}
+.cuerpo .pepi-inicio{position:absolute;right:8px;top:0;width:78px;height:78px}
+.escena.real{display:block;height:auto !important;padding:0;overflow:hidden}
+.escena.real video,.escena.real img{display:block;width:100%;height:auto}
+.escena.real [hidden]{display:none !important}
+#pepi{padding-bottom:20px}
+.chica{font-size:.92em;opacity:.85}
+.pepi-juego{position:relative;display:flex;align-items:center;justify-content:center;gap:28px;max-width:700px;margin:26px auto 26px;padding:26px 34px;border-radius:24px;border:1px solid var(--d-linea);background:radial-gradient(60% 140% at 22% 110%,color-mix(in srgb,var(--pc,#5FD4A0) 30%,transparent),transparent 70%),#0e0f11;overflow:hidden;transition:background .5s}
+.pepi-juego .pepi-grande{width:170px;height:170px;flex:none;cursor:pointer}
+.pepi-info{display:flex;flex-direction:column;gap:3px;text-align:left}
+.pepi-info b{font-family:'Playfair Display',serif;font-size:30px;line-height:1.1;color:#F4EFE6}
+.pepi-info span{color:#c9c4ba;font-size:15px}
+.pepi-info small{color:var(--d-gris);margin-top:10px;font-size:12.5px;max-width:32ch}
+.momentos{display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto}
+.momentos figure{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:20px;align-items:center;background:#0e0f11;border:1px solid var(--d-linea);border-radius:20px;padding:14px 20px 14px 14px}
+.momentos img{width:100%;height:auto;display:block;justify-self:center}
+.momentos figcaption{font-size:14px;color:#c9c4ba}
+.momentos figcaption b{display:block;color:#F4EFE6;font-size:17px;font-family:'Playfair Display',serif;margin-bottom:2px}
+.pepi-cierre{width:116px;height:116px;margin:0 auto 4px}
+.pepi-pie{display:inline-block;width:22px;height:22px;vertical-align:-6px;margin-left:6px}
+@media(max-width:700px){.momentos figure{grid-template-columns:1fr}.pepi-juego{flex-direction:column;text-align:center}.pepi-info{text-align:center}.cuerpo .pepi-inicio{display:none}}
+</style>
 </head>
 <body>
 <a class="saltar" href="#vistazo">Skip to content</a>
@@ -404,7 +435,7 @@ footer .ult a{display:inline;margin:0}
 <header class="nav">
   <div class="ancho">
     <a class="logo" href="/en/"><svg viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg>teire</a>
-    <nav aria-label="Main"><a href="#vistazo">Overview</a><a href="#funciones">Features</a><a href="#espacio">Space</a><a href="#premium">Premium</a><a href="#descargar">Download</a><a href="#preguntas">FAQ</a></nav>
+    <nav aria-label="Main"><a href="#vistazo">Overview</a><a href="#pepi">Pip</a><a href="#funciones">Features</a><a href="#espacio">Space</a><a href="#premium">Premium</a><a href="#descargar">Download</a><a href="#preguntas">FAQ</a></nav>
     <button class="tema" id="tema" aria-label="Switch between light and dark"><i class="mi">dark_mode</i></button>
     <div class="idioma" role="group" aria-label="Idioma / Language"><a href="/" hreflang="es" lang="es" data-lang="es" >ES</a><a href="/en/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
     <a class="btn p chico" href="#descargar">Download free</a>
@@ -413,6 +444,7 @@ footer .ult a{display:inline;margin:0}
 
 <main>
 <div class="hero ancho">
+  <div class="pepi-hero" id="pepiHero" title="Poke it"></div>
   <span class="pildora"><b>New</b>The island is now yours: pick your tabs, build Scenes and add habits</span>
   <h1>Your day and your people's, <em>all in one place.</em></h1>
   <p class="bajada">Teire brings your tasks, reminders, habits and calendar together with the lists, chats and spaces you share with your friends. Plus an island at the top of your screen that saves everything in one gesture.</p>
@@ -428,7 +460,7 @@ footer .ult a{display:inline;margin:0}
   </div>
 
   <div class="pc dev" aria-label="Teire open on a Windows PC, with the island at the top"><div class="marco"><div class="pantalla">
-    <div class="isla-mini"><svg width="14" height="14" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/></svg>Afternoon Light <small>Los Brotes</small><span class="eq"><i></i><i></i><i></i></span></div>
+    <div class="isla-mini real"><img src="/img/isla/en/isla-cerrada.png" alt="The island pill, with Pip" width="338" height="96"></div>
     <div class="ventana">
       <div class="tit"><svg width="13" height="13" viewBox="70 80 340 340" aria-hidden="true"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg>Teire<span class="ctl2"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span></div>
       <div class="in">
@@ -494,21 +526,7 @@ footer .ult a{display:inline;margin:0}
     <button data-t="escenas" role="tab"><i class="mi">apps</i>Scenes</button>
     <button data-t="ajustes" role="tab"><i class="mi">tune</i>Your way</button>
   </div>
-  <div class="escena dev">
-    <div class="isla reposo">
-      <div class="mini" aria-hidden="true"><svg viewBox="70 80 340 340"><path d="M226 142 V338 a56 56 0 0 0 56 56 h24" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 242 H312" fill="none" stroke="#F4EFE6" stroke-width="64" stroke-linecap="round"/><path d="M368 104 C372 170 338 214 280 214 C276 148 312 108 368 104Z" fill="#5FD4A0"/></svg><span class="eq"><i></i><i></i><i></i></span></div>
-      <div class="dentro">
-      <div class="ic"><span class="lg2">t</span><i class="mi" data-i="musica">music_note</i><i class="mi" data-i="hoy">calendar_month</i><i class="mi" data-i="foco">timer</i><i class="mi" data-i="gente">chat</i><i class="mi">edit_note</i><i class="mi" data-i="guardar">bookmarks</i><i class="mi" data-i="escenas">apps</i><i class="mi" data-i="ajustes">tune</i></div>
-      <div class="panel" data-p="musica"><div class="mus"><div class="tapa"><i></i></div><div><h5>De Música Ligera</h5><small>Soda Stereo · Spotify</small></div><div class="ctl"><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M6 6h2v12H6zM9.5 12 18 6v12z"/></svg><span class="g"><i class="mi">pause</i></span><svg width="22" height="22" viewBox="0 0 24 24" fill="#F4EFE6"><path d="M16 6h2v12h-2zM6 18V6l8.5 6z"/></svg></div></div><div class="bar"><b></b></div><div class="let">Ni pienso evitar un roce secreto<b>De aquel amor</b>De música ligera</div></div>
-      <div class="panel" data-p="hoy"><div class="tarj" style="background:transparent;border:0;padding:0"><div class="fl"><span class="cr"></span>Call the accountant<span class="et">10:30</span></div><div class="fl"><span class="cr" style="border-color:var(--d-sol)"></span>Pay the rent<span class="et">18:00</span></div><div class="fl"><i class="mi" style="color:var(--d-brote)">link</i>Team meeting · Meet<span class="et" style="color:#0B0B0C;background:var(--d-brote);border-radius:99px;padding:3px 12px;font-weight:700">Join</span></div></div><div class="habs"><span class="hb on">💧 Drink water</span><span class="hb">🚶 Walk 20 min</span><span class="hb">📖 Read 10 pages</span><small>1 of 3</small></div></div>
-      <div class="panel" data-p="foco"><div class="tm">24:10<small>Finish the report</small></div><div class="bt"><span>Pause</span><span class="o">Finish</span></div><div class="et" style="text-align:center;margin-top:12px;color:var(--d-gris);font-size:12.5px">Notifications muted while it lasts</div></div>
-      <div class="panel" data-p="gente"><div class="caras"><div><span class="av">L</span>Lucía</div><div><span class="av" style="background:#FFC86B">M</span>Mateo</div><div><span class="av" style="background:#8fb8ff">S</span>Sofi</div><div><span class="av" style="background:#ff9fb0">F</span>Family</div></div><div class="campo">Message Mateo…<i class="mi">send</i></div></div>
-      <div class="panel" data-p="guardar"><div class="zonas"><div><i class="mi">bookmarks</i>Save</div><div><i class="mi">download</i>To the shelf</div></div></div>
-      <div class="panel" data-p="escenas"><div class="esc"><div class="ce"><b>🎮 Minecraft</b><small>Minecraft · Discord · Spotify</small></div><div class="ce"><b>📚 Study</b><small>Browser · Spotify</small></div><div class="ce mas"><i class="mi">add</i>Create scene</div></div></div>
-      <div class="panel" data-p="ajustes"><div class="habs"><span class="hb on">Today</span><span class="hb on">Focus</span><span class="hb on">Friends</span><span class="hb on">Notes</span><span class="hb on">Saved</span><span class="hb on">Apps</span><span class="hb off">Reminders</span><span class="hb off">Groups</span><span class="hb off">Alerts</span></div></div>
-      </div>
-    </div>
-  </div>
+  <div class="escena dev real"><video id="islaVideo" autoplay muted loop playsinline preload="metadata" poster="/img/isla/en/isla-cerrada-escena.webp" width="1000" height="470" aria-label="The Teire island, with Pip, opening and switching tabs"><source src="/img/isla/en/isla-en-accion.webm" type="video/webm"><source src="/img/isla/en/isla-en-accion.mp4" type="video/mp4"></video><img id="islaReal" src="/img/isla/en/isla-musica.webp" alt="The Teire island, with Pip" width="1000" height="470" hidden></div>
   <div class="pie-tab">
     <div class="cap on" data-c="reposo"><b>Try the island: tap a tab.</b><span>This is how the pill looks when you're not using it. Tap a tab and it opens.</span></div>
     <div class="cap" data-c="musica"><b>Your music, with album art and lyrics.</b><span>What's playing on Spotify and other apps, with the lyrics in time with the song.</span></div>
@@ -518,6 +536,21 @@ footer .ult a{display:inline;margin:0}
     <div class="cap" data-c="guardar"><b>Drop it and done.</b><span>A link, some text or a photo: it's saved, or you send it to your phone or a friend.</span></div>
     <div class="cap" data-c="escenas"><b>Build your app combo.</b><span>Give it a name, pick the apps (say Minecraft, Discord and Spotify) and open them all with one tap.</span></div>
     <div class="cap" data-c="ajustes"><b>Your island, your way.</b><span>With the settings button you pick which tabs to show. A fresh install starts with the most used ones.</span></div>
+  </div>
+</div></section>
+
+<section id="pepi"><div class="ancho">
+  <div class="k">Meet Pip</div>
+  <h2>A tiny friend on your island.</h2>
+  <p class="sub">Pip lives on the island and on your Home. It doesn't talk, so it reads the same in Spanish and English: it changes color and face with whatever happens in your day. <span class="chica">(Teire AI, the voice and text assistant, only works in Spanish for now.)</span></p>
+  <div class="pepi-juego dev">
+    <div class="pepi-grande" id="pepiEscena" title="Try it"></div>
+    <div class="pepi-info"><b>Try it.</b><span>Poke it, leave your mouse on it for a bit, or wait and see what it does.</span><small>It has more than fifteen faces and we won't spoil them: you'll find them yourself.</small></div>
+  </div>
+  <div class="momentos">
+    <figure><img src="/img/isla/en/isla-mensaje.png" alt="Pip gets amazed when a friend writes to you" width="1364" height="390" loading="lazy"><figcaption><b>Gets amazed</b>when someone writes to you.</figcaption></figure>
+    <figure><img src="/img/isla/en/isla-cumple.png" alt="Pip celebrates a friend's birthday" width="1324" height="358" loading="lazy"><figcaption><b>Celebrates</b>your friends' birthdays.</figcaption></figure>
+    <figure><img src="/img/isla/en/isla-cansado.png" alt="Pip gets tired if you go a long time without a break" width="1568" height="710" loading="lazy"><figcaption><b>Gets tired</b>if you go for hours without a break.</figcaption></figure>
   </div>
 </div></section>
 
@@ -625,6 +658,7 @@ footer .ult a{display:inline;margin:0}
   </div>
 
   <div class="cierre dev">
+    <div class="pepi-cierre" id="pepiCierre"></div>
     <h2>Let's set up your first day.</h2>
     <p class="sub">Download it, add one thing for today and add a friend. That's all it takes to get started.</p>
     <div class="acciones"><a class="btn p" href="#descargar"><i class="mi">download</i>Download free</a><a class="btn s" href="/app/">Open in your browser</a></div>
@@ -634,7 +668,7 @@ footer .ult a{display:inline;margin:0}
 
 <footer><div class="ancho">
   <div><a class="logo" href="/en/" style="color:var(--texto)">teire</a><p style="margin-top:10px;max-width:26ch">Your day and your people's, all in one place. Made in Argentina.</p></div>
-  <div><h4>Teire</h4><a href="#vistazo">Overview</a><a href="#funciones">Features</a><a href="#espacio">Space</a><a href="#premium">Premium</a></div>
+  <div><h4>Teire</h4><a href="#vistazo">Overview</a><a href="#pepi">Pip</a><a href="#funciones">Features</a><a href="#espacio">Space</a><a href="#premium">Premium</a></div>
   <div><h4>Compare</h4><a href="/en/google-keep-alternative/">Google Keep alternative</a><a href="/en/shared-notes/">Shared notes</a><a href="/en/iphone/">Teire on iPhone</a></div>
   <div><h4>Legal</h4><a href="/en/privacy/">Privacy</a><a href="/en/terms/">Terms</a><a href="/en/withdrawal/">Right of withdrawal</a></div>
   <div class="ult">© 2026 Teire · useteire.app · <a href="https://github.com/codewtato/teire-downloads/releases">Previous versions</a> · <a href="https://github.com/codewtato/teire-downloads/issues">Report a problem</a></div>
@@ -672,22 +706,21 @@ footer .ult a{display:inline;margin:0}
   // Idioma: quien elige con ES · EN no vuelve a ser redirigida
   document.querySelectorAll('.idioma a').forEach((a) => a.addEventListener('click', () => { try { localStorage.setItem('idioma-sitio', a.dataset.lang); } catch (e) {} }));
 
-  // La isla: tocar una pestaña abre la pastilla; tocar la misma otra vez la cierra
-  const isla = document.querySelector('.isla');
+  // La isla de «Un vistazo»: sin pestaña elegida corre el video de la isla real; con una, la captura de esa pestaña. Tocar la misma otra vez vuelve al video.
+  const IMG = { musica: 'musica', hoy: 'hoy', foco: 'foco', gente: 'amigos', guardar: 'guardados', escenas: 'apps', ajustes: 'ajustes' };
+  const CARPETA_ISLA = document.documentElement.lang === 'en' ? 'en/' : '';
+  const video = document.getElementById('islaVideo');
+  const captura = document.getElementById('islaReal');
   let activa = null;
-  const marcar = (t) => {
-    document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.t === t));
-    document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('on', p.dataset.p === t));
-    document.querySelectorAll('.cap').forEach((p) => p.classList.toggle('on', p.dataset.c === (t || 'reposo')));
-    document.querySelectorAll('[data-i]').forEach((i) => i.classList.toggle('on', i.dataset.i === t));
-  };
   const ir = (t) => {
-    if (activa === t) { activa = null; isla.classList.add('reposo'); marcar(null); return; }
-    activa = t; marcar(t); isla.classList.remove('reposo');
+    activa = activa === t ? null : t;
+    document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.t === activa));
+    document.querySelectorAll('.cap').forEach((p) => p.classList.toggle('on', p.dataset.c === (activa || 'reposo')));
+    if (!video || !captura) return;
+    if (activa) { captura.src = '/img/isla/' + CARPETA_ISLA + 'isla-' + IMG[activa] + '.webp'; captura.hidden = false; video.hidden = true; video.pause(); }
+    else { captura.hidden = true; video.hidden = false; video.play().catch(() => {}); }
   };
-  isla.addEventListener('click', () => { if (isla.classList.contains('reposo')) ir('musica'); });
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => ir(b.dataset.t)));
-  marcar(null);
 
   // Descargas: el botón grande reconoce tu sistema y baja directo el instalador de la última versión
   const ua = navigator.userAgent;
@@ -742,5 +775,7 @@ footer .ult a{display:inline;margin:0}
   if (location.hash === '#preguntar') abrir();
 })();
 </script>
+<script src="/assets/pepi-web.js" defer></script>
+<script src="/assets/pepi-sitio.js" defer></script>
 </body>
 </html>

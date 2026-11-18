@@ -1,0 +1,61 @@
+/* Pepi (Pip en inglés): el personaje de Teire. Ver src/ui/pepi.ts y marca/BRAND.md.
+   Ninguna animación corre «de fondo» (solo respira cuando duerme): una animación infinita mantiene la isla
+   repintando todo el tiempo y gasta batería. Los gestos y las caras con movimiento duran un rato y paran. */
+svg.pepi{overflow:visible;display:block}
+svg.pepi .bd{fill:var(--c,#5FD4A0);transition:fill .45s}
+svg.pepi .ojos{transition:transform .12s ease-out}
+svg.pepi .inclinado{transform-origin:100px 190px;transition:transform .18s ease-out}
+svg.pepi .cuerpo{transform-origin:100px 190px}
+/* parpadeo en dos pasos (la isla): la propiedad «scale» se suma a lo que ya mueve los ojos (mirar) */
+svg.pepi .ojos.cerrado{scale:1 .08}
+svg.pepi .ojos.parpadeo{animation:pepi-parp .18s}
+svg.pepi .signo text{animation:pepi-pop .35s cubic-bezier(.3,1.6,.5,1) both;transform-box:fill-box;transform-origin:center}
+svg.pepi .pt{animation:pepi-flota var(--d,1.6s) ease-out forwards}
+svg.pepi .brillo{pointer-events:none}
+
+/* movimientos de cada cara */
+svg.pepi.salto .cuerpo{animation:pepi-salto .85s cubic-bezier(.3,.7,.4,1)}
+svg.pepi.rebote .cuerpo{animation:pepi-rebote .45s ease-out 3}
+/* Mareado (como Coucou): gira dos vueltas (1,3 s) y despues se bambolea hasta cumplir 3 s */
+svg.pepi.mareo .cuerpo{transform-origin:100px 138px;animation:pepi-rueda 1.3s ease-in-out,pepi-mareo .5s ease-in-out 1.3s 3}
+/* Cada golpe: se aplasta y pega un saltito a un costado (--gx lo elige al azar) */
+svg.pepi.golpe{animation:pepi-golpe .38s ease-out}
+svg.pepi.aplastado .cuerpo{transform:scale(1.09,.9)}
+svg.pepi.lento .cuerpo{animation:pepi-respira 2.6s ease-in-out 2}
+svg.pepi.dormido .cuerpo{animation:pepi-respira 3.8s ease-in-out infinite}
+/* a tamaño chico (la isla y la bandeja) el dibujo es más grande que el espacio: el brote y los ojos se agrandan */
+svg.pepi.chico.salto .cuerpo,svg.pepi.chico.rebote .cuerpo,svg.pepi.chico.mareo .cuerpo{animation-duration:.5s}
+
+/* manitos: dos óvalos lisos del color del cuerpo, solo en los gestos */
+svg.pepi .hp{transition:transform .38s cubic-bezier(.3,1.5,.5,1),opacity .2s}
+svg.pepi .hand{fill:var(--c,#5FD4A0);stroke:rgba(0,0,0,.24);stroke-width:1.5;transition:fill .45s}
+svg.pepi .hw{transform-origin:0 14px}
+svg.pepi .hw.wave{animation:pepi-wv .5s ease-in-out infinite}
+svg.pepi .hw.cheer{animation:pepi-ch .42s ease-in-out infinite}
+svg.pepi .hw.clapl{animation:pepi-cpl .3s ease-in-out infinite}
+svg.pepi .hw.clapr{animation:pepi-cpr .3s ease-in-out infinite}
+svg.pepi .hw.shake{animation:pepi-sk .2s ease-in-out infinite}
+
+/* Baila con la musica: de izquierda a derecha con un saltito en el medio, suave. No escucha el audio: el ritmo es parejo. Solo en la
+   tarjeta de Musica de la isla abierta (corre mientras se ve, --ps); en la pastilla cerrada Pepi queda quieto. */
+svg.pepi.baila .cuerpo{transform-origin:100px 190px;animation:pepi-baila 1.2s ease-in-out infinite;animation-play-state:var(--ps,running)}
+@keyframes pepi-baila{
+  0%,100%{transform:translate(-16px,0) rotate(-9deg)}
+  25%{transform:translate(0,-16px) scale(.97,1.05)}
+  50%{transform:translate(16px,0) rotate(9deg)}
+  75%{transform:translate(0,-16px) scale(.97,1.05)}}
+@keyframes pepi-respira{0%,100%{transform:scale(1,1)}50%{transform:scale(1.03,.97)}}
+@keyframes pepi-salto{0%{transform:scale(1.07,.92)}30%{transform:translateY(-36px) scale(.95,1.07)}60%{transform:translateY(0) scale(1.07,.93)}80%{transform:translateY(-8px)}100%{transform:none}}
+@keyframes pepi-rebote{0%,100%{transform:none}40%{transform:translateY(-18px)}}
+@keyframes pepi-rueda{from{transform:rotate(0)}to{transform:rotate(720deg)}}
+@keyframes pepi-golpe{0%{transform:none}25%{transform:translate(var(--gx,7px),-7px) scale(1.12,.86)}60%{transform:translate(calc(var(--gx,7px)*.4),0) scale(.96,1.06)}100%{transform:none}}
+@keyframes pepi-mareo{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes pepi-parp{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.08)}}
+@keyframes pepi-pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pepi-flota{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1;transform:translate(calc(var(--dx)*.2),calc(var(--dy)*.2)) scale(1)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.9) rotate(var(--r,0deg))}}
+@keyframes pepi-wv{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(26deg)}}
+@keyframes pepi-ch{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pepi-cpl{0%,100%{transform:translateX(-9px)}50%{transform:translateX(2px)}}
+@keyframes pepi-cpr{0%,100%{transform:translateX(9px)}50%{transform:translateX(-2px)}}
+@keyframes pepi-sk{0%,100%{transform:translateX(-7px)}50%{transform:translateX(7px)}}
+@media (prefers-reduced-motion:reduce){svg.pepi .cuerpo,svg.pepi .pt,svg.pepi .hw,svg.pepi .signo text{animation:none}}
