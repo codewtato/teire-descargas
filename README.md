@@ -26,6 +26,10 @@
   <img src="docs/img/readme/hero.webp" alt="Teire en una compu con Windows: el Inicio con Para hoy, Con tu gente y la semana, y la isla arriba al centro de la pantalla" width="100%">
 </p>
 
+<p align="center">
+  <img src="docs/img/readme/isla-en-accion.gif" alt="La isla de Teire en acción: Pepi en la pastilla, y al pasar el mouse se abre con Música, Tu día, Foco, Tu gente y más" width="760">
+</p>
+
 # Teire: tu día y el de tu gente, en un solo lugar
 
 **Teire** es una **app gratis para organizar tu día y compartirlo con tus amigos**: tareas, recordatorios, hábitos, calendario, listas que se completan en vivo, chat y una **isla** arriba de tu pantalla que guarda todo al toque. Para **Windows, Linux, Android e iPhone**. La hace un creador independiente en Argentina.
@@ -54,6 +58,14 @@ Links, fotos y capturas quedan guardados en un gesto. Sin publicidad y sin inter
 </td>
 </tr>
 </table>
+
+## Por qué Teire
+
+Tu día suele estar repartido en cinco apps: las notas por un lado, las tareas por otro, el calendario en otro y el chat con tu gente en otro más. Y las que se ven bien casi siempre son de pago o vienen con publicidad. **Teire junta todo en un solo lugar, es gratis y no tiene publicidad.**
+
+- **En todos tus aparatos:** Windows, Linux, Android y iPhone, con tu misma cuenta.
+- **Con tu gente:** listas y chats que se completan en vivo.
+- **Sin vueltas:** la isla arriba de la pantalla guarda lo que copiás en un gesto.
 
 ## Lo que hace
 
@@ -146,6 +158,12 @@ Un **lienzo compartido por todos**, sin dueño, estilo r/place: cada día tenés
 </td>
 </tr>
 </table>
+
+## Conocé a Pepi
+
+**Pepi** es el amigo chiquito que vive en la isla y en tu Inicio. No habla, así que se entiende igual en español y en inglés: cambia de color y de cara según lo que pasa en tu día. Se asombra cuando te escribe alguien, festeja el cumple de tus amigos, se cansa si pasás horas sin parar y baila cuando suena música. Tiene más de quince caras y no te las contamos todas: las vas descubriendo. Pegale, dejale el mouse encima un ratito o esperá a ver qué hace.
+
+> Teire IA, la asistente por voz y por texto, por ahora solo funciona en español.
 
 ## La isla
 
