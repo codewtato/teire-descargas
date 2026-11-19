@@ -76,7 +76,7 @@ Tu día suele estar repartido en cinco apps: las notas por un lado, las tareas p
 
 ### Tu día, en orden
 
-**Para hoy** junta tus tareas, recordatorios y eventos en una sola lista, y te dice cuántas cosas tenés hoy y cuántas de tu gente. Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Con el **modo foco** elegís en qué te concentrás y los avisos esperan. Sumá **hábitos** (tomar agua, caminar, leer o los tuyos): los tildás una vez por día, Teire cuenta tu **racha** y, si le ponés una hora a alguno, te avisa. Y lo que anotás al paso queda en una **Bandeja de entrada** para ordenarlo después: Hoy, Esta semana o Algún día.
+**Para hoy** junta tus tareas, recordatorios y eventos en una sola lista, y te dice cuántas cosas tenés hoy y cuántas de tu gente. Calendario con **Mes, Semana y Agenda**. Los recordatorios llegan aunque cierres la ventana y se repiten hasta que les das **Listo**. Con el **modo foco** elegís en qué te concentrás y los avisos esperan. Sumá **hábitos** (tomar agua, caminar, leer o los tuyos): los tildás una vez por día, Teire cuenta tu **racha** y, si le ponés una hora a alguno, te avisa. Los hábitos se **sincronizan entre tus equipos**. Y lo que anotás al paso queda en una **Bandeja de entrada** para ordenarlo después: Hoy, Esta semana o Algún día.
 
 </td>
 </tr>
@@ -125,7 +125,7 @@ Notas, listas y pizarrones que se pintan con el **color de su categoría**. Las 
 
 ### Pedíselo con la voz
 
-En la compu decí **«Oye Teire»** (o apretá `Ctrl K`): *«creá una lista de compras con pan y leche»*, *«recordame mañana a las 9»*, *«mandale a Fede que llego tarde»*. Compartir una nota siempre te pide confirmar. Teire IA funciona **solo en español** por ahora.
+En la compu, `Ctrl K` abre la **barra de comandos**: buscás pantallas, notas, recordatorios y amigos, o creás una nota, un hábito o un foco sin tocar el mouse. Y si escribís una frase, Teire IA la entiende: *«creá una lista de compras con pan y leche»*, *«recordame mañana a las 9 y mandáselo a Fede»*, *«mandale a Fede que llego tarde»*. También podés decir **«Oye Teire»**: la voz viene apagada y se prende en Perfil → Teire IA. Compartir una nota siempre te pide confirmar. Teire IA funciona **solo en español** por ahora.
 
 </td>
 <td width="56%"><img src="docs/img/readme/ia.webp" alt="Teire IA abierta en la app de escritorio" width="100%"></td>
@@ -161,31 +161,33 @@ Un **lienzo compartido por todos**, sin dueño, estilo r/place: cada día tenés
 
 ## Conocé a Pepi
 
-**Pepi** es el amigo chiquito que vive en la isla y en tu Inicio. No habla, así que se entiende igual en español y en inglés: cambia de color y de cara según lo que pasa en tu día. Se asombra cuando te escribe alguien, festeja el cumple de tus amigos, se cansa si pasás horas sin parar y baila cuando suena música. Tiene más de quince caras y no te las contamos todas: las vas descubriendo. Pegale, dejale el mouse encima un ratito o esperá a ver qué hace.
+**Pepi** es el amigo chiquito que vive en la isla y en tu Inicio. No habla, así que se entiende igual en español y en inglés: cambia de color y de cara según lo que pasa en tu día. Se asombra cuando te escribe alguien, festeja el cumple de tus amigos (el tuyo lo ponés en Perfil), se cansa si pasás horas sin parar y baila cuando suena música. Tiene más de quince caras y no te las contamos todas: las vas descubriendo. Pegale, dejale el mouse encima un ratito o esperá a ver qué hace.
 
 > Teire IA, la asistente por voz y por texto, por ahora solo funciona en español.
 
 ## La isla
 
-Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows, con cuenta**). Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
+Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows y Linux, con cuenta**). Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
 
 <p align="center">
   <img src="docs/img/isla-demo.svg" alt="Arrastrás un link hasta la isla de Teire, arriba al centro de la pantalla, y queda guardado" width="640">
 </p>
 
 - **Arrastrás y soltás** un link, un texto o una imagen desde cualquier programa: la isla se abre para recibirlo.
-- **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás, sin sacarte de lo que estás haciendo.
-- **Capturas:** copiás una captura y te ofrece guardarla.
-- **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app. Si algo quedó sin ver, se prende una lucecita verde.
-- **Tu música** (Spotify, YouTube Music, Apple Music, Deezer, Tidal, VLC y otras apps de música) queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**, la **tapa del disco** y la **letra** al ritmo de la canción.
-- **Pasás el mouse y se abre con pestañas, y elegís cuáles ver:** con el botón de ajustes (⚙) prendés y apagás las que quieras. Una instalación nueva arranca con **Hoy, Foco, Amigos, Notas, Guardados y Apps**; Recordatorios, Grupos y Avisos se suman cuando los querés. En **Hoy** ves lo de hoy (con **«Entrar»** a tus videollamadas) y tus hábitos; en **Amigos** le escribís a quien quieras. Todo sin abrir la app.
+- **Copiar = guardar:** copiás un link de Instagram, TikTok o YouTube y te pregunta si lo guardás, sin sacarte de lo que estás haciendo (por ahora solo en Windows).
+- **Capturas:** copiás una captura y te ofrece guardarla (también solo en Windows por ahora).
+- **Te avisa** de mensajes y recordatorios ahí mismo, y podés **responder un mensaje desde la isla** sin abrir la app: tocá a un amigo (o a un grupo) y se ve la conversación. Si algo quedó sin ver, se prende una lucecita verde.
+- **Tu música** (Spotify, YouTube Music, Apple Music, Deezer, Tidal, VLC y otras apps de música) queda a la vista en la isla, con las barritas que bailan; pasás el mouse y aparecen **anterior, pausa y siguiente**, la **tapa del disco**, la **letra** al ritmo de la canción, el **volumen** y una **barra de tiempo** para saltar. En **Linux** funciona con los reproductores de escritorio, como Spotify (los navegadores no).
+- **Pasás el mouse y se abre con pestañas, y elegís cuáles ver:** con el botón de ajustes (⚙) prendés y apagás las que quieras. Una instalación nueva arranca con **Hoy, Foco, Amigos, Notas, Guardados y Apps**; Recordatorios, Grupos y Avisos se suman cuando los querés. En **Recordatorios** podés **crear** uno ahí mismo (en 10 min, en 1 hora, esta noche o mañana). En **Hoy** ves lo de hoy (con **«Entrar»** a tus videollamadas) y tus hábitos; en **Amigos** le escribís a quien quieras. Todo sin abrir la app.
 - **Escenas:** en Apps armás tus propios combos, por ejemplo Minecraft, Discord y Spotify: les ponés nombre, elegís las apps y, con un toque, se abren todas. Si querés, la escena también empieza un foco.
 - **Hábitos con hora:** tildás tus hábitos desde la isla y, a los que les pongas una hora, te avisan a esa hora con **«Es hora de…»**, **Hecho** y **En 30 min**.
 - **Escribile con tus palabras:** en el campo de notas podés poner algo como «che, anotame que mañana tengo un examen» o «recordame el jueves a las 9 llamar al contador», y Teire IA lo entiende y lo hace. Lo que no es una orden se guarda como nota, y si Teire IA no puede (sin internet, por ejemplo), tu texto queda como nota: no se pierde. Teire IA entiende solo español.
+- **Barra de comandos:** el campo de **Notas** también busca pantallas, notas, recordatorios y amigos, y crea una nota, un hábito o un foco con un toque.
+- **Pepi en la pastilla:** cerrada te muestra lo más urgente (o la hora, si no hay nada) y, la primera vez que abrís la isla en cada sesión, te saluda.
 - **Modo foco:** elegís en qué te enfocás y por cuánto tiempo, y la isla te acompaña con el reloj. Si querés, los avisos esperan hasta que termines.
 - **Notas pegadas al escritorio:** sacás una nota o una lista de la isla y queda flotando, como un post-it, para ir tachando.
 - **Mandá cosas a tu celu:** un link, una foto o algo que copiaste te llega al celular en segundos.
-- **Teire IA** te escucha y te contesta en la isla.
+- **Teire IA** te contesta en la isla y, si prendiste la voz, también te escucha.
 - Se esconde sola si estás en un juego o un video en pantalla completa.
 
 ## Teire Premium
@@ -262,6 +264,7 @@ En iPhone no están la isla ni la voz de Teire IA. Todos los pasos, con el atajo
 - **AppImage:** `chmod +x Teire_*.AppImage` y abrilo con doble clic. Se actualiza sola.
 - **Fedora / openSUSE:** `sudo dnf install ./Teire-*.rpm`.
 - En **GNOME**, para ver el ícono en la bandeja necesitás la extensión [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/).
+- La **isla** también anda en Linux (con cuenta). Probada en Fedora con GNOME.
 </details>
 
 ## Preguntas frecuentes
@@ -300,7 +303,7 @@ Porque el instalador todavía no tiene una firma de código paga, y Windows desc
 <details>
 <summary><b>¿La isla funciona en Linux o sin cuenta?</b></summary>
 
-Por ahora no: la isla es solo para Windows y con cuenta (la creás gratis desde la app). El aviso de capturas sí funciona en Linux.
+En Linux sí (la probamos en Fedora con GNOME). Sin cuenta no: necesitás una, que creás gratis desde la app. En Linux todavía no están «Copiar = guardar» ni el aviso de capturas, y la música es la de reproductores de escritorio como Spotify.
 </details>
 
 <details>
