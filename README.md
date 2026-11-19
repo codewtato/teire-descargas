@@ -170,7 +170,7 @@ Un **lienzo compartido por todos**, sin dueño, estilo r/place: cada día tenés
 Una pastilla negra que vive arriba, al centro de tu pantalla (**Windows y Linux, con cuenta**). Estás viendo un reel, un artículo o una foto: lo arrastrás hasta ahí y **queda guardado**.
 
 <p align="center">
-  <img src="docs/img/isla-demo.svg" alt="Arrastrás un link hasta la isla de Teire, arriba al centro de la pantalla, y queda guardado" width="640">
+  <img src="docs/img/readme/isla-arrastrar.gif" alt="Arrastrás un link hasta la isla de Teire, arriba al centro de la pantalla: se abre con Guardar y Al estante, lo soltás y queda guardado" width="640">
 </p>
 
 - **Arrastrás y soltás** un link, un texto o una imagen desde cualquier programa: la isla se abre para recibirlo.
