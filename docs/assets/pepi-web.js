@@ -1,5 +1,418 @@
 var PepiTeire = (function(exports) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+	// scripts/pepi-web/sonidos-web.ts
+	var sonidosActivos = () => true;
+	// src/datos/sonidosPepi.ts
+	var RAIZ = 293.66;
+	var VOZ = {
+		ataque: .022,
+		durMul: 1,
+		lp: 2600,
+		sala: .1,
+		vol: 1
+	};
+	var VOLUMEN = .12;
+	var semitonos = (raiz, s) => raiz * Math.pow(2, s / 12);
+	var PARTITURAS = {
+		hola: [
+			[
+				4,
+				0,
+				.2,
+				.8
+			],
+			[
+				9,
+				.12,
+				.2,
+				.8
+			],
+			[
+				12,
+				.24,
+				.34,
+				.9
+			]
+		],
+		tarea: [
+			[
+				0,
+				0,
+				.16,
+				.8
+			],
+			[
+				7,
+				.1,
+				.16,
+				.8
+			],
+			[
+				12,
+				.2,
+				.45,
+				.9
+			]
+		],
+		habito: [[
+			-3,
+			0,
+			.16,
+			1,
+			12
+		]],
+		racha: [
+			[
+				7,
+				0,
+				.14,
+				.7
+			],
+			[
+				12,
+				.1,
+				.14,
+				.7
+			],
+			[
+				16,
+				.2,
+				.14,
+				.7
+			],
+			[
+				19,
+				.3,
+				.55,
+				.9
+			]
+		],
+		aviso: [
+			[
+				9,
+				0,
+				.16,
+				.9
+			],
+			[
+				9,
+				.28,
+				.16,
+				.9
+			],
+			[
+				9,
+				.56,
+				.24,
+				.9
+			]
+		],
+		mensaje: [[
+			12,
+			0,
+			.24,
+			1,
+			-9
+		]],
+		cumple: [
+			[
+				12,
+				0,
+				.14,
+				.7
+			],
+			[
+				16,
+				.1,
+				.14,
+				.7
+			],
+			[
+				19,
+				.2,
+				.14,
+				.7
+			],
+			[
+				24,
+				.3,
+				.5,
+				.8
+			],
+			[
+				28,
+				.42,
+				.4,
+				.5
+			]
+		],
+		vencido: [
+			[
+				2,
+				0,
+				.1,
+				.7
+			],
+			[
+				3,
+				.11,
+				.1,
+				.7
+			],
+			[
+				2,
+				.22,
+				.1,
+				.7
+			],
+			[
+				3,
+				.33,
+				.16,
+				.7
+			]
+		],
+		pensando: [[
+			4,
+			0,
+			.7,
+			.55,
+			0,
+			[5, .35]
+		]],
+		listo: [[
+			9,
+			0,
+			.2,
+			.8
+		], [
+			16,
+			.12,
+			.4,
+			.9
+		]],
+		focoini: [[
+			0,
+			0,
+			.9,
+			.6
+		], [
+			7,
+			.04,
+			.9,
+			.45
+		]],
+		focofin: [
+			[
+				12,
+				0,
+				.3,
+				.8
+			],
+			[
+				9,
+				.26,
+				.3,
+				.8
+			],
+			[
+				4,
+				.52,
+				.8,
+				.9
+			]
+		],
+		internet: [[
+			7,
+			0,
+			.22,
+			.8
+		], [
+			2,
+			.2,
+			.5,
+			.8
+		]],
+		dormir: [[
+			9,
+			0,
+			1,
+			.5,
+			-5
+		], [
+			4,
+			.55,
+			1.3,
+			.4
+		]],
+		bostezo: [[
+			9,
+			0,
+			.8,
+			.55,
+			-9
+		]],
+		molesto: [[
+			0,
+			0,
+			.09,
+			.9
+		], [
+			-1,
+			.11,
+			.16,
+			.9
+		]],
+		mareado: [[
+			7,
+			0,
+			.8,
+			.75,
+			0,
+			[7, 1.2]
+		]],
+		enamorado: [[
+			7,
+			0,
+			.22,
+			.8
+		], [
+			12,
+			.18,
+			.55,
+			.9
+		]],
+		guino: [[
+			16,
+			0,
+			.07,
+			.6
+		], [
+			19,
+			.08,
+			.12,
+			.6
+		]],
+		abrir: [[
+			0,
+			0,
+			.2,
+			.6,
+			7
+		]],
+		cerrar: [[
+			7,
+			0,
+			.2,
+			.6,
+			-7
+		]],
+		hover: [[
+			12,
+			0,
+			.06,
+			.35
+		]],
+		tilde: [[
+			12,
+			0,
+			.1,
+			.7
+		], [
+			19,
+			.09,
+			.26,
+			.8
+		]]
+	};
+	var ctx = null;
+	var sala = null;
+	var dormirEn = 0;
+	var audio = () => {
+		ctx ??= new AudioContext();
+		if (ctx.state === "suspended") ctx.resume();
+		return ctx;
+	};
+	var nota = (c, seco, mojado, [semi, t0, dur, vol, glide, vib], cuando) => {
+		const t = cuando + t0;
+		const d = dur * VOZ.durMul;
+		const f0 = semitonos(RAIZ, semi);
+		const f1 = glide ? semitonos(RAIZ, semi + glide) : f0;
+		const salida = c.createGain();
+		const lp = c.createBiquadFilter();
+		lp.type = "lowpass";
+		lp.frequency.value = VOZ.lp;
+		lp.Q.value = .4;
+		salida.gain.setValueAtTime(0, t);
+		salida.gain.linearRampToValueAtTime(vol * VOZ.vol * .55, t + VOZ.ataque);
+		salida.gain.exponentialRampToValueAtTime(1e-4, t + d);
+		const o = c.createOscillator();
+		o.type = "sine";
+		o.frequency.setValueAtTime(f0, t);
+		if (glide) o.frequency.exponentialRampToValueAtTime(f1, t + Math.min(d * .8, .25));
+		if (vib) {
+			const lfo = c.createOscillator();
+			const profundidad = c.createGain();
+			lfo.frequency.value = vib[0];
+			profundidad.gain.value = f0 * (Math.pow(2, vib[1] / 12) - 1) * .35;
+			lfo.connect(profundidad);
+			profundidad.connect(o.frequency);
+			lfo.start(t);
+			lfo.stop(t + d + .1);
+		}
+		o.connect(salida);
+		o.start(t);
+		o.stop(t + d + .1);
+		salida.connect(lp);
+		lp.connect(seco);
+		lp.connect(mojado);
+	};
+	var HOLA_ENTRE_SONIDOS = 5e3;
+	var holaReciente = () => {
+		try {
+			const ultimo = Number(localStorage.getItem("tunoty:pepi-hola-sono") ?? 0);
+			if (Date.now() - ultimo < HOLA_ENTRE_SONIDOS) return true;
+			localStorage.setItem("tunoty:pepi-hola-sono", String(Date.now()));
+		} catch {}
+		return false;
+	};
+	var sonarPepi = (nombre) => {
+		if (!sonidosActivos()) return;
+		if (nombre === "hola" && holaReciente()) return;
+		try {
+			const c = audio();
+			const master = c.createGain();
+			master.gain.value = VOLUMEN * 1.8;
+			const limitador = c.createDynamicsCompressor();
+			limitador.threshold.value = -14;
+			limitador.knee.value = 8;
+			limitador.ratio.value = 12;
+			limitador.attack.value = .003;
+			limitador.release.value = .2;
+			master.connect(limitador);
+			limitador.connect(c.destination);
+			const seco = c.createGain();
+			seco.connect(master);
+			const mojado = c.createGain();
+			mojado.gain.value = VOZ.sala;
+			const eco = c.createConvolver();
+			if (!sala) {
+				const largo = Math.floor(c.sampleRate * 1.2);
+				sala = c.createBuffer(2, largo, c.sampleRate);
+				for (let canal = 0; canal < 2; canal++) {
+					const datos = sala.getChannelData(canal);
+					for (let i = 0; i < largo; i++) datos[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / largo, 3);
+				}
+			}
+			eco.buffer = sala;
+			mojado.connect(eco);
+			eco.connect(master);
+			const cuando = c.currentTime + .02;
+			PARTITURAS[nombre].forEach((n) => nota(c, seco, mojado, n, cuando));
+			window.clearTimeout(dormirEn);
+			dormirEn = window.setTimeout(() => void ctx?.suspend().catch(() => void 0), 3500);
+		} catch {}
+	};
 	// src/ui/pepi.ts
 	var CARAS_PEPI = [
 		"neutro",
@@ -656,7 +1069,7 @@ var PepiTeire = (function(exports) {
 		temp(cara, ms, pose, sonido) {
 			window.clearTimeout(this.temporizador);
 			const suena = sonido === void 0 ? SONIDO_DE_CARA[cara] : sonido;
-			if (this.opciones.sonidos && suena);
+			if (this.opciones.sonidos && suena) sonarPepi(suena);
 			this.pintar(cara);
 			this.poner(pose ?? "x");
 			this.temporizador = window.setTimeout(() => {

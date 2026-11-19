@@ -8,6 +8,10 @@
   var nombre = /^en/i.test(document.documentElement.lang || '') ? 'Pip' : 'Pepi';
   function $(s) { return document.querySelector(s); }
   function slot(clase) { var s = document.createElement('span'); s.className = 'pw ' + clase; return s; }
+  // Pepi suena (su voz «Gotita», la misma de la app) solo por lo que hacés vos: pegarle, marearlo, dejarle el mouse encima. Lo que hace solo
+  // (los saludos y gestos) sigue en silencio, y el navegador no deja sonar nada hasta que tocás la página.
+  // Al hacer clic (doble o triple, que es lo que pasa cuando le pegás) no se selecciona el texto de alrededor.
+  function sinSeleccion(host) { host.addEventListener('mousedown', function (e) { e.preventDefault(); }); host.style.userSelect = 'none'; host.style.webkitUserSelect = 'none'; }
   function chico(host) { host.classList.add('pw'); return crear(host, { chico: true, estatico: true }); }
   var reducir = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -16,7 +20,8 @@
   var hero = $('#pepiHero');
   if (hero) {
     hero.classList.add('pw');
-    var ph = crear(hero, { etiqueta: nombre, alCambiar: function (c) { hero.style.setProperty('--pc', color(c)); } });
+    sinSeleccion(hero);
+    var ph = crear(hero, { sonidos: true, etiqueta: nombre, alCambiar: function (c) { hero.style.setProperty('--pc', color(c)); } });
     if (!reducir) {
       var gestos = ['hola', 'festejar', 'aplaudir', 'tada', 'pensar', 'hola'], gi = 0, encima = false;
       hero.addEventListener('pointerenter', function () { encima = true; });
@@ -36,7 +41,8 @@
   var juego = $('#pepiEscena');
   if (juego) {
     juego.classList.add('pw');
-    var pe = crear(juego, { etiqueta: nombre, alCambiar: function (c) { var j = $('.pepi-juego'); if (j) j.style.setProperty('--pc', color(c)); } });
+    sinSeleccion(juego);
+    var pe = crear(juego, { sonidos: true, etiqueta: nombre, alCambiar: function (c) { var j = $('.pepi-juego'); if (j) j.style.setProperty('--pc', color(c)); } });
     if ('IntersectionObserver' in window && !reducir) {
       new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { pe.gesto('hola', 2600, false); o.disconnect(); } }, { threshold: 0.6 }).observe(juego);
     }
@@ -46,7 +52,8 @@
   var ci = $('#pepiCierre');
   if (ci) {
     ci.classList.add('pw');
-    var pc = crear(ci, {}); pc.fijar('contento');
+    sinSeleccion(ci);
+    var pc = crear(ci, { sonidos: true }); pc.fijar('contento');
     if ('IntersectionObserver' in window && !reducir) {
       new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { pc.gesto('hola', 2600, false); o.disconnect(); } }, { threshold: 0.6 }).observe(ci);
     }

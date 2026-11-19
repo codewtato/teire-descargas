@@ -416,6 +416,8 @@ footer .ult a{display:inline;margin:0}
 .chica{font-size:.92em;opacity:.85}
 .pepi-juego{position:relative;display:flex;align-items:center;justify-content:center;gap:28px;max-width:700px;margin:26px auto 26px;padding:26px 34px;border-radius:24px;border:1px solid var(--d-linea);background:radial-gradient(60% 140% at 22% 110%,color-mix(in srgb,var(--pc,#5FD4A0) 30%,transparent),transparent 70%),#0e0f11;overflow:hidden;transition:background .5s}
 .pepi-juego .pepi-grande{width:170px;height:170px;flex:none;cursor:pointer}
+/* Pepi se toca muchas veces seguidas: sin esto el doble y el triple clic seleccionan los títulos de alrededor. */
+.hero,.pepi-juego,.cierre{-webkit-user-select:none;user-select:none}
 .pepi-info{display:flex;flex-direction:column;gap:3px;text-align:left}
 .pepi-info b{font-family:'Playfair Display',serif;font-size:30px;line-height:1.1;color:#F4EFE6}
 .pepi-info span{color:#c9c4ba;font-size:15px}
