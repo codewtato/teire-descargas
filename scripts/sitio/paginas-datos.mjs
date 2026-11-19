@@ -385,14 +385,14 @@ export const PAGINAS = [
                 `<ul>
 <li><strong>Todo lo importante está:</strong> notas, listas, pizarrones, recordatorios, Guardados, amigos, chat, Espacio y Premium.</li>
 <li><strong>Se actualiza sola:</strong> cuando hay una versión nueva, la app la toma al abrirla con internet.</li>
-<li><strong>No hay isla ni voz de Teire IA:</strong> la isla es de Windows y la voz, de escritorio.</li>
+<li><strong>No hay isla ni voz de Teire IA:</strong> la isla es de Windows y Linux, y la voz, de escritorio.</li>
 <li><strong>No aparece sola en Compartir:</strong> iOS no lo permite en las apps instaladas desde Safari. Por eso existe el atajo.</li>
 <li><strong>No hay aviso al copiar:</strong> en Android Teire te ofrece guardar lo que copiaste. En iPhone tocás Pegar.</li>
 </ul>`,
                 `<ul>
 <li><strong>Everything important is there:</strong> notes, lists, whiteboards, reminders, Saved, friends, chat, Space and Premium.</li>
 <li><strong>It updates itself:</strong> when there's a new version, the app picks it up when you open it with internet.</li>
-<li><strong>There's no island or Teire AI voice:</strong> the island is a Windows feature and the voice is desktop-only.</li>
+<li><strong>There's no island or Teire AI voice:</strong> the island is a Windows and Linux feature and the voice is desktop-only.</li>
 <li><strong>It doesn't show up in Share on its own:</strong> iOS doesn't allow it for apps installed from Safari. That's why the shortcut exists.</li>
 <li><strong>There's no notice when you copy:</strong> on Android, Teire offers to save what you copied. On iPhone you tap Paste.</li>
 </ul>`]],
@@ -489,7 +489,7 @@ export const PAGINAS = [
 <li><strong>Pizarrones a pantalla completa:</strong> dibujan entre varios y se ve mientras lo hacen.</li>
 <li><strong>El Espacio:</strong> un lugar para tu grupo, con chat, pizarrón y lo que comparten.</li>
 <li><strong>Guardados:</strong> reels, links, textos y capturas, agrupados por día y aparte de tus notas.</li>
-<li><strong>La isla en Windows:</strong> le soltás un link o una foto desde cualquier programa y queda guardado.</li>
+<li><strong>La isla en Windows y Linux:</strong> le soltás un link o una foto desde cualquier programa y queda guardado.</li>
 <li><strong>Notas con PIN:</strong> se cifran en tu dispositivo, y ni el servidor las puede leer.</li>
 <li><strong>Sin publicidad:</strong> todo lo importante es gratis y Premium es opcional.</li>
 </ul>
@@ -499,7 +499,7 @@ export const PAGINAS = [
 <li><strong>Full-screen whiteboards:</strong> several people draw together and you see it as it happens.</li>
 <li><strong>The Space:</strong> a place for your group, with chat, a whiteboard and what you share.</li>
 <li><strong>Saved:</strong> reels, links, texts and screenshots, grouped by day and separate from your notes.</li>
-<li><strong>The island on Windows:</strong> drop a link or a photo on it from any program and it's saved.</li>
+<li><strong>The island on Windows and Linux:</strong> drop a link or a photo on it from any program and it's saved.</li>
 <li><strong>PIN notes:</strong> they're encrypted on your device, and even the server can't read them.</li>
 <li><strong>No ads:</strong> everything important is free and Premium is optional.</li>
 </ul>
@@ -511,13 +511,13 @@ export const PAGINAS = [
                 `<ul>
 <li><strong>Todavía no hay importador.</strong> Tus notas de Keep se pasan a mano, copiando y pegando. Si tenés cientos, arrancá con las que usás.</li>
 <li><strong>En iPhone no pasa por la App Store.</strong> Se instala desde Safari en tres toques.</li>
-<li><strong>La isla es solo para Windows</strong> y la voz de Teire IA, para la app de escritorio.</li>
+<li><strong>La isla es para Windows y Linux</strong> y la voz de Teire IA, para la app de escritorio.</li>
 <li><strong>Teire es un proyecto independiente</strong> hecho en Argentina, no una empresa grande.</li>
 </ul>`,
                 `<ul>
 <li><strong>There's no importer yet.</strong> Your Keep notes are moved by hand, copying and pasting. If you have hundreds, start with the ones you use.</li>
 <li><strong>On iPhone it doesn't go through the App Store.</strong> It installs from Safari in three taps.</li>
-<li><strong>The island is Windows-only</strong> and Teire AI's voice is for the desktop app.</li>
+<li><strong>The island is for Windows and Linux</strong> and Teire AI's voice is for the desktop app.</li>
 <li><strong>Teire is an independent project</strong> made in Argentina, not a big company.</li>
 </ul>`]],
             ["keep", ["Cuándo te conviene seguir con Keep", "When it makes sense to stay with Keep"], [
